@@ -1,0 +1,53 @@
+
+.header_Sec{
+position: absolute;
+left: 0;
+right: 0;
+width: 100%;
+margin: 0 auto;
+max-width: 1280px;
+padding: 15px;
+}
+.header_main{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.Header_btns {
+    display: flex;
+    gap: 50px;
+    width: 100%;
+    justify-content: end;
+}
+.Header_btns button{
+    font-size: 17px;
+    line-height: 25.5px;
+    font-family: poppins;
+    font-weight: 600;
+    border-radius: 7px;
+    border: 1px solid #FFFFFF;
+    transition: .5s all;
+    cursor: pointer;
+}
+.Header_btns button:first-child{
+    color:#FFFFFF;
+    padding: 10px 15px;
+    min-height: 52px;
+    background-color: transparent;
+}
+.Header_btns button:first-child:hover{
+    color:#181717;
+    background: #FFFFFF;
+}
+.Header_btns button:last-child{
+    color:#181717;
+    background: #FFFFFF;
+    width: 100%;
+    max-width: 127px;
+    min-height: 52px;
+    padding: 10px 15px;
+}
+.Header_btns button:last-child:hover{
+    color:#FFFFFF;
+    background:transparent;
+}

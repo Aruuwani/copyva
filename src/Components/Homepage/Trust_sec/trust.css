@@ -1,0 +1,26 @@
+.Container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0px auto;
+    padding: 0px 15px;
+}
+.bg_trustSec{
+    background: #FAF9F9;
+}
+.Logo_sec{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.trust_content{
+    display: flex;
+    gap: 70px;
+    justify-content: space-between;
+    align-items: center;
+}
+.trust_content h3{
+    font-family: poppins;
+    color: #181717;
+    font-size: 32px;
+    line-height: 48px;
+    margin: 0px;
+}
