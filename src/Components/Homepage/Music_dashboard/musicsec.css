@@ -1,10 +1,13 @@
 .Music_sec .Container {
-    width: 100%;
+    /* width: 100%; */
     max-width: 1220px;
     margin: 80px auto;
     padding: 50px;
     background-color: #181717;
     border-radius: 40px;
+}
+section.Music_sec {
+    padding: 0px 30px;
 }
 .music_content h2{
     font-size: 38px;
@@ -104,4 +107,63 @@
     align-items: center;
     gap: 20px;
     cursor: pointer;
+}
+
+/* responisve */
+
+@media (min-width:767px){
+    .mobile_Img {
+        display: none;
+    }
+}
+@media (max-width:767px){
+    .music_content h2 {
+        color: #FFFFFF;
+        margin: 0px;
+        font-family: Roboto;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 28.13px;
+        text-align: center;
+    }
+    .music_tab .react-tabs {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    .Music_sec .Container {
+        padding: 20px;
+        border-radius: 12px;
+    }
+    .music_tab .react-tabs ul.react-tabs__tab-list li .music_lisContent h5 {
+        margin: 0px;
+        font-family: Roboto;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 18.75px;
+        text-align: left;
+    }
+    .mobile_Img {
+        display: block;
+    }
+    .music_lisContent .mobile_Img {
+        margin-top: 30px;
+    }
+    
+    .music_lisContent .mobile_Img img {
+        width: 100%;
+    }
+    .music_tab .react-tabs ul.react-tabs__tab-list>li:first-child {
+        padding: 20px;
+        min-width: 90%;
+    max-width: 92%;
+    }
+    .music_tab .react-tabs ul.react-tabs__tab-list li{
+        padding: 0px 20px;
+    }
+    .music_tabContent {
+        display: none;
+    }
+    .Music_sec .Container {
+        margin: 50px auto;
+    }
 }

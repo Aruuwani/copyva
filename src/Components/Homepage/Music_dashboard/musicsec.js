@@ -26,7 +26,10 @@ const Musictab = () => {
                     <h5>Your purchases</h5>
                 <p>Check out the new purchases you’ve made</p>
                 <a href="#">Get Started <img src={Music_arrow} alt="Music_arrow" /></a>
+                <div className="mobile_Img"><img src={Dashboard_img} alt="Dashboard_img" />  </div>
               </div>
+
+             
                 
             </div>
 

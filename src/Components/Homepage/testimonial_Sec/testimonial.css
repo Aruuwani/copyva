@@ -1,5 +1,5 @@
 .Container {
-    width: 100%;
+    /* width: 100%; */
     max-width: 1320px;
     margin: 0px auto;
     padding: 0px 15px;
@@ -52,4 +52,26 @@ section.Testimonial_sec h2 {
     font-weight: 400;
     line-height: 24px;
     text-align: left;
+}
+
+/* responisve */
+@media (max-width:767px){
+    .testimoani_wrap_content {
+        min-width: 300px;
+        max-width: 300px;
+    }
+    .testimoani_wrapper {
+        overflow-x: auto;
+        padding: 0px 15px 15px;
+    }
+    section.Testimonial_sec h2 {
+        color: #171717;
+        font-family: Roboto;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 28.13px;
+    }
+    .testimoani_wrap_content p {
+        font-size: 14px;
+    }
 }

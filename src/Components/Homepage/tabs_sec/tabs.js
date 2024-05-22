@@ -17,7 +17,7 @@ const TabsSection = () => {
     const [tabIndex, setTabIndex] = useState(0);
 
     return (
-        <section className='Container'>
+        <section className='Container tabs_section'>
       <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
         <TabList classID='tab_list'>
           <Tab><h4><img src={Music_img} alt='Music_img' />Music</h4></Tab>

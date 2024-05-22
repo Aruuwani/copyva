@@ -3,7 +3,7 @@
 position: absolute;
 left: 0;
 right: 0;
-width: 100%;
+/* width: 100%; */
 margin: 0 auto;
 max-width: 1280px;
 padding: 15px;
@@ -12,12 +12,14 @@ padding: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 20px;
 }
 .Header_btns {
     display: flex;
     gap: 50px;
-    width: 100%;
+    /* width: 100%; */
     justify-content: end;
+    flex: 1;
 }
 .Header_btns button{
     font-size: 17px;
@@ -50,4 +52,40 @@ padding: 15px;
 .Header_btns button:last-child:hover{
     color:#FFFFFF;
     background:transparent;
+}
+
+
+
+/* Responsive */
+@media (max-width:767px){
+    .Header_btns button {
+        cursor: pointer;
+        font-family: Poppins;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 18px;
+        border-radius: 4px;
+    }
+    .Header_btns button:first-child {
+        color: #FFFFFF;
+        padding: 10px;
+        min-height: 32px;
+        background-color: transparent;
+    }
+    .Header_btns button:last-child {
+        max-width: 68px;
+        min-height: 32px;
+        padding: 10px;
+    }
+    .Header_btns {
+        gap: 10px;
+    }
+    .Web_logo {
+        max-width: 80px;
+        width: 100%;
+    }
+    
+    .Web_logo img {
+        width: 100%;
+    }
 }
