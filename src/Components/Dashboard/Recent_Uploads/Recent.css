@@ -80,7 +80,13 @@
 .mobile_slider {
     display: none;
 }
-
+@media (max-width:1200px){
+    .Recent_musicVideo {
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: unset;
+    }
+}
 @media (max-width:767px){
     .mobile_slider {
         display: block;
@@ -91,7 +97,7 @@
     }
     .mobile_slider .slick-slider.slick-initialized {
         width: 100%;
-        max-width: 320px;
+        max-width: 300px;
     }
     .View_all, .Recent_updates h3, .Recent_musicVideo {
         display: none;
@@ -112,4 +118,42 @@
     font-weight: 400;
     line-height: 15px;
 }
+.mobile_slider button.slick-arrow.slick-next {
+    right: -15px;
+    cursor: pointer;
+    width: 10px;
+}
+.mobile_slider button.slick-arrow.slick-next::before {
+    content: '' !important;
+    color: #111;
+    width: 7px;
+    height: 1px;
+    display: flex;
+    background: #9D9C9C;
+    transform: rotate(40deg);
+    border-radius: 20px;
+}
+.mobile_slider button.slick-arrow.slick-next::after {
+    content: '' !important;
+    color: #111;
+    width: 7px;
+    height: 1px;
+    background: #9D9C9C;
+    transform: rotate(140deg);
+    border-radius: 20px;
+    display: flex;
+    position: absolute;
+    bottom: 5px;
+}
+}
+
+
+@media (max-width:350px){
+    .mobile_slider .slick-slider.slick-initialized {
+        width: 100%;
+        max-width: 250px;
+    }
+    .mobile_slider button.slick-arrow.slick-next {
+        right: -15px;
+    }
 }
