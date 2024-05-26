@@ -58,7 +58,7 @@ const AdminPanel = () => {
   // Render the static UI
   return (
     <div>
-      <AppBar position="static" style={{ background: "black" }}>
+      <AppBar position="static" style={{ background: "black" }} className="top_barDashboard">
         <Toolbar style={{ display: "flex", justifyContent: "space-between" }}>
           <img src={Copyva_logo} alt="logo" />
           <div>
@@ -127,12 +127,12 @@ const AdminPanel = () => {
       </AppBar>
       <div>
         <Grid container spacing={3}>
-          <Grid item xs={3}>
+          <Grid item xs={2.5}>
             <Paper className="left_nav">
               {/* Left side: Navigation */}
               <List
                 component="nav"
-                style={{ background: "black", color: "white", height: "100vh" }}
+                style={{ background: "#2F3032", color: "white", height: "100vh" }}
               >
                 <ListItem onClick={() => handleNavItemClick("Home")}>
                   <ListItemIcon>
@@ -196,10 +196,10 @@ const AdminPanel = () => {
               </List>
             </Paper>
           </Grid>
-          <Grid item xs={9}>
+          <Grid item xs={9.35} className="Dashboard_rightContent">
             <Paper>
               {/* Right side: Content */}
-              <Typography variant="h5">{selectedNavItem}</Typography>
+              <Typography variant="h5"></Typography>
               {/* Content based on selected navigation item */}
               {selectedNavItem === "Home" && <Home />}
               {selectedNavItem === "uploardlist" && <UploardList />}

@@ -1,0 +1,79 @@
+.Recent_musicVideo {
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 230px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+}
+.Recent_updates{
+    position: relative;
+}
+.View_all {
+    position: absolute;
+    left: 15px;
+    bottom: 20px;
+    right: 15px;
+    background: white;
+    padding: 10px;
+}
+.View_all button{
+    background: transparent;
+    border: 0px;
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.Recent_updates h3 {
+    font-family: Poppins;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: left;
+    margin: 0px 0px 20px;
+}
+.recent_innerContent {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-align: left;
+}
+
+.recent_innerContent img {
+    border-radius: 30px;
+    width: 49px;
+    height: 49px;
+}
+
+.recent_innerContent h4 {
+    font-family: Poppins;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+    text-align: left;
+    margin: 0px;
+}
+
+.recent_innerContent p {
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    color: #9D9C9C;
+    margin: 5px 0px 0px;
+}
+@media (max-width:767px){
+    .Recent_musicVideo {
+        height: fit-content;
+        overflow-x: hidden;
+        overflow-y: unset;
+    }
+    .View_all {
+        position: unset;
+    }
+}
