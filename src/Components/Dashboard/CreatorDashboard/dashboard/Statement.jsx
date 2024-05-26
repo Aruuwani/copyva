@@ -126,15 +126,91 @@ const Statement = () => {
         );
       case 1:
         return (
-          <form>
-            <label htmlFor="songLink">Song Link:</label>
-            <br />
-            <input type="text" id="songLink" name="songLink" />
-            <br />
-            {/* Add other form fields related to song links */}
-            <button onClick={handlePrev}>Previous</button>
+          <form className="custom-form" onSubmit={handleSubmit(onSubmit)}>
+  <div className="form-group d-flex flex-column">
+    <label htmlFor="spotifyLink">Spotify Link</label>
+    <input
+      type="text"
+      className="form-control"
+      id="spotifyLink"
+      placeholder="Enter Spotify link"
+      {...register("spotifyLink")}
+    />
+  </div>
+  <div className="form-group d-flex flex-column">
+    <label htmlFor="youtubeLink">YouTube Link</label>
+    <input
+      type="text"
+      className="form-control"
+      id="youtubeLink"
+      placeholder="Enter YouTube link"
+      {...register("youtubeLink")}
+    />
+  </div>
+  <div className="form-group d-flex flex-column">
+    <label htmlFor="gaanaLink">Gaana Link</label>
+    <input
+      type="text"
+      className="form-control"
+      id="gaanaLink"
+      placeholder="Enter Gaana link"
+      {...register("gaanaLink")}
+    />
+  </div>
+  <div className="form-group d-flex flex-column">
+    <label htmlFor="amazonMusicLink">Amazon Music Link</label>
+    <input
+      type="text"
+      className="form-control"
+      id="amazonMusicLink"
+      placeholder="Enter Amazon Music link"
+      {...register("amazonMusicLink")}
+    />
+  </div>
+  <div className="form-group d-flex flex-column">
+    <label htmlFor="jiosaavanLink">JioSaavn Link</label>
+    <input
+      type="text"
+      className="form-control"
+      id="jiosaavanLink"
+      placeholder="Enter JioSaavn link"
+      {...register("jiosaavanLink")}
+    />
+  </div>
+  <div className="form-group d-flex flex-column">
+    <label htmlFor="wynkMusicLink">Wynk Music Link</label>
+    <input
+      type="text"
+      className="form-control"
+      id="wynkMusicLink"
+      placeholder="Enter Wynk Music link"
+      {...register("wynkMusicLink")}
+    />
+  </div>
+  <div className="form-group d-flex flex-column">
+    <label htmlFor="appleMusicLink">Apple Music Link</label>
+    <input
+      type="text"
+      className="form-control"
+      id="appleMusicLink"
+      placeholder="Enter Apple Music link"
+      {...register("appleMusicLink")}
+    />
+  </div>
+  <div className="form-group d-flex flex-column">
+    <label htmlFor="otherLink">Other Link</label>
+    <input
+      type="text"
+      className="form-control"
+      id="otherLink"
+      placeholder="Enter other link"
+      {...register("otherLink")}
+    />
+  </div>
+  <button onClick={handlePrev}>Previous</button>
             <button onClick={handleNext}>Next</button>
-          </form>
+</form>
+
         );
       case 2:
         return (
