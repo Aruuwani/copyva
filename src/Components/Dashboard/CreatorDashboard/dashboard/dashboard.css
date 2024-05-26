@@ -167,6 +167,9 @@
 }
 
 @media (max-width:767px){
+    .home_dashboard>div:first-child {
+        order: 2;
+    }
     .home_dashboard {
         margin-right: 0px;
         padding: 0px 15px 100px;

@@ -1,5 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
+import VideoImg from '../../../assets/video_img.png'
 import MusicImg from '../../../assets/music_img.png'
 
 export default function SimpleSlider() {
@@ -10,20 +11,26 @@ export default function SimpleSlider() {
     slidesToShow: 1,
     slidesToScroll: 1,
   };
-  return (
-    <Slider>
-    <div className="recent_innerContent">
-            <img src={MusicImg} alt="" />
-            <div><h4>Lorem ipsum </h4>
-            <p>Lorem ipsum dolor sit amet consect amet</p></div>
-        </div>  
-
+      return (
+        <Slider {...settings}>
+         
         <div className="recent_innerContent">
-            <img src={MusicImg} alt="" />
+            <img src={MusicImg} alt="MusicImg" />
             <div><h4>Lorem ipsum </h4>
             <p>Lorem ipsum dolor sit amet consect amet</p></div>
-        </div>  
-     
-    </Slider>
-  );
-}
+        </div>
+        
+        <div className="recent_innerContent">
+            <img src={VideoImg} alt="VideoImg7" />
+            <div><h4>Lorem ipsum </h4>
+            <p>Lorem ipsum dolor sit amet consect amet</p></div>
+        </div>
+        
+        <div className="recent_innerContent">
+            <img src={MusicImg} alt="MusicImg" />
+            <div><h4>Lorem ipsum </h4>
+            <p>Lorem ipsum dolor sit amet consect amet</p></div>
+        </div>
+        </Slider>
+      );
+    }

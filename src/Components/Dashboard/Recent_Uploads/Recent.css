@@ -67,13 +67,49 @@
     color: #9D9C9C;
     margin: 5px 0px 0px;
 }
+
+
+/* .mobile_slider */
+.mobile_slider .slick-slider.slick-initialized {
+    width: 100%;
+    max-width: 438px;
+}
+.mobile_slider ul.slick-dots {
+    display: none !important;
+}
+.mobile_slider {
+    display: none;
+}
+
 @media (max-width:767px){
-    .Recent_musicVideo {
-        height: fit-content;
-        overflow-x: hidden;
-        overflow-y: unset;
+    .mobile_slider {
+        display: block;
     }
-    .View_all {
-        position: unset;
+   
+    .recent_innerContent {
+        display: flex !important;
     }
+    .mobile_slider .slick-slider.slick-initialized {
+        width: 100%;
+        max-width: 320px;
+    }
+    .View_all, .Recent_updates h3, .Recent_musicVideo {
+        display: none;
+    }
+    .recent_innerContent img {
+        border-radius: 30px;
+        width: 28px;
+        height: 28px;
+    }
+
+.recent_innerContent h4 {
+    font-size: 14px;
+    line-height: 21px;
+}
+.recent_innerContent p {
+    margin: 0px;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 15px;
+}
 }
