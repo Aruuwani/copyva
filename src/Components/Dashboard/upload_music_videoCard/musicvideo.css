@@ -66,6 +66,7 @@
     }
     .Music_videoUpload {
         grid-gap: 10px;
+        margin: 15px 0px;
     }
     .Music_videoUpload .Uploaded_content h5 {
         font-size: 13px;
