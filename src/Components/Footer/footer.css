@@ -35,6 +35,7 @@ section.Footer {
 .socail_links ul {
     display: flex;
     gap: 20px;
+    list-style: none;
 }
 
 .Bottom_raw .Footer_menu ul a {

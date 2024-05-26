@@ -89,3 +89,12 @@ padding: 15px;
         width: 100%;
     }
 }
+@media (max-width:380px){
+    .Header_btns button {
+        font-size: 10px;
+    }
+    .Web_logo {
+        max-width: 50px;
+        width: 100%;
+    }
+}
