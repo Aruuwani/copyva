@@ -15,6 +15,7 @@ section.Testimonial_sec h2 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 30px;
+    margin: 40px 0px 0px;
 }
 .testimoani_wrap_content {
     box-shadow: 0px 2px 15px 0px #00000012;
@@ -52,6 +53,7 @@ section.Testimonial_sec h2 {
     font-weight: 400;
     line-height: 24px;
     text-align: left;
+    margin: 10px 0px 0px;
 }
 
 /* responisve */

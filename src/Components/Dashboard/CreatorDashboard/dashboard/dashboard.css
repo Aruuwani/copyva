@@ -273,10 +273,58 @@
 
 
 
-  .custom-form {
-    background-color: #f8f9fa; /* Light grey background */
-    padding: 20px; /* Padding around the form */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow */
+  .step_form .custom-form {
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0px 4px 12px 0px #00000026;
+    border-radius: 10px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
   }
-  
+ .step_form .custom-form label {
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: left;
+    padding: 0px 0px 10px;
+}
+.step_form form.custom-form input, .step_form .form-select {
+    border: 1px solid #000000 !important;
+    min-height: 54px;
+    font-family: Roboto;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    line-height: 16.41px !important;
+    text-align: left;
+    border-radius: 8px;
+}
+.step_form .form-control:focus, .step_form .form-select:focus, .step_form button.btn:focus {
+    box-shadow: none;
+    border: 0px ;
+}
+.step_form button.btn {
+    background: #181717;
+    border-color: #181717;
+    min-height: 50px;
+    width: 100%;
+    max-width: 366px;
+    margin: 0 auto;
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21.09px;
+    border-radius: 8px;
+    transition: .5s all;
+    border: 1px solid !important;
+}
+.step_form button.btn:hover {
+    background: transparent;
+    color: #181717;
+}
+
+.step_formwrapper {
+    text-align: left;
+}

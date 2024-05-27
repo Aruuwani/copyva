@@ -22,7 +22,7 @@
     background-color: #fff;
     padding: 20px;
     width: 100%;
-    max-width: 370px;
+    max-width: 400px;
     align-items: center;
     text-align: left;
 }
@@ -52,7 +52,7 @@
 /* responsive */
 @media (max-width:991px){
     .Creator_sec {
-        max-width: 250px;
+        max-width: 350px;
         align-items: center;
         flex-wrap: wrap;
     }
@@ -70,11 +70,12 @@
         display: none;
     }
     .Creator_sec {
-        max-width: 145px;
+        max-width: 200px;
         flex-wrap: wrap;
+        padding: 10px;
     }
     .Creator_sec h4 {
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 600;
         line-height: 24px;
         text-align: left;

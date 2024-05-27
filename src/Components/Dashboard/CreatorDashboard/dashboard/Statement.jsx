@@ -27,6 +27,7 @@ const Statement = () => {
     switch (activeStep) {
       case 0:
         return (
+          <div className="step_form">
           <form className="custom-form" onSubmit={handleSubmit(onSubmit)}>
             <div className="form-group d-flex flex-column">
               <label htmlFor="copyrightOwnerName">
@@ -123,6 +124,7 @@ const Statement = () => {
               Next
             </button>
           </form>
+          </div>
         );
       case 1:
         return (
@@ -178,8 +180,9 @@ const Statement = () => {
   };
 
   return (
+    <div className="step_formside">
     <div className="d-flex" style={{ display: "flex" }}>
-     <div className="col-md-3">
+     <div className="col-md-3 step_formwrapper">
         <p
           onClick={() => setActiveStep(0)}
           className={activeStep === 0 ? "active" : ""}
@@ -216,6 +219,7 @@ const Statement = () => {
       <div className="col-md-3">
         <p>helloworld</p>
       </div>
+    </div>
     </div>
   );
 };
