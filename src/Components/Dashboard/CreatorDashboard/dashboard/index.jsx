@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   AppBar,
   Toolbar,
@@ -146,6 +147,7 @@ const AdminPanel = () => {
                     }
                   />
                 </ListItem>
+                {/* <ListItem component={Link} to="/statement"> */}
                 <ListItem onClick={() => handleNavItemClick("Statement")}>
                   <ListItemIcon>
                     <DescriptionIcon style={{ color: "white" }} />{" "}

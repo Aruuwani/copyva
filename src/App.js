@@ -5,13 +5,14 @@ import Header from './Components/Header/header';
 import Footer from './Components/Footer/footer';
 import Login from './Pages/Login/login';
 // import CreatorDashboard from './Components/Dashboard/CreatorDashboard/AppHeader/AppHeader';
-// import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 
 import './App.css';
 // import AdminPanel from './Components/Dashboard/CreatorDashboard/AppHeader/AppHeader';
 // import AdminPanel from './dashboard';
 import AdminPanel from "../src/Components/Dashboard/CreatorDashboard/dashboard"
+import Statement from './Components/Dashboard/CreatorDashboard/dashboard/Statement';
 
 // import { ToastContainer } from 'react-toastify'
 // import 'react-toastify/dist/ReactToastify.css';
@@ -28,6 +29,7 @@ function App() {
             {/* <ToastContainer /> */}
             <Routes>
             <Route path="/dashboard" element={<AdminPanel />} />
+            <Route path="/statement" element={<Statement />} />
               {/* <Route path="*" element={<PageNotFound />} /> */}
             </Routes>
           </BrowserRouter>
