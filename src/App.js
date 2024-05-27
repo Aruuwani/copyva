@@ -4,54 +4,35 @@ import Homepage from './Components/Homepage/homepage';
 import Header from './Components/Header/header';
 import Footer from './Components/Footer/footer';
 import Login from './Pages/Login/login';
-// import CreatorDashboard from './Components/Dashboard/CreatorDashboard/AppHeader/AppHeader';
-
-
 
 import './App.css';
-// import AdminPanel from './Components/Dashboard/CreatorDashboard/AppHeader/AppHeader';
-// import AdminPanel from './dashboard';
-import AdminPanel from "../src/Components/Dashboard/CreatorDashboard/dashboard"
-import Statement from './Components/Dashboard/CreatorDashboard/dashboard/Statement';
-
-// import { ToastContainer } from 'react-toastify'
-// import 'react-toastify/dist/ReactToastify.css';
-
+import AdminPanel from "./Components/Dashboard/CreatorDashboard/dashboard"
+import MultiStepForm from './Components/Dashboard/CreatorDashboard/dashboard/Statement';
 
 function App() {
-
-
   return (
     <div className="App">
-      {
-        window.location.pathname === "/dashboard" ? (
-          <BrowserRouter>
-            {/* <ToastContainer /> */}
+      <BrowserRouter>
+        {window.location.pathname.startsWith("/dashboard") ? (
+          <>
             <Routes>
-            <Route path="/dashboard" element={<AdminPanel />} />
-            <Route path="/statement" element={<Statement />} />
-              {/* <Route path="*" element={<PageNotFound />} /> */}
+              <Route path="/dashboard/*" element={<AdminPanel />} />
+              {/* <Route path="/dashboard/MultiStepForm" element={<MultiStepForm />} /> */}
             </Routes>
-          </BrowserRouter>
+          </>
         ) : (
-
-          <BrowserRouter>
-          <Header />
-            {/* <ToastContainer /> */}
+          <>
+            <Header />
             <Routes>
-            <Route path="/" element={<Homepage />} />
-           <Route path="/login" element={<Login />} />
-              
-              {/* <Route path="*" element={<PageNotFound />} /> */}
+              <Route path="/" element={<Homepage />} />
+              <Route path="/login" element={<Login />} />
             </Routes>
             <Footer />
-          </BrowserRouter>
-        )
-      }
-
+          </>
+        )}
+      </BrowserRouter>
     </div>
   );
 }
 
 export default App;
-

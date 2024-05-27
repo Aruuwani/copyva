@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Routes, Route } from "react-router-dom";
 import {
   AppBar,
   Toolbar,
@@ -22,7 +22,6 @@ import UploadIcon from '@mui/icons-material/Upload';
 import CancelIcon from '@mui/icons-material/Cancel';
 
 import "./dashboard.css";
-// import AdminLogin from "./AdminLogin";
 import Statement from "./Statement";
 import Logout from "@mui/icons-material/Logout";
 import EditNoteOutlinedIcon from "@mui/icons-material/EditNoteOutlined";
@@ -30,17 +29,14 @@ import Home from "./Home";
 import UploardList from "./UploardList";
 import PiracyComplaints from "./PiracyComplaints";
 import Copyva_logo from "../../../../assets/Copyva_logo.png";
+import MultiStepForm from "./MusicUplorad/index"
+import MusicUplorad from "./MusicUplorad/index";
+import UploardContent from "./UploardContent";
 
 const AdminPanel = () => {
-  // Static values
-
-  // State for UI
-  const [selectedNavItem, setSelectedNavItem] = React.useState("Home");
-  const [authenticated, setAuthenticated] = React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
 
-  // Handlers
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -48,15 +44,10 @@ const AdminPanel = () => {
     setAnchorEl(null);
   };
 
-  const handleNavItemClick = (itemName) => {
-    setSelectedNavItem(itemName);
-  };
-
   const handleLogout = () => {
-    setAuthenticated(false);
+    // Implement logout functionality
   };
 
-  // Render the static UI
   return (
     <div>
       <AppBar position="static" style={{ background: "black" }} className="top_barDashboard">
@@ -130,84 +121,46 @@ const AdminPanel = () => {
         <Grid container spacing={3}>
           <Grid item xs={2.5}>
             <Paper className="left_nav">
-              {/* Left side: Navigation */}
-              <List
-                component="nav"
-                style={{ background: "#2F3032", color: "white", height: "100vh" }}
-              >
-                <ListItem onClick={() => handleNavItemClick("Home")}>
+              <List component="nav" style={{ background: "#2F3032", color: "white", height: "100vh" }}>
+                <ListItem component={Link} to="/dashboard/home">
                   <ListItemIcon>
-                    <HomeIcon style={{ color: "white" }} />{" "}
-                    {/* Add the icon component here */}
+                    <HomeIcon style={{ color: "white" }} />
                   </ListItemIcon>
-                  <ListItemText
-                    primary="Home"
-                    className={
-                      selectedNavItem === "Home" ? "active_nav" : "nav_item"
-                    }
-                  />
+                  <ListItemText primary="Home" />
                 </ListItem>
-                {/* <ListItem component={Link} to="/statement"> */}
-                <ListItem onClick={() => handleNavItemClick("Statement")}>
+                <ListItem component={Link} to="/dashboard/Statement">
                   <ListItemIcon>
-                    <DescriptionIcon style={{ color: "white" }} />{" "}
-                    {/* Add the icon component here */}
+                    <DescriptionIcon style={{ color: "white" }} />
                   </ListItemIcon>
-
-                  <ListItemText
-                    primary="Statement"
-                    className={
-                      selectedNavItem === "Statement"
-                        ? "active_nav"
-                        : "nav_item"
-                    }
-                  />
+                  <ListItemText primary="Statement" />
                 </ListItem>
-               
-                <ListItem onClick={() => handleNavItemClick("Uploard List")}>
-                <ListItemIcon>
-                    <UploadIcon style={{ color: "white" }} />{" "}
-                    {/* Add the icon component here */}
+                <ListItem component={Link} to="/dashboard/uploard-list">
+                  <ListItemIcon>
+                    <UploadIcon style={{ color: "white" }} />
                   </ListItemIcon>
-                  <ListItemText
-                    primary="Uploard List"
-                    className={
-                      selectedNavItem === "Uploard list"
-                        ? "active_nav"
-                        : "nav_item"
-                    }
-                  />
+                  <ListItemText primary="Uploard List" />
                 </ListItem>
-                <ListItem
-                  onClick={() => handleNavItemClick("Piracy Complaints")}
-                >
-                
-                <ListItemIcon>
-                    <CancelIcon style={{ color: "white" }} />{" "}
-                    {/* Add the icon component here */}
+                <ListItem component={Link} to="/dashboard/piracy-complaints">
+                  <ListItemIcon>
+                    <CancelIcon style={{ color: "white" }} />
                   </ListItemIcon>
-                  <ListItemText
-                    primary="Piracy Complaints"
-                    className={
-                      selectedNavItem === "Piracy Complaints"
-                        ? "active_nav"
-                        : "nav_item"
-                    }
-                  />
+                  <ListItemText primary="Piracy Complaints" />
                 </ListItem>
               </List>
             </Paper>
           </Grid>
           <Grid item xs={9.35} className="Dashboard_rightContent">
             <Paper>
-              {/* Right side: Content */}
               <Typography variant="h5"></Typography>
-              {/* Content based on selected navigation item */}
-              {selectedNavItem === "Home" && <Home />}
-              {selectedNavItem === "uploardlist" && <UploardList />}
-              {selectedNavItem === "Statement" && <Statement />}
-              {selectedNavItem === "PiracyComplaints" && <PiracyComplaints />}
-              {/* Add more content components for other navigation items */}
+              <Routes>
+                <Route path="home" element={<Home />} />
+                <Route path="Statement" element={<Statement />} />
+                <Route path="uploard-list" element={<UploardList />} />
+                <Route path="piracy-complaints" element={<PiracyComplaints />} />
+                <Route path="Music-upload" element={<MusicUplorad />} />
+                <Route path="upload-content" element={<UploardContent />} />
+
+              </Routes>
             </Paper>
           </Grid>
         </Grid>
