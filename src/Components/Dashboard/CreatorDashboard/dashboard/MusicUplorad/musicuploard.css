@@ -46,3 +46,317 @@
   .statement_form{
     display: flex;
   }
+
+
+/* Left_step */
+.custom-form h2 {
+  font-family: Roboto;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 23.44px;
+  text-align: left;
+  border-bottom: 1px solid #E4E4E4;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+.Dashboard_rightContent .col-md-3 p {
+  color: #9D9C9C;
+}
+.Dashboard_rightContent .stepForm_part p.active, .Dashboard_rightContent .stepForm_part p {
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16.41px;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px;
+  clip-path: polygon(100% 51%, 93% 100%, 0 100%, 0 0, 93% 0);
+  border: 1px solid #C9C9C9;
+  position: relative;
+  background: #ffffff;
+}
+.form-check label.form-check-label {
+  padding: 0px;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 21.09px;
+  text-align: left;
+}
+
+.custom-form form .stepForm_part {
+  gap: 10px;
+}
+.Dashboard_rightContent .stepForm_part {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 260px;
+}
+
+.Dashboard_rightContent .stepForm_part p::after {
+  content: '';
+  width: 80px;
+  height: 1px;
+  position: absolute;
+  background: #C9C9C9;
+  top: 0px;
+  right: -23px;
+  transform: rotate(53deg);
+}
+.Dashboard_rightContent .custom-form .d-flex {
+  gap: 14px;
+}
+.Dashboard_rightContent .custom-form .d-flex label {
+  padding: 0px;
+}
+.Dashboard_rightContent .stepForm_part p::before {
+  content: '';
+  width: 80px;
+  height: 1px;
+  position: absolute;
+  background: #C9C9C9;
+  bottom: 0px;
+  right: -24px;
+  transform: rotate(306deg);
+}
+
+.Dashboard_rightContent .stepForm_part span {
+  position: absolute;
+  background: white;
+  content: '';
+  width: 49px;
+  height: 49px;
+  border-radius: 50px;
+  left: -20px;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #9D9C9C;
+  font-family: Roboto;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 16.41px;
+  text-align: left;
+  color: #9D9C9C;
+}
+
+.step_divForm {
+  position: relative;
+}
+
+.Dashboard_rightContent .stepForm_part p.active {
+  background: #181717;
+  color: #ffffff;
+}
+.Dashboard_rightContent .stepForm_part p.active+ span {
+  background: linear-gradient(180deg, #F4C05C 0%, #D8A136 100%);
+  border: 0px;
+  color: #181717;
+}
+.step_part {
+  display: flex;
+  gap: 20px;
+  padding: 40px 20px;
+}
+/* right_side */
+.Dashboard_rightContent .stepForm_part p.active+ span {
+  background: linear-gradient(180deg, #F4C05C 0%, #D8A136 100%);
+  border: 0px;
+  color: #181717;
+}
+.Dashboard_rightContent .note_sec {
+  background: linear-gradient(96.28deg, #D8E3FF 0%, #FFECE3 98.13%);
+  height: fit-content;
+  border: 2px solid var(--white, #FFFFFF);
+  border-radius: 10px;
+  color: #181717;
+  text-align: left;
+  padding: 20px 20px 5px;
+}
+
+.Dashboard_rightContent .note_sec p {
+  color: #181717;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+}
+.MuiGrid-root.MuiGrid-item.MuiGrid-grid-xs-2\.5.css-s7s3c1-MuiGrid-root {
+  background: #2f3032;
+}
+.Dashboard_rightContent .note_sec h1 {
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 18px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+/* Middle */
+  .Dashboard_rightContent .custom-form {
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0px 4px 12px 0px #00000026;
+    border-radius: 10px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 860px;
+    width: 100%;
+  }
+ .Dashboard_rightContent .custom-form label {
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  text-align: left;
+  padding: 10px 0px 0px;
+}
+.Dashboard_rightContent input.form-control, .Dashboard_rightContent select.form-control {
+  border: 1px solid #000000 !important;
+  min-height: 54px !important;
+  font-family: Roboto !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 16.41px !important;
+  text-align: left !important;
+  border-radius: 8px !important;
+}
+.Dashboard_rightContent .form-control:focus,  .Dashboard_rightContent .form-select:focus,   .Dashboard_rightContent button.btn:focus, .form-check-input:focus {
+    box-shadow: none !important;
+    border: 0px ;
+}
+.custom-form h2 {
+  font-family: Roboto;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 23.44px;
+  text-align: left;
+  border-bottom: 1px solid #E4E4E4;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+.Dashboard_rightContent .form-check-input:checked {
+  background-color: #000000;
+  border-color: #000000;
+}
+.Dashboard_rightContent button {
+  background: #181717;
+  border-color: #181717;
+  min-height: 50px;
+  width: 100%;
+  /* max-width: 366px; */
+  margin: 0 auto;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 21.09px;
+  border-radius: 8px;
+  transition: .5s all;
+  border: 1px solid !important;
+  color: white;
+}
+.Dashboard_rightContent button:hover {
+    background: transparent;
+    color: #181717;
+}
+
+.Dashboard_rightContent .step_formwrapper {
+    text-align: left;
+}
+.custom-form>div:last-child {
+  display: flex;
+  gap: 10px;
+}
+
+/* progress */
+
+.custom-form .progress-step.active {
+  background: #524E4E;
+  width: 120px;
+  height: 4px !important;
+  border-radius: 3px;
+}
+
+.custom-form .progress-container {
+  background: #E4E4E4;
+  padding: 0px;
+  height: 1px;
+  width: 100%;
+  margin: -20px 0px 20px;
+}
+.custom-form .progress-container .progress-step {
+  height: 1px;
+}
+.Dashboard_rightContent .custom-form .Progress_form h4 {
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 21.09px;
+  text-align: left;
+}
+
+.custom-form .progress-step.active {
+  background: #524E4E;
+  width: 120px;
+  height: 4px !important;
+  border-radius: 3px;
+  margin: 0px;
+}
+.btn_wapper {
+  display: flex;
+  gap: 10px;
+}
+.custom-form .progress-container {
+    background: #E4E4E4;
+    padding: 0px;
+    height: 1px;
+    width: 100%;
+    margin: -20px 0px 20px;
+}
+.custom-form .progress-container .progress-step {
+    height: 1px;
+}
+form.Progress_form {
+  margin-top: 30px;
+}
+.Dashboard_rightContent .custom-form .Progress_form h4 {
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 21.09px;
+  text-align: left;
+  padding-bottom: 10px;
+}
+
+form.Progress_form .check_progress {
+    border-radius: 8px;
+    border: 1px solid #9D9C9C;
+    min-height: 54px;
+    padding: 8px 15px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+form.Progress_form .check_progress label {
+    padding: 0px;
+    position: relative;
+}
+
+form.Progress_form .check_progress input[type="radio"] {
+  accent-color: black;
+  width: 16px;
+  height: 16px;
+}

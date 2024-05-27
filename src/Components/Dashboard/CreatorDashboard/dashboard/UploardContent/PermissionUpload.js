@@ -37,12 +37,12 @@ const PermissionUpload = () => {
     switch (currentStep) {
       case 1:
         return (
-          <form>
+          <form className='Progress_form'>
             <div>
-              <label>Permission to remix/combine the selected content/video by editing:</label>
-              <div>
+              <h4>Permission to remix/combine the selected content/video by editing:</h4>
+              <div className='check_progress'>
                 <input
-                  type="checkbox"
+                  type="radio"
                   name="pricing"
                   value="Commercial / Business purpose"
                   checked={formData?.pricing.includes('Commercial / Business purpose')}
@@ -56,12 +56,12 @@ const PermissionUpload = () => {
         );
       case 2:
         return (
-          <form>
+          <form className='Progress_form'>
             <div>
-              <label>Commercial/Business Purpose:</label>
-              <div>
+              <h4>Commercial/Business Purpose:</h4>
+              <div className='check_progress'>
                 <input
-                  type="checkbox"
+                  type="radio"
                   name="pricing"
                   value="Youtube"
                   checked={formData?.pricing.includes('Youtube')}
@@ -69,9 +69,9 @@ const PermissionUpload = () => {
                 />
                 <label>Youtube</label>
               </div>
-              <div>
+              <div className='check_progress'>
                 <input
-                  type="checkbox"
+                  type="radio"
                   name="pricing"
                   value="Instagram"
                   checked={formData?.pricing.includes('Instagram')}
@@ -79,9 +79,9 @@ const PermissionUpload = () => {
                 />
                 <label>Instagram</label>
               </div>
-              <div>
+              <div className='check_progress'>
                 <input
-                  type="checkbox"
+                  type="radio"
                   name="pricing"
                   value="Facebook"
                   checked={formData?.pricing.includes('Facebook')}
@@ -89,9 +89,9 @@ const PermissionUpload = () => {
                 />
                 <label>Facebook</label>
               </div>
-              <div>
+              <div className='check_progress'>
                 <input
-                  type="checkbox"
+                  type="radio"
                   name="pricing"
                   value="Set a discuss with copyva team"
                   checked={formData?.pricing.includes('Set a discuss with copyva team')}
@@ -100,18 +100,20 @@ const PermissionUpload = () => {
                 <label>Set a discuss with copyva team</label>
               </div>
             </div>
+            <div className='btn_wapper'>
             <button type="button" onClick={prevStep}>Back</button>
             <button type="button" onClick={nextStep}>Next</button>
+            </div>
           </form>
         );
       case 3:
         return (
-          <form>
+          <form className='Progress_form'>
             <div>
-              <label>Youtube:</label>
-              <div>
+              <h4>Youtube:</h4>
+              <div className='check_progress'>
                 <input
-                  type="checkbox"
+                  type="radio"
                   name="Seatingcapacity"
                   value="0 to 50,000 subscribers"
                   checked={formData?.Seatingcapacity.includes('0 to 50,000 subscribers')}
@@ -119,9 +121,9 @@ const PermissionUpload = () => {
                 />
                 <label>0 to 50,000 subscribers</label>
               </div>
-              <div>
+              <div className='check_progress'>
                 <input
-                  type="checkbox"
+                  type="radio"
                   name="Seatingcapacity"
                   value="50,000 to 500,000 subscribers"
                   checked={formData?.Seatingcapacity.includes('50,000 to 500,000 subscribers')}
@@ -129,9 +131,9 @@ const PermissionUpload = () => {
                 />
                 <label>50,000 to 500,000 subscribers</label>
               </div>
-              <div>
+              <div className='check_progress'>
                 <input
-                  type="checkbox"
+                  type="radio"
                   name="Seatingcapacity"
                   value="500,000 to 2,000,000 subscribers"
                   checked={formData?.Seatingcapacity.includes('500,000 to 2,000,000 subscribers')}
@@ -139,9 +141,9 @@ const PermissionUpload = () => {
                 />
                 <label>500,000 to 2,000,000 subscribers</label>
               </div>
-              <div>
+              <div className='check_progress'>
                 <input
-                  type="checkbox"
+                  type="radio"
                   name="Seatingcapacity"
                   value="2,000,000 to 10,000,000 subscribers"
                   checked={formData?.Seatingcapacity.includes('2,000,000 to 10,000,000 subscribers')}
@@ -149,9 +151,9 @@ const PermissionUpload = () => {
                 />
                 <label>2,000,000 to 10,000,000 subscribers</label>
               </div>
-              <div>
+              <div className='check_progress'>
                 <input
-                  type="checkbox"
+                  type="radio"
                   name="Seatingcapacity"
                   value="More than 10,000,000 subscribers"
                   checked={formData?.Seatingcapacity.includes('More than 10,000,000 subscribers')}
@@ -160,18 +162,20 @@ const PermissionUpload = () => {
                 <label>More than 10,000,000 subscribers</label>
               </div>
             </div>
+            <div className='btn_wapper'>
             <button type="button" onClick={prevStep}>Back</button>
             <button type="button" onClick={nextStep}>Next</button>
+            </div>
           </form>
         );
       case 4:
         return (
-          <form>
+          <form className='Progress_form'>
             <div>
-              <label>Licence to use the content on Youtube - 0 to 50,000 subscribers:</label>
-              <div>
+              <h4>Licence to use the content on Youtube - 0 to 50,000 subscribers:</h4>
+              <div className='check_progress'>
                 <input
-                  type="checkbox"
+                  type="radio"
                   name="Seatingcapacity"
                   value="AddHeading"
                   checked={formData?.Seatingcapacity.includes('AddHeading')}
@@ -179,9 +183,9 @@ const PermissionUpload = () => {
                 />
                 <label>Add Heading</label>
               </div>
-              <div>
+              <div className='check_progress'>
                 <input
-                  type="checkbox"
+                  type="radio"
                   name="Seatingcapacity"
                   value="One time usage"
                   checked={formData?.Seatingcapacity.includes('One time usage')}
@@ -189,9 +193,9 @@ const PermissionUpload = () => {
                 />
                 <label>One time usage</label>
               </div>
-              <div>
+              <div className='check_progress'>
                 <input
-                  type="checkbox"
+                  type="radio"
                   name="Seatingcapacity"
                   value="Multiple usage"
                   checked={formData?.Seatingcapacity.includes('Multiple usage')}
@@ -209,7 +213,7 @@ const PermissionUpload = () => {
   };
 
   return (
-    <div>
+    <div className='Progress_form'>
       <h2>Permission Upload</h2>
       <ProgressBar step={currentStep} />
       {renderForm()}

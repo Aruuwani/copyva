@@ -37,12 +37,12 @@ const Pricing = () => {
     switch (currentStep) {
       case 1:
         return (
-          <form>
+          <form className='Progress_form'>
             <div>
-              <label>Licence for the song that you select:</label>
-              <div>
+              <h4>Licence for the song that you select:</h4>
+              <div className='check_progress'>
                 <input
-                  type="checkbox"
+                  type="radio"
                   name="pricing"
                   value="Public places"
                   checked={formData?.pricing.includes('Public places')}
@@ -50,9 +50,9 @@ const Pricing = () => {
                 />
                 <label>Public places</label>
               </div>
-              <div>
+              <div className='check_progress'>
                 <input
-                  type="checkbox"
+                  type="radio"
                   name="pricing"
                   value="Commercial / Business purpose"
                   checked={formData?.pricing.includes('Commercial / Business purpose')}
@@ -60,9 +60,9 @@ const Pricing = () => {
                 />
                 <label>Commercial / Business purpose</label>
               </div>
-              <div>
+              <div className='check_progress'>
                 <input
-                  type="checkbox"
+                  type="radio"
                   name="pricing"
                   value="Metaverse"
                   checked={formData?.pricing.includes('Metaverse')}
@@ -70,9 +70,9 @@ const Pricing = () => {
                 />
                 <label>Metaverse</label>
               </div>
-              <div>
+              <div className='check_progress'>
                 <input
-                  type="checkbox"
+                  type="radio"
                   name="pricing"
                   value="Specific / Custom licences"
                   checked={formData?.pricing.includes('Specific / Custom licences')}
@@ -86,12 +86,12 @@ const Pricing = () => {
         );
       case 2:
         return (
-          <form>
+          <form className='Progress_form'>
             <div>
-              <label>Licence to use music in public places as:</label>
-              <div>
+              <h4>Licence to use music in public places as:</h4>
+              <div className='check_progress'>
                 <input
-                  type="checkbox"
+                  type="radio"
                   name="pricing"
                   value="Background"
                   checked={formData?.pricing.includes('Background')}
@@ -99,9 +99,9 @@ const Pricing = () => {
                 />
                 <label>Background</label>
               </div>
-              <div>
+              <div className='check_progress'>
                 <input
-                  type="checkbox"
+                  type="radio"
                   name="pricing"
                   value="Live performance"
                   checked={formData?.pricing.includes('Live performance')}
@@ -110,18 +110,20 @@ const Pricing = () => {
                 <label>Live performance</label>
               </div>
             </div>
+            <div className='btn_wapper'>
             <button type="button" onClick={prevStep}>Back</button>
             <button type="button" onClick={nextStep}>Next</button>
+            </div>
           </form>
         );
       case 3:
         return (
-          <form>
+          <form  className='Progress_form'>
             <div>
-              <label>Can we use previously given information:</label>
-              <div>
+              <h4>Can we use previously given information:</h4>
+              <div className='check_progress'>
                 <input
-                  type="checkbox"
+                  type="radio"
                   name="Seatingcapacity"
                   value="Clubs, pubs & night clubs"
                   checked={formData?.Seatingcapacity.includes('Clubs, pubs & night clubs')}
@@ -129,9 +131,9 @@ const Pricing = () => {
                 />
                 <label>Clubs, pubs & night clubs</label>
               </div>
-              <div>
+              <div className='check_progress'>
                 <input
-                  type="checkbox"
+                  type="radio"
                   name="Seatingcapacity"
                   value="Restaurants, dining rooms, bars, lounges, coffee houses, etc"
                   checked={formData?.Seatingcapacity.includes('Restaurants, dining rooms, bars, lounges, coffee houses, etc')}
@@ -139,9 +141,9 @@ const Pricing = () => {
                 />
                 <label>Restaurants, dining rooms, bars, lounges, coffee houses, etc</label>
               </div>
-              <div>
+              <div className='check_progress'>
                 <input
-                  type="checkbox"
+                  type="radio"
                   name="Seatingcapacity"
                   value="Multiplex & Shopping center, arcades, IT parks, etc"
                   checked={formData?.Seatingcapacity.includes('Multiplex & Shopping center, arcades, IT parks, etc')}
@@ -149,9 +151,9 @@ const Pricing = () => {
                 />
                 <label>Multiplex & Shopping center, arcades, IT parks, etc</label>
               </div>
-              <div>
+              <div className='check_progress'>
                 <input
-                  type="checkbox"
+                  type="radio"
                   name="Seatingcapacity"
                   value="Lodges, guest houses, vacation homes, resorts, etc"
                   checked={formData?.Seatingcapacity.includes('Lodges, guest houses, vacation homes, resorts, etc')}
@@ -159,9 +161,9 @@ const Pricing = () => {
                 />
                 <label>Lodges, guest houses, vacation homes, resorts, etc</label>
               </div>
-              <div>
+              <div className='check_progress'>
                 <input
-                  type="checkbox"
+                  type="radio"
                   name="Seatingcapacity"
                   value="Banquet halls & auditoriums, sports, service-oriented premises, waiting premises, transport services"
                   checked={formData?.Seatingcapacity.includes('Banquet halls & auditoriums, sports, service-oriented premises, waiting premises, transport services')}
@@ -171,20 +173,22 @@ const Pricing = () => {
               </div>
               <button type="button">Add an option if needed</button>
               <div>
+              <div className='btn_wapper'>
                 <button type="button" onClick={prevStep}>Back</button>
                 <button type="button" onClick={nextStep}>Next</button>
+                </div>
               </div>
             </div>
           </form>
         );
       case 4:
         return (
-          <form>
+          <form className='Progress_form'>
             <div>
-              <label>Public places Background - clubs, pubs & night clubs</label>
-              <div>
+              <h4>Public places Background - clubs, pubs & night clubs</h4>
+              <div className='check_progress'>
                 <input
-                  type="checkbox"
+                  type="radio"
                   name="Seatingcapacity"
                   value="Seating capacity"
                   checked={formData?.Seatingcapacity.includes('Seating capacity')}
@@ -192,9 +196,9 @@ const Pricing = () => {
                 />
                 <label>Seating Capacity</label>
               </div>
-              <div>
+              <div className='check_progress'>
                 <input
-                  type="checkbox"
+                  type="radio"
                   name="Seatingcapacity"
                   value="Price of licence (1 year validity)"
                   checked={formData?.Seatingcapacity.includes('Price of licence (1 year validity)')}
@@ -202,9 +206,9 @@ const Pricing = () => {
                 />
                 <label>Price of licence (1 year validity)</label>
               </div>
-              <div>
+              <div className='check_progress'>
                 <input
-                  type="checkbox"
+                  type="radio"
                   name="Seatingcapacity"
                   value="Price of licence (6 months validity)"
                   checked={formData?.Seatingcapacity.includes('Price of licence (6 months validity)')}
@@ -214,8 +218,10 @@ const Pricing = () => {
               </div>
               <button type="button">Add an option if needed</button>
               <div>
+              <div className='btn_wapper'>
                 <button type="button" onClick={prevStep}>Back</button>
                 <button type="button" onClick={nextStep}>Next</button>
+                </div>
               </div>
             </div>
           </form>
