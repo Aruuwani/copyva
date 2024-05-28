@@ -2,11 +2,29 @@
     gap: 20px;
     display: flex;
     flex-direction: column;
-    height: calc(100vh - 230px);
+    height: calc(100vh - 130px);
     overflow-x: hidden;
     overflow-y: auto;
     position: relative;
 }
+.Recent_musicVideo::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  .Recent_musicVideo::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  .Recent_musicVideo::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  .Recent_musicVideo::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
 .Recent_updates{
     position: relative;
 }
@@ -28,7 +46,13 @@
     cursor: pointer;
     text-decoration: underline;
 }
-
+.Dashboard_rightContent .View_all button {
+    background: transparent;
+    color: #111;
+    border: 0px !important;
+    padding: 0px;
+    min-height: auto;
+}
 .Recent_updates h3 {
     font-family: Poppins;
     font-size: 20px;

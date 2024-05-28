@@ -32,13 +32,30 @@ const UploardContent = () => {
 
     return (
         <div className='step_part'>
-            <div className="stepForm_part">
+            {/* <div className="stepForm_part">
                 <div className='step_divForm'><p onClick={() => setActiveStep(1)} className={currentStep === 1 ? 'active' : ''}>Content information</p><span>1</span></div>
                 <div className='step_divForm'><p onClick={() => setActiveStep(2)} className={currentStep === 2 ? 'active' : ''}>Content links</p><span>2</span></div>
                 <div className='step_divForm'><p onClick={() => setActiveStep(3)} className={currentStep === 3 ? 'active' : ''}>Permission to upload</p><span>3</span></div>
                 <div className='step_divForm'><p onClick={() => setActiveStep(4)} className={currentStep === 4 ? 'active' : ''}>Agreement</p><span>4</span></div>
+            </div> */}
+            <div className="stepForm_part">
+                <div className={`step_divForm ${currentStep >= 1 ? 'stepCompleted' : ''}`}>
+                    <p onClick={() => setActiveStep(1)} className={currentStep === 1 ? 'active' : ''}>Content information</p>
+                    <span>1</span>
+                </div>
+                <div className={`step_divForm ${currentStep >= 2 ? 'stepCompleted' : ''}`}>
+                    <p onClick={() => setActiveStep(2)} className={currentStep === 2 ? 'active' : ''}>Content links</p>
+                    <span>2</span>
+                </div>
+                <div className={`step_divForm ${currentStep >= 3 ? 'stepCompleted' : ''}`}>
+                    <p onClick={() => setActiveStep(3)} className={currentStep === 3 ? 'active' : ''}>Permission to upload</p>
+                    <span>3</span>
+                </div>
+                <div className={`step_divForm ${currentStep >= 4 ? 'stepCompleted' : ''}`}>
+                    <p onClick={() => setActiveStep(4)} className={currentStep === 4 ? 'active' : ''}>Agreement</p>
+                    <span>4</span>
+                </div>
             </div>
-
             <div className='col-md-6 custom-form'>
                 {currentStep === 1 && (
                     <ContentInformation

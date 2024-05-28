@@ -1,10 +1,22 @@
 import React from 'react'
+import './ProfileSettings.css'
+import ProfileImg from '../../../../../assets/profile_img.png'
 
 import { Form, Row, Col } from 'react-bootstrap';
 
 const ProfileSettings = () => {
     return (
-        <Form>
+        <Form className='profile_setting'>
+         <div className='profile_Div'>
+            <img src={ProfileImg} alt='ProfileImg' />
+<div className='Profile_content'>
+    <h5>Profile picture</h5>
+<p>Recommended memory size is less then 12MB </p>
+<button>Upload</button>
+</div>
+         </div>
+
+
             <Row>
                 <Col md={6}>
                     <Form.Group controlId="name">

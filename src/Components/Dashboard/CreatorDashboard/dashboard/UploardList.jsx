@@ -1,15 +1,43 @@
-import React from 'react'
+
+import React, { useState } from 'react';
+import { CiSearch } from "react-icons/ci";
+import UploadEdit from '../../../../assets/upload_edit.svg'
+import UploadSucces from '../../../../assets/uploade_success.svg'
+import CloseImg from '../../../../assets/closeImg.svg'
+
 
 const UploardList = () => {
+  const [isActive, setIsActive] = useState(false);
+
+  const toggleClass = () => {
+    setIsActive(!isActive);
+  };
+  const close = () => {
+    setIsActive(false);
+  };
+
   return (
-    <div className='Statement_page'>
+    <div className={isActive ? 'Statement_page active' : 'Statement_page'}>
+     
+<div className='popupbg'>
+  <div className='Popu_div'>
+    <img src={CloseImg} alt='' className="close_btn" onClick={close}/>
+    <img src={UploadSucces} alt='' />  
+    <h3>Music uploaded successfully</h3>
+    <button>Upload list</button>
+    </div>
+</div>
+
+
+
 
       <div class="Statement_page_firstcontent">
         <div>
           <h4>Uploard List</h4>
         </div>
-        <div>
-          <input type="text" placeholder="Search..." />
+        <div className='statement_search'>
+        <CiSearch />
+<input type="text" placeholder="Search..." />
 
         </div>
       </div>
@@ -18,7 +46,7 @@ const UploardList = () => {
 
 
 
-      <div className='Statemenet_table'>
+      <div className='Statemenet_table mt-3'>
         <table class="table">
           <thead class="thead-dark">
             <tr>
@@ -33,18 +61,9 @@ const UploardList = () => {
           <tbody>
             <tr>
 
-              <td>Music</td>
-              <td>Demo music</td>
-              <td>https://copyva.com/searchmusic </td>
-              <td>Demo name</td>
-              <td>Demo name</td>
-
-            </tr>
-            <tr>
-
 
               <td>Music</td>
-              <td>Demo music</td>
+              <td>Demo music <a href="#" onClick={toggleClass}> <img src={UploadEdit} alt='UploadEdit' width={16} height={16}/></a></td>
               <td>https://copyva.com/searchmusic </td>
               <td>Demo name</td>
               <td>Demo name</td>
@@ -53,7 +72,7 @@ const UploardList = () => {
 
 
               <td>Music</td>
-              <td>Demo music</td>
+              <td>Demo music  <a href="#" onClick={toggleClass}> <img src={UploadEdit} alt='UploadEdit' width={16} height={16} /></a></td>
               <td>https://copyva.com/searchmusic </td>
               <td>Demo name</td>
               <td>Demo name</td>

@@ -1,6 +1,6 @@
 import "./musicsec.css";
 import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
-import type { ReactTabsFunctionComponent, TabProps } from "react-tabs";
+// import type { ReactTabsFunctionComponent, TabProps } from "react-tabs";
 import { useState } from "react";
 import Music_img from "../../../assets/music_tab.png";
 import Music_arrow from "../../../assets/arrow_vec.svg";

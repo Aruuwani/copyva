@@ -1,4 +1,5 @@
 import React from 'react'
+import { CiSearch } from "react-icons/ci";
 
 const PiracyComplaints = () => {
   return (
@@ -8,8 +9,9 @@ const PiracyComplaints = () => {
         <div>
           <h4>Piracy Complaints</h4>
         </div>
-        <div>
-          <input type="text" placeholder="Search..." />
+        <div className='statement_search'>
+        <CiSearch />
+<input type="text" placeholder="Search..." />
 
         </div>
       </div>
@@ -18,7 +20,7 @@ const PiracyComplaints = () => {
 
 
 
-      <div className='Statemenet_table'>
+      <div className='Statemenet_table mt-3'>
         <table class="table">
           <thead class="thead-dark">
             <tr>

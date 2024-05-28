@@ -1,4 +1,5 @@
 import React from 'react'
+import { CiSearch } from "react-icons/ci";
 
 const Statement = () => {
   return (
@@ -8,26 +9,27 @@ const Statement = () => {
         <div>
           <h4>Statement</h4>
         </div>
-        <div>
-          <input type="text" placeholder="Search..." />
+        <div className='statement_search'>
+        <CiSearch />
+<input type="text" placeholder="Search..." />
 
         </div>
       </div>
 
-      <div className='row d-flex'>
+      <div className='d-flex gap-3 flex-wrap'>
 
 
-        <div className='users_dashboard dashboard_bg col-md-3'>
+        <div className='Statement_dashboard bg_blue col-md-3'>
           <h4>Over total </h4>
-          <h4><b>1,270</b></h4>
+          <h3><b>1,270</b></h3>
         </div>
-        <div className='users_dashboard dashboard_bg col-md-3'>
+        <div className='Statement_dashboard  col-md-3'>
           <h4>Music </h4>
-          <h4><b>1,200</b></h4>
+          <h3><b>1,200</b></h3>
         </div>
-        <div className='users_dashboard dashboard_bg col-md-3'>
+        <div className='Statement_dashboard  col-md-3'>
           <h4>Content </h4>
-          <h4><b>270</b></h4>
+          <h3><b>270</b></h3>
         </div>
 
         <div className='col-md-3'>
@@ -38,11 +40,11 @@ const Statement = () => {
 
 
 
-      <div className='Statemenet_table'>
+      <div className='Statemenet_table mt-3'>
         <table class="table">
           <thead class="thead-dark">
-            <tr>
-              <th scope="col">Date</th>
+            <tr class='border-radius'>
+              <th scope="col ">Date</th>
               <th scope="col">Time</th>
               <th scope="col">Customer name</th>
               <th scope="col">Licence code</th>
@@ -69,7 +71,7 @@ const Statement = () => {
               <td>Murali Kumar </td>
               <td>232345 </td>
               <td>copyva Proma  </td>
-              <td>Sep 23 2024  </td>
+              <td className='expired'>Expired</td>
               <td>₹ 1,200  </td>
             </tr>
             <tr>

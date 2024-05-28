@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ProgressBar from './ProgressBar'; // Import the ProgressBar component
 import { Form, Button } from 'react-bootstrap';
-const Pricing = () => {
+const Pricing = ({priseState}) => {
   const [formData, setFormData] = useState({
     pricing: [],
     Seatingcapacity: [],
@@ -256,7 +256,7 @@ const Pricing = () => {
 
   return (
     <div>
-      <h2>Pricing</h2>
+      <div class="d-flex justify-content-between"><h2>Pricing</h2><span> Step {currentStep}/4</span></div>
       <ProgressBar step={currentStep} />
       {renderForm()}
     </div>
