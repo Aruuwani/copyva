@@ -1,0 +1,19 @@
+
+form.profile_setting h1.text-start {
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 28.13px;
+    text-align: left;
+    margin: 10px 0px 0px;
+}
+form.profile_setting {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-right: 20px;
+}
+form.profile_setting button {
+    max-width: 232px;
+    margin-left: 0px;
+}
