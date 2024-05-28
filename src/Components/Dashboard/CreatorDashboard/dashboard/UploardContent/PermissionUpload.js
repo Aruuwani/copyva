@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ProgressBar from './ProgressBar'; // Import the ProgressBar component
 
 const PermissionUpload = () => {
@@ -8,6 +8,7 @@ const PermissionUpload = () => {
     // Add other form data fields as needed
   });
   const [currentStep, setCurrentStep] = useState(1);
+  const [additionalOptions, setAdditionalOptions] = useState([]);
 
   const handleChange = (e) => {
     const { name, value, checked } = e.target;
@@ -33,6 +34,26 @@ const PermissionUpload = () => {
     setCurrentStep((prevStep) => Math.max(prevStep - 1, 1));
   };
 
+
+
+  const addOption = () => {
+    const defaultOptions = [
+      'Youtube',
+      'Instagram',
+      'Facebook',
+      'Set a discuss with copyva team',
+      'Banquet halls & auditoriums, sports, service-oriented premises, waiting premises, transport services'
+    ];
+    setAdditionalOptions((prevOptions) => [
+      ...prevOptions,
+      ...defaultOptions.map((option) => ({ value: option, label: option })),
+    ]);
+  };
+  
+  useEffect(() => {
+    addOption();
+  }, []);
+
   const renderForm = () => {
     switch (currentStep) {
       case 1:
@@ -57,49 +78,21 @@ const PermissionUpload = () => {
       case 2:
         return (
           <form>
-            <div>
-              <label>Commercial/Business Purpose:</label>
-              <div>
-                <input
-                  type="checkbox"
-                  name="pricing"
-                  value="Youtube"
-                  checked={formData?.pricing.includes('Youtube')}
-                  onChange={handleChange}
-                />
-                <label>Youtube</label>
-              </div>
-              <div>
-                <input
-                  type="checkbox"
-                  name="pricing"
-                  value="Instagram"
-                  checked={formData?.pricing.includes('Instagram')}
-                  onChange={handleChange}
-                />
-                <label>Instagram</label>
-              </div>
-              <div>
-                <input
-                  type="checkbox"
-                  name="pricing"
-                  value="Facebook"
-                  checked={formData?.pricing.includes('Facebook')}
-                  onChange={handleChange}
-                />
-                <label>Facebook</label>
-              </div>
-              <div>
-                <input
-                  type="checkbox"
-                  name="pricing"
-                  value="Set a discuss with copyva team"
-                  checked={formData?.pricing.includes('Set a discuss with copyva team')}
-                  onChange={handleChange}
-                />
-                <label>Set a discuss with copyva team</label>
-              </div>
-            </div>
+           {additionalOptions.map((option, index) => (
+        <div key={index}>
+          <input
+            type="checkbox"
+            name="pricing"
+            value={option.value}
+            checked={formData?.pricing.includes(option.value)}
+            onChange={handleChange}
+          />
+          <label>{option.label}</label>
+        </div>
+      ))}
+      <button type="button" onClick={addOption}>
+          Add an option if needed
+        </button>
             <button type="button" onClick={prevStep}>Back</button>
             <button type="button" onClick={nextStep}>Next</button>
           </form>

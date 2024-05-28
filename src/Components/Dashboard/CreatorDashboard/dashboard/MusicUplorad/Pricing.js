@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ProgressBar from './ProgressBar'; // Import the ProgressBar component
 
 const Pricing = () => {
@@ -8,6 +8,7 @@ const Pricing = () => {
     // Add other form data fields as needed
   });
   const [currentStep, setCurrentStep] = useState(1);
+  const [additionalOptions, setAdditionalOptions] = useState([]);
 
   const handleChange = (e) => {
     const { name, value, checked } = e.target;
@@ -33,6 +34,23 @@ const Pricing = () => {
     setCurrentStep((prevStep) => Math.max(prevStep - 1, 1));
   };
 
+  const addOption = () => {
+    const defaultOptions = [
+      'Clubs, pubs & night clubs',
+      'Restaurants, dining rooms, bars, lounges, coffee houses, etc',
+      'Multiplex & Shopping center, arcades, IT parks, etc',
+      'Lodges, guest houses, vacation homes, resorts, etc',
+      'Banquet halls & auditoriums, sports, service-oriented premises, waiting premises, transport services'
+    ];
+    setAdditionalOptions((prevOptions) => [
+      ...prevOptions,
+      ...defaultOptions.map((option) => ({ value: option, label: option })),
+    ]);
+  };
+  
+  useEffect(() => {
+    addOption();
+  }, []);
   const renderForm = () => {
     switch (currentStep) {
       case 1:
@@ -117,64 +135,21 @@ const Pricing = () => {
       case 3:
         return (
           <form>
-            <div>
-              <label>Can we use previously given information:</label>
-              <div>
-                <input
-                  type="checkbox"
-                  name="Seatingcapacity"
-                  value="Clubs, pubs & night clubs"
-                  checked={formData?.Seatingcapacity.includes('Clubs, pubs & night clubs')}
-                  onChange={handleChange}
-                />
-                <label>Clubs, pubs & night clubs</label>
-              </div>
-              <div>
-                <input
-                  type="checkbox"
-                  name="Seatingcapacity"
-                  value="Restaurants, dining rooms, bars, lounges, coffee houses, etc"
-                  checked={formData?.Seatingcapacity.includes('Restaurants, dining rooms, bars, lounges, coffee houses, etc')}
-                  onChange={handleChange}
-                />
-                <label>Restaurants, dining rooms, bars, lounges, coffee houses, etc</label>
-              </div>
-              <div>
-                <input
-                  type="checkbox"
-                  name="Seatingcapacity"
-                  value="Multiplex & Shopping center, arcades, IT parks, etc"
-                  checked={formData?.Seatingcapacity.includes('Multiplex & Shopping center, arcades, IT parks, etc')}
-                  onChange={handleChange}
-                />
-                <label>Multiplex & Shopping center, arcades, IT parks, etc</label>
-              </div>
-              <div>
-                <input
-                  type="checkbox"
-                  name="Seatingcapacity"
-                  value="Lodges, guest houses, vacation homes, resorts, etc"
-                  checked={formData?.Seatingcapacity.includes('Lodges, guest houses, vacation homes, resorts, etc')}
-                  onChange={handleChange}
-                />
-                <label>Lodges, guest houses, vacation homes, resorts, etc</label>
-              </div>
-              <div>
-                <input
-                  type="checkbox"
-                  name="Seatingcapacity"
-                  value="Banquet halls & auditoriums, sports, service-oriented premises, waiting premises, transport services"
-                  checked={formData?.Seatingcapacity.includes('Banquet halls & auditoriums, sports, service-oriented premises, waiting premises, transport services')}
-                  onChange={handleChange}
-                />
-                <label>Banquet halls & auditoriums, sports, service-oriented premises, waiting premises, transport services</label>
-              </div>
-              <button type="button">Add an option if needed</button>
-              <div>
-                <button type="button" onClick={prevStep}>Back</button>
-                <button type="button" onClick={nextStep}>Next</button>
-              </div>
-            </div>
+             {additionalOptions.map((option, index) => (
+          <div key={index}>
+            <input
+              type="checkbox"
+              name="Seatingcapacity"
+              value={option.value}
+              checked={formData?.Seatingcapacity.includes(option.value)}
+              onChange={handleChange}
+            />
+            <label>{option.label}</label>
+          </div>
+        ))}
+        <button type="button" onClick={addOption}>
+          Add an option if needed
+        </button>
           </form>
         );
       case 4:
