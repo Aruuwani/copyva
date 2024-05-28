@@ -23,6 +23,7 @@ const Agreement = ({ formData, setFormData }) => {
                     <Form.Control as="textarea" rows={3} onChange={handleChange}
                     />
                 </Form.Group>
+                <button type="button" >Back</button>
             </Form>
         </div>
     );

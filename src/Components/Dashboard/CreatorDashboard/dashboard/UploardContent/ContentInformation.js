@@ -15,28 +15,28 @@ const ContentInformation = ({ formData, setFormData }) => {
 
 
                 <Form.Group controlId="ownerName">
-                    <Form.Label className="statement_form">Copyright owner name:</Form.Label>
-                    <Form.Control name="ownerName" type="text" value={formData?.ownerName} onChange={handleChange} required />
+                    <Form.Label className="statement_form">Copyright owner name *</Form.Label>
+                    <Form.Control name="ownerName" type="text" placeholder='Enter name ' value={formData?.ownerName} onChange={handleChange} required />
                 </Form.Group>
                 <Form.Group controlId="coverLink">
-                    <Form.Label className="statement_form">Upload cover template:</Form.Label>
-                    <Form.Control name="coverLink" type="text" value={formData?.coverLink} onChange={handleChange} required />
+                    <Form.Label className="statement_form">Upload cover template *</Form.Label>
+                    <Form.Control name="coverLink" type="text" placeholder='Enter link from platform(Ex:Spotify,Youtube,IMusic,etc) ' value={formData?.coverLink} onChange={handleChange} required />
                 </Form.Group>
                 <Form.Group controlId="contentName">
-                    <Form.Label className="statement_form">Content name:</Form.Label>
-                    <Form.Control name="contentName" type="text" value={formData?.contentName} onChange={handleChange} required />
+                    <Form.Label className="statement_form">Content name *</Form.Label>
+                    <Form.Control name="contentName" type="text" placeholder='Enter music name ' value={formData?.contentName} onChange={handleChange} required />
                 </Form.Group>
                 <Form.Group controlId="artistName">
-                    <Form.Label className="statement_form">Artist name:</Form.Label>
-                    <Form.Control name="artistName" type="text" value={formData?.artistName} onChange={handleChange} required />
+                    <Form.Label className="statement_form">Artist name *</Form.Label>
+                    <Form.Control name="artistName" type="text" placeholder='Enter artist name ' value={formData?.artistName} onChange={handleChange} required />
                 </Form.Group>
                 <Form.Group controlId="releaseDate">
-                    <Form.Label>Month & year of release:</Form.Label>
-                    <Form.Control name="releaseDate" type="month" value={formData?.releaseDate} onChange={handleChange} required />
+                    <Form.Label>Month & date of release:</Form.Label>
+                    <Form.Control name="releaseDate" type="month" placeholder='Select date' value={formData?.releaseDate} onChange={handleChange} required />
                 </Form.Group>
                 <Form.Group controlId="language">
                     <Form.Label className="statement_form">Language:</Form.Label>
-                    <Form.Select name="language" value={formData?.language} onChange={handleChange} required>
+                    <Form.Select name="language" value={formData?.language} onChange={handleChange} required placeholder='Select language' >
                         <option value="">Select Language</option>
                         <option value="English">English</option>
                         <option value="Spanish">Spanish</option>

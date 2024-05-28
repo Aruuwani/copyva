@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import ProgressBar from './ProgressBar'; // Import the ProgressBar component
-
+import { Form, Button } from 'react-bootstrap';
 const PermissionUpload = () => {
   const [formData, setFormData] = useState({
     pricing: [],
     Seatingcapacity: [],
+    AddHeading: '',
+    Onetimeusage: '',
+    Multipleusage: ''
     // Add other form data fields as needed
   });
   const [currentStep, setCurrentStep] = useState(1);
-  const [additionalOptions, setAdditionalOptions] = useState([]);
+  const [additionalOptionsCase2, setAdditionalOptionsCase2] = useState([]);
+  const [additionalOptionsCase4, setAdditionalOptionsCase4] = useState([]);
 
   const handleChange = (e) => {
     const { name, value, checked } = e.target;
@@ -35,35 +39,97 @@ const PermissionUpload = () => {
   };
 
 
+  // Case3
 
-  const addOption = () => {
-    const defaultOptions = [
-      'Youtube',
-      'Instagram',
-      'Facebook',
-      'Set a discuss with copyva team',
-      'Banquet halls & auditoriums, sports, service-oriented premises, waiting premises, transport services'
-    ];
-    setAdditionalOptions((prevOptions) => [
+
+  const Case2Options = [
+    'Youtube',
+    'Instagram',
+    'Facebook',
+    "Set a discuss with copyva team",
+
+
+  ];
+
+  const addOptionCase2 = () => {
+    setAdditionalOptionsCase2((prevOptions) => [
       ...prevOptions,
-      ...defaultOptions.map((option) => ({ value: option, label: option })),
+      ...Case2Options.map((option) => ({ value: option, label: option })),
     ]);
   };
-  
   useEffect(() => {
-    addOption();
+    // Initialize default options once
+    setAdditionalOptionsCase2(Case2Options.map((option) => ({ value: option, label: option })));
   }, []);
+  const handleChangeCase2 = (event) => {
+    const { value } = event.target;
+    setFormData((prevData) => {
+      if (prevData.Seatingcapacity.includes(value)) {
+        return {
+          ...prevData,
+          Seatingcapacity: prevData.Seatingcapacity.filter((item) => item !== value),
+        };
+      } else {
+        return {
+          ...prevData,
+          Seatingcapacity: [...prevData.Seatingcapacity, value],
+        };
+      }
+    });
+  };
+
+
+
+  // Case4
+
+
+  const Case4Options = [
+    'AddHeading',
+    'One time usage',
+    'Multiple usage',
+
+
+
+  ];
+
+  const addOptionCase4 = () => {
+    setAdditionalOptionsCase4((prevOptions) => [
+      ...prevOptions,
+      ...Case4Options.map((option) => ({ value: option, label: option })),
+    ]);
+  };
+  useEffect(() => {
+    // Initialize default options once
+    setAdditionalOptionsCase4(Case4Options.map((option) => ({ value: option, label: option })));
+  }, []);
+  const handleChangeCase4 = (event) => {
+    const { value } = event.target;
+    setFormData((prevData) => {
+      if (prevData.Seatingcapacity.includes(value)) {
+        return {
+          ...prevData,
+          Seatingcapacity: prevData.Seatingcapacity.filter((item) => item !== value),
+        };
+      } else {
+        return {
+          ...prevData,
+          Seatingcapacity: [...prevData.Seatingcapacity, value],
+        };
+      }
+    });
+  };
+
 
   const renderForm = () => {
     switch (currentStep) {
       case 1:
         return (
-          <form>
+          <form className='Progress_form'>
             <div>
-              <label>Permission to remix/combine the selected content/video by editing:</label>
-              <div>
+              <h4>Permission to remix/combine the selected content/video by editing:</h4>
+              <div className='check_progress'>
                 <input
-                  type="checkbox"
+                  type="radio"
                   name="pricing"
                   value="Commercial / Business purpose"
                   checked={formData?.pricing.includes('Commercial / Business purpose')}
@@ -71,40 +137,53 @@ const PermissionUpload = () => {
                 />
                 <label>Commercial / Business purpose</label>
               </div>
+              <div className='check_progress'>
+                <input
+                  type="radio"
+                  name="pricing"
+                  value="Specific / Custom licence"
+                  checked={formData?.pricing.includes('Specific / Custom licence')}
+                  onChange={handleChange}
+                />
+                <label>Specific / Custom licence</label>
+              </div>
             </div>
             <button type="button" onClick={nextStep}>Next</button>
           </form>
         );
       case 2:
         return (
-          <form>
-           {additionalOptions.map((option, index) => (
-        <div key={index}>
-          <input
-            type="checkbox"
-            name="pricing"
-            value={option.value}
-            checked={formData?.pricing.includes(option.value)}
-            onChange={handleChange}
-          />
-          <label>{option.label}</label>
-        </div>
-      ))}
-      <button type="button" onClick={addOption}>
-          Add an option if needed
-        </button>
-            <button type="button" onClick={prevStep}>Back</button>
-            <button type="button" onClick={nextStep}>Next</button>
+          <form className='Progress_form'>
+            <div>
+              <h4>Commercial/Business Purpose:</h4>
+              {additionalOptionsCase2.map((option, index) => (
+                <div className='check_progress' key={index}>
+                  <input
+                    type="radio"
+                    name="Seatingcapacity"
+                    value={option.value}
+                    checked={formData.Seatingcapacity === option.value}
+                    onChange={handleChangeCase2}
+                  />
+                  <label>{option.label}</label>
+                </div>
+              ))}
+              <button  type="button" onClick={addOptionCase2} > + Add an option if needed</button>
+            </div>
+            <div className='btn_wapper'>
+              
+              <button type="button" onClick={nextStep}>Next</button>
+            </div>
           </form>
         );
       case 3:
         return (
-          <form>
+          <form className='Progress_form'>
             <div>
-              <label>Youtube:</label>
-              <div>
+              <h4>Youtube:</h4>
+              <div className='check_progress'>
                 <input
-                  type="checkbox"
+                  type="radio"
                   name="Seatingcapacity"
                   value="0 to 50,000 subscribers"
                   checked={formData?.Seatingcapacity.includes('0 to 50,000 subscribers')}
@@ -112,9 +191,9 @@ const PermissionUpload = () => {
                 />
                 <label>0 to 50,000 subscribers</label>
               </div>
-              <div>
+              <div className='check_progress'>
                 <input
-                  type="checkbox"
+                  type="radio"
                   name="Seatingcapacity"
                   value="50,000 to 500,000 subscribers"
                   checked={formData?.Seatingcapacity.includes('50,000 to 500,000 subscribers')}
@@ -122,9 +201,9 @@ const PermissionUpload = () => {
                 />
                 <label>50,000 to 500,000 subscribers</label>
               </div>
-              <div>
+              <div className='check_progress'>
                 <input
-                  type="checkbox"
+                  type="radio"
                   name="Seatingcapacity"
                   value="500,000 to 2,000,000 subscribers"
                   checked={formData?.Seatingcapacity.includes('500,000 to 2,000,000 subscribers')}
@@ -132,9 +211,9 @@ const PermissionUpload = () => {
                 />
                 <label>500,000 to 2,000,000 subscribers</label>
               </div>
-              <div>
+              <div className='check_progress'>
                 <input
-                  type="checkbox"
+                  type="radio"
                   name="Seatingcapacity"
                   value="2,000,000 to 10,000,000 subscribers"
                   checked={formData?.Seatingcapacity.includes('2,000,000 to 10,000,000 subscribers')}
@@ -142,9 +221,9 @@ const PermissionUpload = () => {
                 />
                 <label>2,000,000 to 10,000,000 subscribers</label>
               </div>
-              <div>
+              <div className='check_progress'>
                 <input
-                  type="checkbox"
+                  type="radio"
                   name="Seatingcapacity"
                   value="More than 10,000,000 subscribers"
                   checked={formData?.Seatingcapacity.includes('More than 10,000,000 subscribers')}
@@ -153,48 +232,37 @@ const PermissionUpload = () => {
                 <label>More than 10,000,000 subscribers</label>
               </div>
             </div>
-            <button type="button" onClick={prevStep}>Back</button>
-            <button type="button" onClick={nextStep}>Next</button>
+            <div className='btn_wapper'>
+              
+              <button type="button" onClick={nextStep}>Next</button>
+            </div>
           </form>
         );
       case 4:
         return (
-          <form>
+          <form className='Progress_form'>
             <div>
-              <label>Licence to use the content on Youtube - 0 to 50,000 subscribers:</label>
-              <div>
-                <input
-                  type="checkbox"
-                  name="Seatingcapacity"
-                  value="AddHeading"
-                  checked={formData?.Seatingcapacity.includes('AddHeading')}
-                  onChange={handleChange}
-                />
-                <label>Add Heading</label>
-              </div>
-              <div>
-                <input
-                  type="checkbox"
-                  name="Seatingcapacity"
-                  value="One time usage"
-                  checked={formData?.Seatingcapacity.includes('One time usage')}
-                  onChange={handleChange}
-                />
-                <label>One time usage</label>
-              </div>
-              <div>
-                <input
-                  type="checkbox"
-                  name="Seatingcapacity"
-                  value="Multiple usage"
-                  checked={formData?.Seatingcapacity.includes('Multiple usage')}
-                  onChange={handleChange}
-                />
-                <label>Multiple usage</label>
-              </div>
+              <h4>Licence to use the content on Youtube - 0 to 50,000 subscribers:</h4>
+              {additionalOptionsCase4.map((option, index) => (
+                <Form.Group key={index} controlId={option.value}>
+                  <Form.Label className="statement_form">{option.label}</Form.Label>
+                  <Form.Control
+                    name={option.value}
+                    placeholder={`Enter ${option.label}`}
+                    type="text"
+                    value={formData[option.value]}
+                    onChange={handleChange}
+                    required
+                  />
+                </Form.Group>
+              ))}
+              <button type="button" onClick={addOptionCase4}>Add an option if needed</button>
+
+
             </div>
-            <button type="button" onClick={prevStep}>Back</button>
+           
           </form>
+
         );
       default:
         return null;
@@ -202,7 +270,7 @@ const PermissionUpload = () => {
   };
 
   return (
-    <div>
+    <div className='Progress_form'>
       <h2>Permission Upload</h2>
       <ProgressBar step={currentStep} />
       {renderForm()}

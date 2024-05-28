@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, Routes, Route } from "react-router-dom";
+import { useNavigate } from "react-router-dom"
 import {
   AppBar,
   Toolbar,
@@ -32,11 +33,12 @@ import Copyva_logo from "../../../../assets/Copyva_logo.png";
 import MultiStepForm from "./MusicUplorad/index"
 import MusicUplorad from "./MusicUplorad/index";
 import UploardContent from "./UploardContent";
+import ProfileSettings from "./ProfileSettings/ProfileSettings";
 
 const AdminPanel = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
-
+  const navigate = useNavigate()
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -47,6 +49,9 @@ const AdminPanel = () => {
   const handleLogout = () => {
     // Implement logout functionality
   };
+
+
+
 
   return (
     <div>
@@ -101,8 +106,14 @@ const AdminPanel = () => {
               transformOrigin={{ horizontal: "right", vertical: "top" }}
               anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
             >
-              <MenuItem>
+            <MenuItem>
                 <ListItemIcon>
+                  <EditNoteOutlinedIcon fontSize="small" />
+                </ListItemIcon>
+               Profile Settings
+              </MenuItem>
+              <MenuItem>
+                <ListItemIcon component={Link} to="/dashboard/profile-settings">
                   <EditNoteOutlinedIcon fontSize="small" />
                 </ListItemIcon>
                 Change Password
@@ -159,7 +170,8 @@ const AdminPanel = () => {
                 <Route path="piracy-complaints" element={<PiracyComplaints />} />
                 <Route path="Music-upload" element={<MusicUplorad />} />
                 <Route path="upload-content" element={<UploardContent />} />
-
+                <Route path="profile-settings" element={<ProfileSettings />} />
+                
               </Routes>
             </Paper>
           </Grid>
