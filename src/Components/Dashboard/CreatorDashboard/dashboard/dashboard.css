@@ -21,8 +21,15 @@
 .left_nav nav a:hover svg {
     fill: #111;
 }
-.left_nav nav a:hover{
+/* .left_nav nav a:hover{
     background: linear-gradient(180deg, #F4C05C 0%, #D8A136 100%);
+    border-radius: 6px;
+    color: #111;
+    } */
+
+
+    .highlightsidebar {
+        background: linear-gradient(180deg, #F4C05C 0%, #D8A136 100%);
     border-radius: 6px;
     color: #111;
     }
@@ -35,15 +42,28 @@
     line-height: 27px;
     text-align: left;
 }
-.left_nav nav>a:first-child {
+
+
+/* .left_nav nav>a:first-child {
     background: linear-gradient(180deg, #F4C05C 0%, #D8A136 100%);
     border-radius: 6px;
     color: #111;
-}
-.left_nav nav>a:first-child svg {
-    fill: #111;
+} */
+
+.highlightsidebar{
+    background: linear-gradient(180deg, #F4C05C 0%, #D8A136 100%);
+    border-radius: 6px;
+    color: #111; 
 }
 
+.left_nav nav a:hover {
+    background: linear-gradient(rgb(244, 192, 92) 0%, rgb(216, 161, 54) 100%) !important;
+    border-radius: 6px;
+    color: rgb(17, 17, 17) !important;
+}
+.left_nav nav a:hover img{
+filter: invert(1);
+}
 /* .Dashbaordimg.content */
 .home_dashboard {
     display: grid;
@@ -318,3 +338,10 @@
 .Dashboard_rightContent .step_formwrapper {
     text-align: left;
 }
+
+
+
+.active-link {
+    background-color: red;
+  }
+  
