@@ -24,7 +24,7 @@ function App() {
           <>
             <Header />
             <Routes>
-              <Route path="/" element={<Homepage />} />
+              <Route path="/home" element={<Homepage />} />
               <Route path="/login" element={<Login />} />
             </Routes>
             <Footer />

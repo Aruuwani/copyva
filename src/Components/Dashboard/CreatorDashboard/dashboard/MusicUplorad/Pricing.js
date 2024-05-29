@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import ProgressBar from './ProgressBar'; // Import the ProgressBar component
-import { Form, Button } from 'react-bootstrap';
-const Pricing = ({priseState}) => {
+import React, { useEffect, useState } from "react";
+import ProgressBar from "./ProgressBar"; // Import the ProgressBar component
+import { Form, Button } from "react-bootstrap";
+const Pricing = ({nextstep}) => {
   const [formData, setFormData] = useState({
     pricing: [],
     Seatingcapacity: [],
-
   });
   const [currentStep, setCurrentStep] = useState(1);
   const [additionalOptions, setAdditionalOptions] = useState([]);
@@ -28,20 +27,27 @@ const Pricing = ({priseState}) => {
   };
 
   const nextStep = () => {
-    setCurrentStep((prevStep) => Math.min(prevStep + 1, 4));
+    setCurrentStep((prevStep) => {
+      const newStep = Math.min(prevStep + 1, 4);
+      localStorage.setItem("pricingStep", newStep);
+      return newStep;
+    });
   };
 
   const prevStep = () => {
-    setCurrentStep((prevStep) => Math.max(prevStep - 1, 1));
+    setCurrentStep((prevStep) => {
+      const newStep = Math.max(prevStep - 1, 1);
+
+      return newStep;
+    });
   };
 
-
   const Case3Options = [
-    'Clubs, pubs & night clubs',
-    'Restaurants, dining rooms, bars, lounges, coffee houses, etc',
-    'Multiplex & Shopping center, arcades, IT parks, etc',
-    'Lodges, guest houses, vacation homes, resorts, etc',
-    'Banquet halls & auditoriums, sports, service-oriented premises, waiting premises, transport services'
+    "Clubs, pubs & night clubs",
+    "Restaurants, dining rooms, bars, lounges, coffee houses, etc",
+    "Multiplex & Shopping center, arcades, IT parks, etc",
+    "Lodges, guest houses, vacation homes, resorts, etc",
+    "Banquet halls & auditoriums, sports, service-oriented premises, waiting premises, transport services",
   ];
 
   const addOption = () => {
@@ -52,7 +58,9 @@ const Pricing = ({priseState}) => {
   };
   useEffect(() => {
     // Initialize default options once
-    setAdditionalOptions(Case3Options.map((option) => ({ value: option, label: option })));
+    setAdditionalOptions(
+      Case3Options.map((option) => ({ value: option, label: option }))
+    );
   }, []);
   const handleChangecase3 = (event) => {
     const { value } = event.target;
@@ -60,7 +68,9 @@ const Pricing = ({priseState}) => {
       if (prevData.Seatingcapacity.includes(value)) {
         return {
           ...prevData,
-          Seatingcapacity: prevData.Seatingcapacity.filter((item) => item !== value),
+          Seatingcapacity: prevData.Seatingcapacity.filter(
+            (item) => item !== value
+          ),
         };
       } else {
         return {
@@ -71,14 +81,10 @@ const Pricing = ({priseState}) => {
     });
   };
 
-
-
   const Case4Options = [
-    'Seating Capacity',
-    'Price of licence (1 year validity)',
-    'Price of licence (6 months validity)',
-
-
+    "Seating Capacity",
+    "Price of licence (1 year validity)",
+    "Price of licence (6 months validity)",
   ];
 
   const addOptionCase4 = () => {
@@ -89,7 +95,9 @@ const Pricing = ({priseState}) => {
   };
   useEffect(() => {
     // Initialize default options once
-    setAdditionalOptions1(Case4Options.map((option) => ({ value: option, label: option })));
+    setAdditionalOptions1(
+      Case4Options.map((option) => ({ value: option, label: option }))
+    );
   }, []);
   const handleChangeCase4 = (event) => {
     const { value } = event.target;
@@ -97,7 +105,9 @@ const Pricing = ({priseState}) => {
       if (prevData.Seatingcapacity.includes(value)) {
         return {
           ...prevData,
-          Seatingcapacity: prevData.Seatingcapacity.filter((item) => item !== value),
+          Seatingcapacity: prevData.Seatingcapacity.filter(
+            (item) => item !== value
+          ),
         };
       } else {
         return {
@@ -112,92 +122,102 @@ const Pricing = ({priseState}) => {
     switch (currentStep) {
       case 1:
         return (
-          <form className='Progress_form'>
+          <form className="Progress_form">
             <div>
               <h4>Licence for the song that you select:</h4>
-              <div className='check_progress'>
+              <div className="check_progress">
                 <input
                   type="radio"
                   name="pricing"
                   value="Public places"
-                  checked={formData?.pricing.includes('Public places')}
+                  checked={formData?.pricing.includes("Public places")}
                   onChange={handleChange}
                 />
                 <label>Public places</label>
               </div>
-              <div className='check_progress'>
+              <div className="check_progress">
                 <input
                   type="radio"
                   name="pricing"
                   value="Commercial / Business purpose"
-                  checked={formData?.pricing.includes('Commercial / Business purpose')}
+                  checked={formData?.pricing.includes(
+                    "Commercial / Business purpose"
+                  )}
                   onChange={handleChange}
                 />
                 <label>Commercial / Business purpose</label>
               </div>
-              <div className='check_progress'>
+              <div className="check_progress">
                 <input
                   type="radio"
                   name="pricing"
                   value="Metaverse"
-                  checked={formData?.pricing.includes('Metaverse')}
+                  checked={formData?.pricing.includes("Metaverse")}
                   onChange={handleChange}
                 />
                 <label>Metaverse</label>
               </div>
-              <div className='check_progress'>
+              <div className="check_progress">
                 <input
                   type="radio"
                   name="pricing"
                   value="Specific / Custom licences"
-                  checked={formData?.pricing.includes('Specific / Custom licences')}
+                  checked={formData?.pricing.includes(
+                    "Specific / Custom licences"
+                  )}
                   onChange={handleChange}
                 />
                 <label>Specific / Custom licences</label>
               </div>
             </div>
-            <button type="button" onClick={nextStep}>Next</button>
+            <button type="button" onClick={nextStep}>
+              Next
+            </button>
           </form>
         );
       case 2:
         return (
-          <form className='Progress_form'>
+          <form className="Progress_form">
             <div>
               <h4>Licence to use music in public places as:</h4>
-              <div className='check_progress'>
+              <div className="check_progress">
                 <input
                   type="radio"
                   name="pricing"
                   value="Background"
-                  checked={formData?.pricing.includes('Background')}
+                  checked={formData?.pricing.includes("Background")}
                   onChange={handleChange}
                 />
                 <label>Background</label>
               </div>
-              <div className='check_progress'>
+              <div className="check_progress">
                 <input
                   type="radio"
                   name="pricing"
                   value="Live performance"
-                  checked={formData?.pricing.includes('Live performance')}
+                  checked={formData?.pricing.includes("Live performance")}
                   onChange={handleChange}
                 />
                 <label>Live performance</label>
               </div>
             </div>
-            <div className='btn_wapper'>
-              <button type="button" onClick={prevStep}>Back</button>
-              <button type="button" onClick={nextStep}>Next</button>
+            <div className="btn_wapper">
+              <button type="button" onClick={prevStep}>
+                Back
+              </button>
+              <button type="button" onClick={nextStep}>
+                Next
+              </button>
             </div>
           </form>
         );
       case 3:
         return (
-          <form className='Progress_form'>
+          <form className="Progress_form">
             <div>
               <h4>Can we use previously given information:</h4>
               {additionalOptions.map((option, index) => (
-                <div className='check_progress' key={index}>
+                <div className="check_progress" key={index}>
                   <input
                     type="radio"
                     name="Seatingcapacity"
@@ -209,11 +229,17 @@ const Pricing = ({priseState}) => {
                 </div>
               ))}
 
-              <button type="button" onClick={addOption}>Add an option if needed</button>
+              <button type="button" onClick={addOption}>
+                Add an option if needed
+              </button>
               <div>
-                <div className='btn_wapper'>
-                  <button type="button" onClick={prevStep}>Back</button>
-                  <button type="button" onClick={nextStep}>Next</button>
+                <div className="btn_wapper">
+                  <button type="button" onClick={prevStep}>
+                    Back
+                  </button>
+                  <button type="button" onClick={nextStep}>
+                    Next
+                  </button>
                 </div>
               </div>
             </div>
@@ -221,14 +247,15 @@ const Pricing = ({priseState}) => {
         );
       case 4:
         return (
-          <form className='Progress_form'>
+          <form className="Progress_form">
             <div>
               <h4>Public places Background - clubs, pubs & night clubs</h4>
 
-
               {additionalOptions1.map((option, index) => (
                 <Form.Group key={index} controlId={option.value}>
-                  <Form.Label className="statement_form">{option.label}</Form.Label>
+                  <Form.Label className="statement_form">
+                    {option.label}
+                  </Form.Label>
                   <Form.Control
                     name={option.value}
                     placeholder={`Enter ${option.label}`}
@@ -239,11 +266,26 @@ const Pricing = ({priseState}) => {
                   />
                 </Form.Group>
               ))}
-              <button type="button" onClick={addOptionCase4} className='add_option'>Add an option if needed</button>
+              <button type="button" onClick={addOptionCase4} className='add_option'>+Add an option if needed</button>
+              {/* <button type="button" onClick={addOptionCase4}>
+                + Add an option if needed
+              </button> */}
               <div>
-                <div className='btn_wapper'>
-                  <button type="button" onClick={prevStep}>Back</button>
-                  <button type="button" onClick={nextStep}>Next</button>
+                <div className="btn_wapper">
+                  <button
+                    type="button"
+                    onClick={prevStep}
+                    disabled={currentStep === 1}
+                  >
+                    Back
+                  </button>
+                  <button
+                    type="button"
+                    onClick={nextstep}
+                    // disabled={currentStep === 4}
+                  >
+                   {currentStep === 4 ? 'Submit' : 'Next'} 
+                  </button>
                 </div>
               </div>
             </div>
@@ -256,7 +298,10 @@ const Pricing = ({priseState}) => {
 
   return (
     <div>
-      <div class="d-flex justify-content-between"><h2>Pricing</h2><span> Step {currentStep}/4</span></div>
+      <div class="d-flex justify-content-between">
+        <h2>Pricing</h2>
+        <span> Step {currentStep}/4</span>
+      </div>
       <ProgressBar step={currentStep} />
       {renderForm()}
     </div>

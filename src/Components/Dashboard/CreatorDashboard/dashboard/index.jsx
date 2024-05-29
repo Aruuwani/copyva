@@ -120,7 +120,7 @@ const AdminPanel = () => {
               transformOrigin={{ horizontal: "right", vertical: "top" }}
               anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
             >
-              <MenuItem>
+              <MenuItem component={Link} to="/dashboard/profile-settings">
                 <ListItemIcon>
                   <EditNoteOutlinedIcon fontSize="small" />
                 </ListItemIcon>
@@ -262,8 +262,7 @@ const AdminPanel = () => {
                         width: 16,
                         height: 16,
                         color: activeItem === 3 ? "#111" : "#FFF",
-                    filter:activeItem === 3 && 'invert(1)'
-
+                        filter: activeItem === 3 && "invert(1)",
                       }}
                     />
                   </ListItemIcon>
