@@ -1,7 +1,22 @@
-.active {
+.stepForm_part .active {
     background-color: black;
   }
-  
+  .back_screens, .back_screens h1 a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+}
+.back_screens h1 a {
+    font-family: Poppins;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 36px;
+    text-align: left;
+    cursor: pointer;
+    color: #111;
+    text-decoration: none;
+}
 
   .custom-form {
     background-color: #f8f9fa; /* Light grey background */
@@ -162,7 +177,7 @@
 .step_part {
   display: flex;
   gap: 20px;
-  padding: 40px 20px;
+  padding: 20px 20px 40px;
 }
 .step_divForm.stepCompleted p, .step_divForm.stepCompleted p::before, .step_divForm.stepCompleted p::after {
   background: #e5ede7;
@@ -191,7 +206,7 @@
   padding: 20px 20px 5px;
 }
 
-.Dashboard_rightContent .note_sec p {
+.Dashboard_rightContent .note_sec p, .Predefined_price p {
   color: #181717;
   font-family: Roboto;
   font-size: 16px;
@@ -199,10 +214,39 @@
   line-height: 24px;
   text-align: left;
 }
+.Predefined_price {
+  border-radius: 10px;
+  color: #181717;
+  text-align: left;
+  padding: 20px ;
+  border: 1px solid var(--Color-Black-10, #DFDFDF);
+  margin-top: 15px;
+  
+}
+.Predefined_price .customize_btns {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.Dashboard_rightContent button.btn-light {
+  background: #EFEFEF ;
+  color: #181717 ;
+  border-color: #EFEFEF !important;
+}
+.Predefined_price .customize_btns button {
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16.41px;
+  max-width: 130px;
+  padding: 10px;
+  margin: unset;
+}
 .MuiGrid-root.MuiGrid-item.MuiGrid-grid-xs-2\.5.css-s7s3c1-MuiGrid-root {
   background: #2f3032;
 }
-.Dashboard_rightContent .note_sec h1 {
+.Dashboard_rightContent .note_sec h1, .Predefined_price h1 {
   font-family: Roboto;
   font-size: 16px;
   font-weight: 700;
@@ -354,6 +398,11 @@
 .btn_wapper {
   display: flex;
   gap: 10px;
+}
+.Dashboard_rightContent button.bg_transparent {
+  background: transparent;
+  color: #111;
+  margin-bottom: 10px;
 }
 .custom-form .progress-container {
     background: #E4E4E4;

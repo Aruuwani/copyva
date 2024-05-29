@@ -170,7 +170,7 @@ const PermissionUpload = ({nextstep}) => {
                   <label>{option.label}</label>
                 </div>
               ))}
-              <button type="button" onClick={addOptionCase2}>
+              <button type="button" onClick={addOptionCase2} className="bg_transparent">
                 {" "}
                 + Add an option if needed
               </button>
@@ -280,7 +280,7 @@ const PermissionUpload = ({nextstep}) => {
               <button
                 type="button"
                 onClick={addOptionCase4}
-                className="add_option"
+                className="add_option bg_transparent"
               >
                 Add an option if needed
               </button>

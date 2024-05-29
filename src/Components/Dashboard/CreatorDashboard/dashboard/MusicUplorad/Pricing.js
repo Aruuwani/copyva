@@ -202,7 +202,7 @@ const Pricing = ({nextstep}) => {
               </div>
             </div>
             <div className="btn_wapper">
-              <button type="button" onClick={prevStep}>
+              <button type="button" onClick={prevStep} className="btn-light">
                 Back
               </button>
               <button type="button" onClick={nextStep}>
@@ -229,12 +229,12 @@ const Pricing = ({nextstep}) => {
                 </div>
               ))}
 
-              <button type="button" onClick={addOption}>
+              <button type="button" onClick={addOption} className="bg_transparent">
                 Add an option if needed
               </button>
               <div>
                 <div className="btn_wapper">
-                  <button type="button" onClick={prevStep}>
+                  <button type="button" onClick={prevStep} className="btn-light">
                     Back
                   </button>
                   <button type="button" onClick={nextStep}>
@@ -266,7 +266,7 @@ const Pricing = ({nextstep}) => {
                   />
                 </Form.Group>
               ))}
-              <button type="button" onClick={addOptionCase4} className='add_option'>+Add an option if needed</button>
+              <button type="button" onClick={addOptionCase4} className='add_option bg_transparent'>+Add an option if needed</button>
               {/* <button type="button" onClick={addOptionCase4}>
                 + Add an option if needed
               </button> */}
@@ -276,7 +276,7 @@ const Pricing = ({nextstep}) => {
                     type="button"
                     onClick={prevStep}
                     disabled={currentStep === 1}
-                  >
+                    className="btn-light">
                     Back
                   </button>
                   <button
