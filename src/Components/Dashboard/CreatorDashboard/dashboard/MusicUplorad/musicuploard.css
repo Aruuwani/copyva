@@ -94,7 +94,7 @@
   flex-direction: column;
   gap: 20px;
   width: 100%;
-  max-width: 260px;
+  max-width: 250px;
 }
 
 .Dashboard_rightContent .stepForm_part p::after {
@@ -164,6 +164,17 @@
   gap: 20px;
   padding: 40px 20px;
 }
+.step_divForm.stepCompleted p, .step_divForm.stepCompleted p::before, .step_divForm.stepCompleted p::after {
+  background: #e5ede7;
+  color: #56AB68;
+  border-color: #e5ede7;
+}
+
+.step_divForm.stepCompleted span {
+  border: 1px solid #56AB68;
+  background: #e5ede7;
+  color: #56AB68;
+}
 /* right_side */
 .Dashboard_rightContent .stepForm_part p.active+ span {
   background: linear-gradient(180deg, #F4C05C 0%, #D8A136 100%);
@@ -204,16 +215,27 @@
 /* Middle */
   .Dashboard_rightContent .custom-form {
     background-color: #ffffff;
-    padding: 20px;
     box-shadow: 0px 4px 12px 0px #00000026;
     border-radius: 10px;
     text-align: left;
     display: flex;
     flex-direction: column;
     gap: 15px;
-    max-width: 570px;
+    max-width: 500px;
     width: 100%;
+    padding: 0px;
   }
+  .musicSubmitbtn {
+    box-shadow: 0px 4px 14px 0px #00000040;
+    padding: 20px;
+}
+.musicSubmitbtn button.musicSubmitbutton {
+  width: 100%;
+  max-width: 366px;
+}
+  .custom-form>div:first-child {
+    padding: 20px;
+}
  .Dashboard_rightContent .custom-form label {
   font-family: Poppins;
   font-size: 14px;

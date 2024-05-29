@@ -239,7 +239,7 @@ const Pricing = ({priseState}) => {
                   />
                 </Form.Group>
               ))}
-              <button type="button" onClick={addOptionCase4}>Add an option if needed</button>
+              <button type="button" onClick={addOptionCase4} className='add_option'>Add an option if needed</button>
               <div>
                 <div className='btn_wapper'>
                   <button type="button" onClick={prevStep}>Back</button>

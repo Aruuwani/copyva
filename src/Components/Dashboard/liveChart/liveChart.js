@@ -105,11 +105,11 @@ const LiveChart = () => {
     });
   };
   return (
-    <div className="statements">
+    <div className="statements dashboard_bg">
       <div className="header">
         <h2>Statements</h2>
         <div className="filters">
-          <select>
+          <div><select>
             <option>All</option>
             {/* Add more options as needed */}
           </select>
@@ -117,6 +117,7 @@ const LiveChart = () => {
             <option>2024</option>
             {/* Add more options as needed */}
           </select>
+          </div>
           <Link to="#">Explore</Link>
         </div>
         

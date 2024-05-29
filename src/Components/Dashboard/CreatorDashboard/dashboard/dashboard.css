@@ -72,6 +72,9 @@ filter: invert(1);
     margin-right: 20px;
     margin-bottom: 20px;
 }
+.custom-form .add_option{
+    margin: 15px 0px 0px;
+}
 .MuiGrid-root.MuiGrid-container.MuiGrid-spacing-xs-3.css-zow5z4-MuiGrid-root {
     justify-content: space-between;
     background: #f9f9f9;
@@ -81,7 +84,9 @@ filter: invert(1);
 .css-zow5z4-MuiGrid-root>.MuiGrid-item {
     padding-top: 0px !important;
 }
-
+.Recent_updates {
+    height: fit-content;
+}
 .css-zow5z4-MuiGrid-root>.MuiGrid-item {
     padding-left: 20px;
 }
@@ -345,12 +350,12 @@ filter: invert(1);
 
 @media (max-width:1600px){
     .left_nav .css-10hburv-MuiTypography-root {
-        font-size: 14px;
+        font-size: 14px;            
         line-height: 21px;  
     }   
 }
 
-@media (min-width:1440px){  
+@media (min-width:1200px){  
     .left_nav nav {
         width: 100%;
         max-width: 19.6%;
@@ -362,10 +367,7 @@ filter: invert(1);
         padding: 10px;
         gap: 10px;
     }
-    .left_nav nav {
-        width: 100%;
-        max-width: 28%;
-    }
+  
     .left_nav nav a {
         padding: 10px;
     }
@@ -373,6 +375,10 @@ filter: invert(1);
 @media (max-width:1200px){
     .home_dashboard {
         grid-template-columns: 1fr;
+    }
+    .left_nav nav {
+        width: 100%;
+        max-width: 26%;
     }
     .Recent_musicVideo {
         height: 100%;
@@ -522,13 +528,13 @@ filter: invert(1);
 
   .Dashboard_rightContent .custom-form {
     background-color: #ffffff;
-    padding: 20px;
     box-shadow: 0px 4px 12px 0px #00000026;
     border-radius: 10px;
     text-align: left;
     display: flex;
     flex-direction: column;
     gap: 15px;
+    padding: 0px;
   }
  .Dashboard_rightContent .custom-form label {
     font-family: Poppins;
