@@ -6,6 +6,8 @@ import Agreement from './Agreement';
 import './uploardcontent.css';
 import check from "../../../../../assets/check.svg"
 import BackImg from '../../../../../assets/backIMg.svg'
+import { IoMdClose } from "react-icons/io";
+import BlubImg from "../../../../../assets/noun-light-blub.png"
 
 const UploardContent = () => {
   const [currentStep, setCurrentStep] = useState(1);
@@ -25,6 +27,24 @@ const UploardContent = () => {
     setCurrentStep(currentStep - 1);
   };
 
+
+
+  const [isActive, setIsActive] = useState(false);
+
+  const handleSearchClick = () => {
+    setIsActive(!isActive);
+  };
+
+  const handleBlurbClick = () => {
+    setIsActive(true);
+  };
+
+  const handleCloseClick = () => {
+    setIsActive(false);
+  };
+
+
+
   const handleDataChange = (stepData, stepName) => {
     setFormData({
       ...formData,
@@ -36,8 +56,11 @@ const UploardContent = () => {
 
     return (
 
-        <><div className='back_screens'>
+        <>
+        <div className='back_screens'>
             <h1><a href="/dashboard/home"><img src={BackImg} alt='BackImg' />Music upload</a></h1>
+            <div className='d-block d-md-none blurb_img  ' onClick={handleBlurbClick} ><img src={BlubImg} alt='BlubImg' /></div>
+            
         </div>
         <div className='step_part'>
                 {/* <div className="stepForm_part">
@@ -64,7 +87,17 @@ const UploardContent = () => {
                         <span>4</span>
                     </div>
                 </div>
-                <div className='col-md-6 custom-form'>
+                <div className={`custom-form content_info ${isActive ? 'active' : ''}`}>
+                <div className="note_SecWrapper mobile_only">
+                    <div className='note_sec'>
+                        <div className='note_secwrap'>
+                    <h1>Note</h1>
+                    <p>Since our customers buy a license for each song, we suggest you set an affordable price.</p>
+                    
+                    <span  onClick={handleSearchClick} className='close_icon'><IoMdClose /> </span>
+                    </div>
+                </div>
+                </div>
                     {currentStep === 1 && (
                         <ContentInformation
                             data={formData.ContentInformation}
@@ -94,9 +127,13 @@ const UploardContent = () => {
                     </div>
                 </div>
 
-                <div className='note_sec'>
+            
+
+
+                <div className='note_SecWrapper desktop_only'><div className='note_sec'>
                     <h1>Note</h1>
                     <p>Since our customers buy a license for each song, we suggest you set an affordable price.</p>
+                </div>
                 </div>
             </div></>
     );

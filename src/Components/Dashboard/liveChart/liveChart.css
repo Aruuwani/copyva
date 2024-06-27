@@ -121,6 +121,7 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
+  gap: 10px;
 }
 .header .filters select {
   width: 100%;
@@ -147,4 +148,61 @@
   line-height: 21px;
   text-align: left;
   color: #111;
+}
+
+@media (max-width:1200px){
+  .chardt_rightContent .music_content {
+    flex-wrap: wrap;
+    flex-direction: unset;
+}
+}
+@media (max-width:767px){
+  .nav-buttons {
+    left: unset;
+    width: 100%;
+}
+
+.chardt_rightContent .music_content h6 {
+  font-size: 8px;
+  font-weight: 500;
+  line-height: 11px;
+  margin-bottom: 0px;
+}
+.chardt_rightContent .music_content b {
+  font-size: 14px;
+  line-height: 21px;
+}
+.chardt_rightContent .music_content>div {
+  border-radius: 4px;
+  padding: 5px;
+  width: 100%;
+  max-width: 82px;
+  min-width: 82px;
+}
+.chardt_rightContent {
+  gap: 10px;
+  justify-content: space-between;
+}
+.chart-container {
+  min-height: 180px;
+  width: 100%;
+  max-width: 100%;
+}
+.header h2 {
+  font-size: 14px;
+  line-height: 18.68px;
+}
+.header .filters select {
+  width: 100%;
+  max-width: 80px;
+}
+.chardt_rightContent .music_content {
+  flex-direction: column;
+}
+.chardt_rightContent .nav-buttons button {
+  width: 14px !important;
+  min-height: 14px !important;
+  height: 10px;
+}
+
 }

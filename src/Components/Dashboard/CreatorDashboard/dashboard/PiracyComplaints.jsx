@@ -1,7 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react';
 import { CiSearch } from "react-icons/ci";
+import { IoMdClose } from "react-icons/io";
 
 const PiracyComplaints = () => {
+  const [isActive, setIsActive] = useState(false);
+
+  const toggleClass = () => {
+    setIsActive(!isActive);
+  };
   return (
     <div className='Statement_page'>
 
@@ -9,8 +15,9 @@ const PiracyComplaints = () => {
         <div>
           <h4>Piracy Complaints</h4>
         </div>
-        <div className='statement_search'>
-        <CiSearch />
+        <div className={`statement_search ${isActive ? 'active' : ''}`}>
+        <span onClick={toggleClass} className='search_icons'><CiSearch /></span>
+        <span onClick={toggleClass} className='close_icon d-none'><IoMdClose /> </span>
 <input type="text" placeholder="Search..." />
 
         </div>

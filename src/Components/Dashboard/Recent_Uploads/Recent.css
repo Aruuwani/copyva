@@ -114,12 +114,25 @@
         overflow-x: hidden;
         overflow-y: unset;
     }
+    .View_all {
+        position: unset;
+    }
+    .chardt_rightContent {
+        flex-wrap: wrap;
+    }
+  
 }
 @media (max-width:767px){
     .mobile_slider {
         display: block;
     }
-   
+    .chardt_rightContent {
+        flex-wrap: nowrap;
+    }
+    .chart-container {
+        min-height: 130px;
+      
+      }
     .recent_innerContent {
         display: flex !important;
     }
@@ -150,6 +163,7 @@
     right: -15px;
     cursor: pointer;
     width: 10px;
+    font-size: 0px;
 }
 .mobile_slider button.slick-arrow.slick-next::before {
     content: '' !important;
@@ -160,6 +174,10 @@
     background: #9D9C9C;
     transform: rotate(40deg);
     border-radius: 20px;
+    position: absolute;
+    top: 47%;
+    transform: translateX(-50%) rotate(40deg);
+    right: 20%;
 }
 .mobile_slider button.slick-arrow.slick-next::after {
     content: '' !important;
@@ -171,7 +189,9 @@
     border-radius: 20px;
     display: flex;
     position: absolute;
-    bottom: 5px;
+    bottom: 46%;
+    transform: translateY(260%) rotate(140deg);
+    right: 56%;
 }
 }
 

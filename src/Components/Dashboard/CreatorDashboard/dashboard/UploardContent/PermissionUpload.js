@@ -148,9 +148,10 @@ const PermissionUpload = ({nextstep}) => {
                 <label>Specific / Custom licence</label>
               </div>
             </div>
-            <button type="button" onClick={nextStep}>
+            <div className="btn_wapper"><button type="button" onClick={nextStep}>
               Next
             </button>
+            </div>
           </form>
         );
       case 2:

@@ -167,3 +167,9 @@ section.Music_sec {
         margin: 50px auto;
     }
 }
+
+@media (max-width:479px){
+    .Music_videoUpload {
+        grid-template-columns: 1fr;
+    }
+}

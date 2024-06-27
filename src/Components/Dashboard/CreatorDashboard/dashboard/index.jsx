@@ -282,7 +282,7 @@ const AdminPanel = () => {
                   path="piracy-complaints"
                   element={<PiracyComplaints />}
                 />
-                <Route path="Music-upload" element={<MusicUplorad />} />
+                <Route path="Music-upload" element={<MusicUplorad ad />} />
                 <Route path="upload-content" element={<UploardContent />} />
                 <Route path="profile-settings" element={<ProfileSettings />} />
               </Routes>

@@ -9,6 +9,7 @@ import BlubImg from "../../../../../assets/noun-light-blub.png"
 import check from "../../../../../assets/check.svg"
 import BackImg from '../../../../../assets/backIMg.svg'
 import PrizeImg from '../../../../../assets/predefined_prize.svg'
+import { IoMdClose } from "react-icons/io";
 
 
 const MusicUplorad = () => {
@@ -27,6 +28,21 @@ const MusicUplorad = () => {
         agreement: {},
     });
 
+    const [isActive, setIsActive] = useState(false);
+
+    const handleSearchClick = () => {
+      setIsActive(!isActive);
+    };
+
+    const handleBlurbClick = () => {
+        setIsActive(true);
+      };
+    
+      const handleCloseClick = () => {
+        setIsActive(false);
+      };
+
+      
     const handleNext = () => {
         // debugger;
         // if (prisingStep === 4) {
@@ -53,6 +69,7 @@ const MusicUplorad = () => {
     return (
         <><div className='back_screens'>
             <h1><a href="/dashboard/home"><img src={BackImg} alt='BackImg' />Music upload</a></h1>
+            <div className='d-block d-md-none blurb_img' onClick={handleBlurbClick}><img src={BlubImg} alt='BlubImg' /></div>
         </div>
             <div className='step_part'>
 
@@ -64,7 +81,32 @@ const MusicUplorad = () => {
                     <div className={`step_divForm ${currentStep > 5 ? 'stepCompleted' : ''}`}><p onClick={() => setActiveStep(5)} className={currentStep === 5 ? 'active' : ''}>Agreement</p><span>5</span></div>
                 </div>
 
-                <div className='custom-form'>
+                <div className={`custom-form  ${isActive ? 'active' : ''}`}>
+                <div className='note_SecWrapper mobile_only'>
+                    <div className='note_sec'>
+                    <div className='note_secwrap'>
+                        <h1> <img src={BlubImg} alt='BlubImg' />Note</h1>
+                        <p>Since our customers buy licence for each song,we suggest you to set an affordable price</p>
+                        <span  onClick={handleSearchClick} className='close_icon'><IoMdClose /> </span>
+                        </div>
+
+                    </div>
+                    {currentStep === 3 &&
+                        <div className='Predefined_price'>
+                             <div className='note_secwrap'>
+                            <h1> <img src={PrizeImg} alt='BlubImg' />Predefined price</h1>
+                            <p>Do you like to take the same package as earlier?</p>
+                            <span  onClick={handleSearchClick} className='close_icon'><IoMdClose /> </span>
+                            </div>
+                           
+                            <div className='customize_btns'>
+                                <button className='customize_btn btn-light'>No, Customize it</button>
+                                <button className='customize_btn '>Yes</button>
+                            </div>
+
+                        </div>
+                    }
+                </div>
                     {currentStep === 1 && (
                         <SongInformation
                             data={formData.songInformation}
@@ -104,7 +146,7 @@ const MusicUplorad = () => {
 
 
                 </div>
-                <div>
+                <div className='note_SecWrapper desktop_only'>
                     <div className='note_sec'>
                         <h1> <img src={BlubImg} alt='BlubImg' />Note</h1>
                         <p>Since our customers buy licence for each song,we suggest you to set an affordable price</p>

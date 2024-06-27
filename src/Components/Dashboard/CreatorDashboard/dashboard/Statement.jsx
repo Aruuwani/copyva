@@ -1,7 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react';
 import { CiSearch } from "react-icons/ci";
+import { IoMdClose } from "react-icons/io";
+
 
 const Statement = () => {
+  const [isActive, setIsActive] = useState(false);
+
+  const toggleClass = () => {
+    setIsActive(!isActive);
+  };
   return (
     <div className='Statement_page'>
 
@@ -9,14 +16,15 @@ const Statement = () => {
         <div>
           <h4>Statement</h4>
         </div>
-        <div className='statement_search'>
-        <CiSearch />
+        <div className={`statement_search ${isActive ? 'active' : ''}`}>
+        <span onClick={toggleClass} className='search_icons'><CiSearch /></span>
+        <span onClick={toggleClass} className='close_icon d-none'><IoMdClose /> </span>
 <input type="text" placeholder="Search..." />
 
         </div>
       </div>
 
-      <div className='d-flex gap-3 flex-wrap'>
+      <div className='d-flex gap-2 gap-md-3 flex-nowrap flex-md-wrap'>
 
 
         <div className='Statement_dashboard bg_blue col-md-3'>
