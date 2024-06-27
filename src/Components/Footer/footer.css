@@ -159,13 +159,11 @@ section.Footer hr {
         text-align: left;
     }
     .iput_search span.search_icon svg {
-        padding: 8px;
+        /* padding: 8px; */
         height: 15px;
         width: 15px;
     }
-    .iput_search span.search_icon svg {
-        padding: 8px;
-    }
+
     .Bottom_raw {
         margin: 20px 0px 0px;
         flex-direction: column-reverse;
@@ -187,8 +185,8 @@ section.Footer hr {
     .iput_search  span.search_icon {
         position: absolute;
         right: 10px;
-        width: 40px;
-        height: 40px;
+        width: 30px;
+        height: 30px;
         display: flex;
         align-items: center;
         justify-content: center;
