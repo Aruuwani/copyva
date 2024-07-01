@@ -41,13 +41,17 @@ const LiveChart = () => {
             borderColor: '#000',
             backgroundColor: 'rgba(0, 0, 0, 0.1)',
             fill: true,
-            tension: 0.4
+            tension: 0.4,
+            pointRadius: 0 // Remove the data point markers
           }
         ]
       },
       options: {
         responsive: true,
         plugins: {
+          legend: {
+            display: false // Remove the legend
+          },
           tooltip: {
             callbacks: {
               label: function (context) {
@@ -104,6 +108,7 @@ const LiveChart = () => {
       return [start, end];
     });
   };
+
   return (
     <div className="statements dashboard_bg">
       <div className="header">
@@ -120,7 +125,6 @@ const LiveChart = () => {
           </div>
           <Link to="#">Explore</Link>
         </div>
-        
       </div>
       <div className='chardt_rightContent'>
       <div className="chart-container">
@@ -143,8 +147,6 @@ const LiveChart = () => {
           <b>10</b>
         </div>
         </div></div>
-      
-     
     </div>
   );
 };
