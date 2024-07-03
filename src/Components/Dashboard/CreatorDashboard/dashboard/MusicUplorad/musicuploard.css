@@ -496,6 +496,10 @@ form.Progress_form .check_progress input[type="radio"] {
 .Dashboard_rightContent .Content_infowrapper .Progress_form {
   padding: 20px 0px 0px !important;
 }
+.Dashboard_rightContent .Content_infowrapper .Progress_form {
+  padding: 0px 0px 0px !important;
+  margin-top: 0px;
+}
 .Dashboard_rightContent .Content_infowrapper button.bg_transparent {
   width: 100% !IMPORTANT;
   max-width: 100%;

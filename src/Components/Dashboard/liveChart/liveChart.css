@@ -14,12 +14,16 @@
   .filters select {
     margin-left: 10px;
   }
-  
+  .chart-container canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
   .chart-container {
     position: relative;
     min-height: 180px;
     width: 100%;
-    max-width: 490px;
+    max-width: 100%;
+    padding: 0px 30px;
   }
   
   .nav-buttons {
@@ -27,10 +31,10 @@
     justify-content: space-between;
     align-items: center;
     margin-top: 0px;
-    width: calc(100% + 50px);
+    width: 100%;
     position: absolute;
-    bottom: 23px;
-    left: -25px;
+    bottom: 0px;
+    left: 5px;
   }
   .header h2 {
     font-family: Poppins;
@@ -79,7 +83,7 @@
 .chardt_rightContent {
   display: flex;
   gap: 50px;
-  justify-content: center;
+  justify-content: space-between;
   align-items: flex-start;
 }
 .chardt_rightContent .music_content {
@@ -157,10 +161,6 @@
 }
 }
 @media (max-width:767px){
-  .nav-buttons {
-    left: unset;
-    width: 100%;
-}
 
 .chardt_rightContent .music_content h6 {
   font-size: 8px;
@@ -171,6 +171,9 @@
 .chardt_rightContent .music_content b {
   font-size: 14px;
   line-height: 21px;
+}
+.nav-buttons {
+  bottom: 3px;
 }
 .chardt_rightContent .music_content>div {
   border-radius: 4px;
@@ -184,7 +187,7 @@
   justify-content: space-between;
 }
 .chart-container {
-  min-height: 180px;
+  min-height: unset;
   width: 100%;
   max-width: 100%;
 }
@@ -202,7 +205,19 @@
 .chardt_rightContent .nav-buttons button {
   width: 14px !important;
   min-height: 14px !important;
-  height: 10px;
+  height: 14px !important;
+  padding: 0px !important;
+  min-width: 14px !important;
 }
 
+}
+@media (max-width:479px){
+  .chart-container {
+    padding: 0px 10px;
+}
+.nav-buttons {
+  width: calc(100% + 5%);
+  bottom: 0px;
+  left: -10px;
+}
 }
