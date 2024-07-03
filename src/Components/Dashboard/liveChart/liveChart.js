@@ -66,7 +66,7 @@ const LiveChart = () => {
         scales: {
           x: {
             title: {
-              display: true,
+              display: false,
               text: 'Month'
             },
             grid: {

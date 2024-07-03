@@ -89,13 +89,11 @@ const MusicUplorad = () => {
                     <div className={`step_divForm ${currentStep > 4 ? 'stepCompleted' : ''}`}><p onClick={() => setActiveStep(4)} className={currentStep === 4 ? 'active' : ''}>General licence</p><span>{currentStep >= 5 ? <img src={check} /> : 4}</span></div>
                     <div className={`step_divForm ${currentStep > 5 ? 'stepCompleted' : ''}`}><p onClick={() => setActiveStep(5)} className={currentStep === 5 ? 'active' : ''}>Agreement</p><span>5</span></div>
                 </div>
-                <div>
+                <div className='Custom_formwrapper'>
                 {showPredefinedPrice && currentStep === 3 &&
-                        <div className='Predefined_price'>
+                        <div className='Predefined_price top_prices'>
                             <div className='note_secwrap'>
-                                <h1> <img src={PrizeImg} alt='BlubImg' />Predefined price</h1>
-                                <p>Do you like to take the same package as earlier?</p>
-                                <span onClick={handleSearchClick} className='close_icon'><IoMdClose /> </span>
+                                <h1>Can we use previously given information?</h1>
                             </div>
 
                             <div className='customize_btns'>
@@ -105,8 +103,7 @@ const MusicUplorad = () => {
 
                         </div>
                     }
-
-                    <div className={`custom-form  ${isActive ? 'active' : ''}`}>
+<div className={`custom-form content_info ${isActive ? 'active' : ''} ${currentStep === 3 ? 'Content_infowrapper' : ''}`}>
                         <div className='note_SecWrapper mobile_only'>
                             <div className='note_sec'>
                                 <div className='note_secwrap'>
@@ -163,7 +160,7 @@ const MusicUplorad = () => {
                                 setFormData={(data) => handleDataChange(data, 'agreement')} />
                         )}
 
-                        <div className='musicSubmitbtn'>
+<div className={currentStep !== 3 && 'musicSubmitbtn'}>
                             {/* {currentStep > 1 && <button onClick={handlePrev}>Previous</button>} */}
                             {currentStep < 5 && currentStep !== 3 && <button onClick={handleNext} className='musicSubmitbutton'>Submit</button>}
                             {currentStep === 5 && currentStep !== 3 && <button className='musicSubmitbutton' onClick={() => console.log(formData)}>Submit</button>}

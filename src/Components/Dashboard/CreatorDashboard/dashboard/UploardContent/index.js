@@ -58,7 +58,7 @@ const UploardContent = () => {
 
         <>
         <div className='back_screens'>
-            <h1><a href="/dashboard/home"><img src={BackImg} alt='BackImg' />Music upload</a></h1>
+            <h1><a href="/dashboard/home"><img src={BackImg} alt='BackImg' />Upload Content</a></h1>
             <div className='d-block d-md-none blurb_img  ' onClick={handleBlurbClick} ><img src={BlubImg} alt='BlubImg' /></div>
             
         </div>
@@ -87,7 +87,7 @@ const UploardContent = () => {
                         <span>4</span>
                     </div>
                 </div>
-                <div className={`custom-form content_info ${isActive ? 'active' : ''}`}>
+                <div className={`custom-form content_info ${isActive ? 'active' : ''} ${currentStep === 3 ? 'Content_infowrapper' : ''}`}>
                 <div className="note_SecWrapper mobile_only">
                     <div className='note_sec'>
                         <div className='note_secwrap'>
@@ -119,8 +119,7 @@ const UploardContent = () => {
                             data={formData.agreement}
                             setFormData={(data) => handleDataChange(data, 'agreement')} />
                     )}
-
-                    <div className='musicSubmitbtn'>
+<div className={currentStep !== 3 && 'musicSubmitbtn'}>
                         {currentStep < 5 && currentStep !== 3 && <button className='musicSubmitbutton' onClick={handleNext}>Submit</button>}
                         {/* You can include a Previous button if needed */}
                         {/* {currentStep > 1 && <button onClick={handlePrev}>Previous</button>} */}

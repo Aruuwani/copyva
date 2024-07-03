@@ -35,12 +35,13 @@
     }
     
 .left_nav .css-10hburv-MuiTypography-root {
-    display: block;
+    display: flex;
     font-family: Poppins;
     font-size: 18px;
     font-weight: 600;
     line-height: 27px;
     text-align: left;
+    gap: 6px;
 }
 
 
@@ -348,7 +349,7 @@ filter: invert(1);
     top: 15px;
 }
 .content_info form>div:first-child label {
-    padding-top: 0px;
+    padding: 8px 0px;
 }
 
 
@@ -446,6 +447,9 @@ filter: invert(1);
         top: 0;
         z-index: 1;
     }
+    .desktoponly{
+        display: block;
+    }
     .custom-form .note_SecWrapper.mobile_only span.close_icon {
         display: none;
     }
@@ -473,9 +477,13 @@ filter: invert(1);
         background: #555; 
       }
 }
+
 @media (max-width:767px){
     .home_dashboard>div:first-child {
         order: 2;
+    }
+    .desktoponly{
+        display: none;
     }
     .custom-form.content_info.active .note_SecWrapper.mobile_only, .custom-form.active .note_SecWrapper.mobile_only {
         display: none;

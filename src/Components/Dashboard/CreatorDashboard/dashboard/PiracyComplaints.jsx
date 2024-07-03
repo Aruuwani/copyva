@@ -13,7 +13,7 @@ const PiracyComplaints = () => {
 
       <div class="Statement_page_firstcontent">
         <div>
-          <h4>Piracy Complaints</h4>
+        <h4><span className='desktoponly'>Piracy</span> Complaints</h4>
         </div>
         <div className={`statement_search ${isActive ? 'active' : ''}`}>
         <span onClick={toggleClass} className='search_icons'><CiSearch /></span>

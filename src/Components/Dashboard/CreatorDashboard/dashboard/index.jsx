@@ -266,7 +266,11 @@ const AdminPanel = () => {
                       }}
                     />
                   </ListItemIcon>
-                  <ListItemText primary="Piracy Complaints" />
+                  <ListItemText primary={
+                    <>
+                      <span className='desktoponly'>Piracy </span>Complaints
+                    </>
+                  } />
                 </ListItem>
               </List>
             </Paper>
