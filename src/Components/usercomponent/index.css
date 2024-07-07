@@ -1,0 +1,125 @@
+/* App.css */
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .header_Sec {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+  }
+  
+  .header_main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .Web_logo img {
+    height: 40px;
+  }
+  
+  .Header_btns {
+    display: flex;
+    align-items: center;
+  }
+  
+  .Header_btns button {
+    margin-left: 10px;
+  }
+  
+  .profile-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .user-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+  
+  .side-menu {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    z-index: 1000;
+  }
+  
+  .side-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .side-menu-header h2 {
+    margin: 0;
+  }
+  
+  .close-button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .side-menu-content {
+    margin-top: 20px;
+  }
+  
+  .side-menu-content ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .side-menu-content ul li {
+    padding: 10px 0;
+    cursor: pointer;
+  }
+  
+  .logout-button {
+    margin-top: 20px;
+    background-color: red;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .tab-content {
+    padding: 20px;
+  }
+  .tabs {
+    display: flex;
+    justify-content: space-around;
+    background-color: #f1f1f1;
+    padding: 10px;
+}
+
+.tabs button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.tabs button:hover {
+    background-color: #45a049;
+}
+
+.tab-content {
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+}
