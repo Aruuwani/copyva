@@ -3,13 +3,14 @@ import "./header.css";
 import Logo_web from "../../../src/assets/Copyva_logo.png";
 import UserIcon from "../../../src/assets/user_icon.png";
 import UserComponent from "../usercomponent";
-import { Link } from "react-router-dom";
+import { Link ,useNavigate} from "react-router-dom";
 
 const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userProfile, setUserProfile] = useState(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('');
+  const navigate = useNavigate()
 
   useEffect(() => {
     const storedUser = JSON.parse(localStorage.getItem("user"));
@@ -35,6 +36,9 @@ const Header = () => {
     toggleMenu();
   };
 
+  const loginHandler = ()=>{
+    navigate('/auth')
+  }
   return (
     <>
       <section className="header_Sec">
@@ -51,7 +55,7 @@ const Header = () => {
                 <span style={{color:'white'}}>View profile</span>
               </div>
             ) : (
-              <button type="button" onClick={() => window.location.href = '/auth'}>Login</button>
+              <button type="button" onClick={() => loginHandler()}>Login</button>
             )}
           </div>
         </div>
