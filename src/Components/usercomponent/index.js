@@ -164,14 +164,16 @@ const UserInfo = () => (
 );
 
 const UserComponent = ({ activeTab }) => {
-    const [activeTabs, setActiveTab] = useState(activeTab );
+    const [activeTabs, setActiveTab] = useState( );
+    console.log('activeTabs', activeTabs)
+    console.log('activeTab', activeTab)
     const { tab } = useParams();
 
     useEffect(() => {
         if (tab) {
             setActiveTab(tab);
         } else if (activeTab) {
-            setActiveTab(activeTab);
+            // setActiveTab(activeTab);
         }
     }, [tab, activeTab]);
 
