@@ -35,42 +35,73 @@
     align-items: center;
     cursor: pointer;
   }
-  
+  .profile_name {
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+  .profile-container .profile_name span.view_profile {
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: left;
+    text-decoration: underline;
+}
+  .profile-container .profile_name .profile_name {
+    font-family: Poppins;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 25.5px;
+    text-align: left;
+    
+}
+
   .user-icon {
-    width: 30px;
-    height: 30px;
+    width: 52px;
+    height: 52px;
     margin-right: 10px;
+    border: 1px;
   }
   
   .side-menu {
     position: fixed;
     right: 0;
     top: 0;
-    width: 300px;
+    width: 584px;
     height: 100%;
     background-color: white;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
-    padding: 20px;
+    padding: 40px;
     z-index: 1000;
   }
   
   .side-menu-header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    position: relative;
+    justify-content: center;
   }
   
   .side-menu-header h2 {
-    margin: 0;
+    font-family: Poppins;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 36px;
+    text-align: left;
+    color: #181717;
   }
   
   .close-button {
     background: none;
     border: none;
-    font-size: 20px;
+    font-size: 30px;
     cursor: pointer;
+    padding: 0px;
+    position: absolute;
+    right: 0;
+    top: -5px;
   }
-  
   .side-menu-content {
     margin-top: 20px;
   }
@@ -78,13 +109,27 @@
   .side-menu-content ul {
     list-style-type: none;
     padding: 0;
+    margin-top: 60px;
   }
   
   .side-menu-content ul li {
     padding: 10px 0;
     cursor: pointer;
   }
-  
+  .side-menu-content ul li a {
+    display: flex;
+    justify-content: space-between;
+    font-family: Poppins;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 36px;
+    color: #444343;
+    text-decoration: none;
+}
+
+.side-menu-content ul li a svg {
+    fill: #707070;
+}
   .logout-button {
     margin-top: 20px;
     background-color: red;
