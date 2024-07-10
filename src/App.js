@@ -34,7 +34,9 @@ function App() {
               <Route path="/usercomponent/:tab" element={<UserComponent />} />
               <Route path="/viewall" element={<ViewAll />} />
             </Routes>
-            <Footer />
+            {window.location.pathname !== '/usercomponent' &&
+              <Footer />
+            }
           </>
         )}
       </BrowserRouter>

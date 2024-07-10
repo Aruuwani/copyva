@@ -15,7 +15,7 @@ const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userProfile, setUserProfile] = useState(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeTab,  setActiveTab] = useState('xx');
+  const [activeTab, setActiveTab] = useState('xx');
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -47,7 +47,7 @@ const Header = () => {
   }
   return (
     <>
-      <section className="header_Sec">
+      <section className={window.location.pathname === '/' ? "header_Sec" : "header_Sec all_sections"}>
         <div className="header_main">
           <div className="Web_logo">
             <img src={Logo_web} alt="main_logo" />
