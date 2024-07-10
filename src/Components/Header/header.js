@@ -15,7 +15,7 @@ const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userProfile, setUserProfile] = useState(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState('');
+  const [activeTab,  setActiveTab] = useState('xx');
   const navigate = useNavigate()
 
   useEffect(() => {
