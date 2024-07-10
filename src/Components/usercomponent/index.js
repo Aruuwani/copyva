@@ -153,7 +153,7 @@ const Favourites = () => {
 
   return (
     <div className="App">
-      {purchases.length !== 0 && <FavouritiesList    purchases={purchases} />}
+      {purchases.length !== 0 && <FavouritiesList purchases={purchases} />}
     </div>
   );
 };
@@ -163,34 +163,28 @@ const UserInfo = () => (
   </div>
 );
 
-const UserComponent = ({ activeTab }) => {
-    const [activeTabs, setActiveTab] = useState( );
-    console.log('activeTabs', activeTabs)
-    console.log('activeTab', activeTab)
-    const { tab } = useParams();
+const UserComponent = () => {
+  const [activeTabs, setActiveTab] = useState('purchases');
 
-    useEffect(() => {
-        if (tab) {
-            setActiveTab(tab);
-        } else if (activeTab) {
-            // setActiveTab(activeTab);
-        }
-    }, [tab, activeTab]);
 
-    return (
-        <div className="user-component">
-            <div className="tabs">
-                <button onClick={() => setActiveTab("purchases")}>Purchases</button>
-                <button onClick={() => setActiveTab("favourites")}>Favourites</button>
-                <button onClick={() => setActiveTab("userinfo")}>User Info</button>
-            </div>
-            <div className="tab-content">
-                {activeTabs === "purchases" && <Purchases />}
-                {activeTabs === "favourites" && <Favourites />}
-                {activeTabs === "userinfo" && <UserInfo />}
-            </div>
+  const { tab } = useParams();
+
+
+
+  return (
+    <div className="user-component">
+      <div className="tab-content">
+        <div className="tabs">
+          <button onClick={() => setActiveTab("purchases")}>Purchases</button>
+          <button onClick={() => setActiveTab("favourites")}>Favourites</button>
+          <button onClick={() => setActiveTab("userinfo")}>User Info</button>
         </div>
-    );
+        {activeTabs === "purchases" && <Purchases />}
+        {activeTabs === "favourites" && <Favourites />}
+        {activeTabs === "userinfo" && <UserInfo />}
+      </div>
+    </div>
+  );
 };
 
 export default UserComponent;
