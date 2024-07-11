@@ -3,12 +3,10 @@ import "./header.css";
 import Logo_web from "../../../src/assets/Copyva_logo.png";
 import UserIcon from "../../../src/assets/user_icon.png";
 import UserComponent from "../usercomponent";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { IoClose } from "react-icons/io5";
 import { IoIosArrowForward } from "react-icons/io";
-
-
-
+import cartLogo from '../../assets/header_cart.svg'
 
 
 const Header = () => {
@@ -46,15 +44,20 @@ const Header = () => {
   const loginHandler = () => {
     navigate('/auth')
   }
+  const location = useLocation();
   return (
     <>
-      <section className={window.location.pathname === '/' ? "header_Sec" : "header_Sec all_sections"}>
+      <section className={location.pathname === '/' ? "header_Sec" : "header_Sec all_sections"}>
         <div className="header_main">
           <div className="Web_logo">
             <Link to='/'><img src={Logo_web} alt="main_logo" /></Link>
           </div>
           <div className="Header_btns">
             <button type="button">Report content piracy</button>
+            {(location.pathname === '/usercomponent' || location.pathname === '/serch_bycode') && (
+
+              <Link to='#'><img src={cartLogo} alt="cart_logo" /></Link>
+            )}
             {isLoggedIn ? (
               <div className="profile-container" onClick={toggleMenu}>
                 <img src={UserIcon} alt="user_icon" className="user-icon" />
