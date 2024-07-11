@@ -1,0 +1,17 @@
+.header_alltab {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 20px;
+}
+
+.header_alltab h1 {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.explore-link {
+  font-size: 1em;
+  text-decoration: none;
+  color: black;
+}

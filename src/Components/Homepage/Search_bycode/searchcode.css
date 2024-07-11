@@ -1,0 +1,19 @@
+.serch_img {
+width: 242px;
+    height: 223px;
+    gap: 0px;
+    border-radius: 13.99px 0px 0px 0px;
+    opacity: 0px;
+   
+}
+
+.icon_section{
+border: 1px solid grey;
+    border-radius: 15px;
+    /* width: 80%; */
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    padding: 40px;
+    margin: 15px 63px;
+}

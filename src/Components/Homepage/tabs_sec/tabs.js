@@ -1,5 +1,5 @@
 import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
-import type { ReactTabsFunctionComponent, TabProps } from "react-tabs";
+
 import "./tabs.css";
 import { useState } from "react";
 import Music_img from "../../../assets/Frame 11 (1).png";
