@@ -12,7 +12,7 @@ const UserProfile = () => {
          <div className='profile_Div'>
             <img src={ProfileImg} alt='ProfileImg' />
 <div className='Profile_content'>
-    <h5>Profile picture</h5>
+    <h5>User info</h5>
 <p>Recommended memory size is less then 12MB </p>
 <button>Upload</button>
 </div>
