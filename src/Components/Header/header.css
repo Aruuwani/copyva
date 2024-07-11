@@ -162,6 +162,24 @@
     border-color: white !important;
 
   }
+
+
+  /* dashboardsec */
+  section.header_Sec.all_sections {
+    position: sticky;
+    background: #000 !important;
+    width: 100% !important;
+    max-width: 100%;
+    top: 0;
+    padding: 20px 0px;
+    z-index: 9;
+}
+section.header_Sec.all_sections .header_main {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+
   /* Responsive */
   @media (max-width: 767px) {
     .Header_btns button {

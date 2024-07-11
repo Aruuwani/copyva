@@ -23,7 +23,6 @@ section.Container {
 }
 
 .tabs_section ul.react-tabs__tab-list li.react-tabs__tab--selected {
-    border: 0px;
     border-bottom: 2px solid #000000;
 }
 .Tab_content {

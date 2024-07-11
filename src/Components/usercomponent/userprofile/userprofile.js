@@ -6,18 +6,20 @@ import { Form, Row, Col } from 'react-bootstrap';
 
 const UserProfile = () => {
     return (
+        <div className="purchases-list">
         <Form className='profile_setting'>
+        <h1 className='text-start mb-3'>Bank account</h1>
          <div className='profile_Div'>
             <img src={ProfileImg} alt='ProfileImg' />
 <div className='Profile_content'>
-    <h5>Profile picture</h5>
+    <h5>User info</h5>
 <p>Recommended memory size is less then 12MB </p>
 <button>Upload</button>
 </div>
          </div>
 
 
-            <Row>
+            <Row className="mt-3">
                 <Col md={6}>
                     <Form.Group controlId="name">
                         <Form.Label className="statement_form">Name</Form.Label>
@@ -25,40 +27,11 @@ const UserProfile = () => {
                     </Form.Group>
                 </Col>
                 <Col md={6}>
-                    <Form.Group controlId="Mobilenumber">
-                        <Form.Label className="statement_form">Mobile number</Form.Label>
-                        <Form.Control name="Mobilenumber" placeholder='Enter mobile number' type="text" />
-                    </Form.Group>
-                </Col>
-            </Row>
-            <Row>
-                <Col md={6}>
                     <Form.Group controlId="emailaddress">
                         <Form.Label className="statement_form">Email address</Form.Label>
                         <Form.Control name="emailaddress" placeholder='Enter email address' type="text" />
                     </Form.Group>
                 </Col>
-                <Col md={6}>
-                    <Form.Group controlId="typeSelect">
-                        <Form.Label className="statement_form">Type</Form.Label>
-                        <Form.Control as="select" name="typeSelect">
-                            <option value="">Select type</option>
-                            <option value="type1">Type 1</option>
-                            <option value="type2">Type 2</option>
-                            <option value="type3">Type 3</option>
-
-                        </Form.Control>
-                    </Form.Group>
-                </Col>
-            </Row>
-            <Row>
-                <Col md={6}>
-                    <Form.Group controlId="Description">
-                        <Form.Label className="statement_form">Description</Form.Label>
-                        <Form.Control as="textarea" name="Description" placeholder="Enter info" rows={3} />
-                    </Form.Group>
-                </Col>
-
             </Row>
 
             <h1 className='text-start'>Change Password</h1>
@@ -71,7 +44,7 @@ const UserProfile = () => {
                 </Col>
                 <Col md={6}>
                     <Form.Group controlId="otherLink">
-                        <Form.Label className="statement_form">Other link</Form.Label>
+                        <Form.Label className="statement_form">New Password</Form.Label>
                         <Form.Control name="otherLink" placeholder='Enter password' type="text" />
                     </Form.Group>
                 </Col>
@@ -111,8 +84,9 @@ const UserProfile = () => {
                 </Col>
 
             </Row>
-            <button >Update</button>
+            <button  className='form_btn mt-2'>Update</button>
         </Form>
+        </div>
     )
 }
 

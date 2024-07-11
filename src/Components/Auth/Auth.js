@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import './Auth.css'; // Create a CSS file for styling
+import './Auth.css'; 
 import { useNavigate } from 'react-router-dom';
+
+// import loginbg from "../../assets/loginbg.jpeg"
 
 const schema = yup.object().shape({
   fullName: yup.string().when('isLogin', {
@@ -19,9 +21,9 @@ const schema = yup.object().shape({
 });
 
 const Auth = () => {
-  const [isLogin, setIsLogin] = useState(true); // Toggle between login and sign up
-  const [isUser, setIsUser] = useState(true); // Toggle between user and owner
-  const navigate = useNavigate()
+  const [isLogin, setIsLogin] = useState(true); 
+  const [isUser, setIsUser] = useState(true); 
+  const navigate = useNavigate();
   const { register, handleSubmit, formState: { errors } } = useForm({
     resolver: yupResolver(schema),
     defaultValues: { isLogin }
@@ -33,7 +35,7 @@ const Auth = () => {
       const storedUser = JSON.parse(localStorage.getItem('user'));
       if (storedUser && storedUser.email === data.email && storedUser.password === data.password && storedUser.type === (isUser ? 'user' : 'owner')) {
         alert('Login successful!');
-        navigate('/')
+        navigate('/');
       } else {
         alert('Invalid email or password');
       }
@@ -55,8 +57,8 @@ const Auth = () => {
       <div className="auth-left">
         <h1 className="auth-logo">COPYVA</h1>
         <p className="auth-welcome">Welcome to Copyva</p>
-        <p className="auth-description">Your one-stop destination to buy & sell licenses</p>
-        <img src="path_to_image" alt="Instrument" className="auth-image" />
+        <p className="auth-description">Your one-stop destination to buy & sell<br/> licenses</p>
+        {/* <img src={loginbg} alt="" className="auth-image" /> */}
       </div>
       <div className="auth-right">
         <h2 className="auth-title">{isLogin ? 'Login' : 'Create account'}</h2>
@@ -109,20 +111,26 @@ const Auth = () => {
               {errors.confirmPassword && <p className="error-message">{errors.confirmPassword.message}</p>}
             </>
           )}
+          {isLogin && <p className="forgot-password">Forgot password?</p>}
           <button type="submit" className="auth-submit">Submit</button>
         </form>
-        {isLogin && <p className="forgot-password">Forgot password?</p>}
+        <div className="auth-divider">
+          <span>Or</span>
+        </div>
+       
         <button className="google-signin">Continue with Google</button>
         <p className="auth-switch">
           {isLogin 
             ? 'Not a member? Sign up' 
             : 'Already a member? Login'}
-          <button 
+         
+        </p>
+
+        <button 
             onClick={() => setIsLogin(!isLogin)} 
-            className="switch-button">
+            className="google-signin">
             {isLogin ? 'Create your account' : 'Login'}
           </button>
-        </p>
       </div>
     </div>
   );

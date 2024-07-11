@@ -29,27 +29,56 @@
     width: 300px;
   }
   .filter {
-    width: 250px;
+    width: 300px;
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    height: 800px; /* Adjust the height as needed */
   }
   
-  .filter h3 {
-    margin-top: 0;
+  .filter-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
   }
   
   .filter-category {
-    margin-top: 20px;
+    margin-bottom: 20px;
   }
   
-  .filter-category h4 {
-    margin-bottom: 10px;
+  .filter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   
-  .filter-category div {
-    margin-bottom: 5px;
+  .filter-header h4 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: normal;
   }
+  
+  .filter-toggle {
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  .filter-option {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .filter-option input {
+    margin-right: 10px;
+  }
+  
+  hr {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 20px 0;
+  }
+  
   .content {
     flex-grow: 1;
     padding: 20px;

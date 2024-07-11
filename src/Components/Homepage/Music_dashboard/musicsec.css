@@ -6,6 +6,10 @@
     background-color: #181717;
     border-radius: 40px;
 }
+
+.tabs_section ul.react-tabs__tab-list li.react-tabs__tab--selected {
+    border-bottom: 3px solid orange;
+}
 section.Music_sec {
     padding: 0px 30px;
 }
@@ -173,3 +177,9 @@ section.Music_sec {
         grid-template-columns: 1fr;
     }
 }
+
+
+
+
+/* tablesection? */
+

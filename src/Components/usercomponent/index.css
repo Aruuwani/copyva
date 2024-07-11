@@ -140,9 +140,9 @@
     width: 100%;
   }
   
-  .tab-content {
+  /* .tab-content {
     padding: 20px;
-  }
+  } */
   .tabs {
     display: flex;
     justify-content: space-around;
@@ -162,9 +162,75 @@
     background-color: #45a049;
 }
 
-.tab-content {
+/* .tab-content {
     padding: 20px;
     background-color: white;
     border: 1px solid #ccc;
     margin-top: 10px;
+}
+
+/* usercoponent */
+.user-component .tab-content .tabs {
+  box-shadow: 0px 4px 4px 0px #0000000D;
+  background: #fff;
+  min-height: 75px;
+  justify-content: center;
+  gap: 50px;
+  padding: 0px;
+}
+.user-component .App, .user-component .tab-content .tabs+div {
+  background: #fafafa;
+  padding-top: 30px;
+}
+.user-component .purchases-list form.profile_setting {
+  box-shadow: none;
+  margin: 0px;
+}
+.user-component .tab-content {
+  padding: 0px;
+  margin: 0px;
+}
+.user-component .purchases-list {
+  border-radius: 0px;
+  box-shadow: none;
+  background: #fff;
+  max-width: 80%;
+  margin: 0px auto;
+  border: 1px solid var(--Color-Black-10, #DFDFDF);
+  padding: 0px;
+}
+.user-component .tab-content .tabs button {
+  background: transparent;
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  text-align: left;
+  color: #707070;
+  padding: 0px;
+  transition: .5s all;
+  position: relative;
+}
+.user-component .tab-content .tabs>button:first-child, .user-component .tab-content .tabs>button:hover{
+  background: linear-gradient(180deg, #F4C05C 0%, #D8A136 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  font-weight: 600;
+}
+
+.user-component .tab-content .tabs button::after {
+  width: 0;
+  height: 3px;
+  content: '';
+  position: absolute;
+  bottom: 0;
+  background: linear-gradient(180deg, #F4C05C 0%, #D8A136 100%);
+  z-index: 1;
+  border: 0px;
+  left: 0;
+  transition: width 0.3s ease; /* Adjust the duration and timing function as needed */
+}
+
+.user-component .tab-content .tabs button:hover::after, .user-component .tab-content .tabs>button:first-child::after {
+  width: 100%;
 }
