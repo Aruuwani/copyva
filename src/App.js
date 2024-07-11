@@ -18,7 +18,7 @@ function App() {
   const [footerPath, setFooterPath] = useState(true);
 
   useEffect(() => {
-    if (location.pathname === '/usercomponent') {
+    if (location.pathname === '/usercomponent' || location.pathname === '/serch_bycode') {
       setFooterPath(false);
     } else {
       setFooterPath(true);
