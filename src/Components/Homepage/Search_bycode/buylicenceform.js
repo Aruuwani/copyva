@@ -27,7 +27,7 @@ const Buylicenceform = () => {
                 />
                 <label>Permission to repost the content/video without any edits</label>
             </div>
-            <button type="button" onClick={nextStep}>Next</button>
+            <button type="button" onClick={nextStep} className='btn_three'>Next</button>
         </div>
     );
 
@@ -51,7 +51,7 @@ const Buylicenceform = () => {
                 />
                 <label>Specific / Custom licence</label>
             </div>
-            <button type="button" onClick={nextStep}>Next</button>
+            <button type="button" onClick={nextStep} className='btn_three'>Next</button>
         </div>
     );
 
@@ -91,7 +91,7 @@ const Buylicenceform = () => {
                 />
                 <label>Set a discussion with copyva team</label>
             </div>
-            <button type="button" onClick={nextStep}>Next</button>
+            <button type="button" onClick={nextStep} className='btn_three'>Next</button>
         </div>
     );
 
@@ -107,14 +107,14 @@ const Buylicenceform = () => {
                 />
                 <label>0 to 50,000 subscribers</label>
             </div>
-            <button type="button" onClick={nextStep}>Next</button>
+            <button type="button" onClick={nextStep} className='btn_three'>Next</button>
         </div>
     );
 
     const renderStep5 = () => (
         <div>
             <h4 style={{ textAlign: "start" }}>Youtube with 0 to 50,000 subscribers</h4>
-            <span>To use full content to edit with your content/video</span>
+            {/* <span>To use full content to edit with your content/video</span> */}
             <div className="check_progress">
                 <input
                     type="checkbox"
@@ -139,8 +139,12 @@ const Buylicenceform = () => {
                 />
                 <label>Just few seconds of content will be used</label>
             </div>
-            <button type="button">Add to Cart</button>
+            <div className='btn_Twowrapper'>
+                
+                <button type="button">Add to Cart</button>
             <button type="button" onClick={() => { window.location.href = "/payment"; }}>Buy Now</button>
+            </div>
+
 
         </div>
     );

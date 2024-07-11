@@ -47,8 +47,12 @@
   .music-item {
     display: flex;
     align-items: center;
+    position: relative;
   }
-  
+  .purchase_table .music-item img.video_sec {
+    position: absolute;
+    left: 37px;
+}
   .music-image {
     width: 50px;
     height: 50px;
@@ -96,25 +100,29 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.5);
+      background: #181717c2;
       display: flex;
       justify-content: center;
       align-items: center;
       z-index: 1000;
     }
-  
-    .video-player {
-      background: white;
-      width: 60%;
-      padding: 20px;
-      border-radius: 10px;
+    .main_pageWidth .video-player {
+      background: transparent;
+      width: 844.52px;
+      padding: 0px;
       position: relative;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       display: flex;
       justify-content: center;
       align-items: center;
-    }
-  
+      height: 476px;
+      border-radius: 0px !important;
+  }
+  .main_pageWidth .video-player button.close-button {
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
     .close-button {
       position: absolute;
       top: 10px;
@@ -130,3 +138,12 @@
       height: auto;
       border-radius: 10px;
     }
+
+    .music-image {
+      width: 100%;
+      max-width: 80px;
+      height: 50px;
+      margin-right: 10px;
+      border-radius: 8px;
+      object-fit: cover;
+  }

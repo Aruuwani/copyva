@@ -60,19 +60,20 @@ const TabsComponent = () => {
             <button onClick={() => setActiveTab("Content")}> Content</button>
             <button onClick={() => setActiveTab("Artist")}>  Artist</button>
           </div>
-          <div style={{ display: "flex", justifyContent: "center", gap: "2rem" }}>
+          <div>
+          <div className="main_pageWidth">
             <div>
               <Filter />
             </div>
 
-            <div>
+            <div >
               {activeTabs === "All" && <Alltab />}
               {activeTabs === "Music" && <Musictab />}
               {activeTabs === "Content" && <Contenttab />}
               {activeTabs === "Artist" && <Artisttab />}
 
             </div>
-
+</div>
           </div>
         </div>
       </div>

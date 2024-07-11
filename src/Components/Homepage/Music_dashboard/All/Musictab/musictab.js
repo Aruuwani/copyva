@@ -7,6 +7,7 @@ import HearIcon from "../../../../../assets/heart.svg";
 import QullSound from "../../../../../assets/quill_sound.svg";
 import SolarLink from "../../../../../assets/solar_link-bold.svg";
 import Five_img from "../../../../../assets/Frame 34.png";
+import videoIcons from "../../../../../assets/Vector_td.png";
 
 const Musictab = () => {
   const musicItems = [
@@ -104,6 +105,7 @@ const Musictab = () => {
                           className="music-image"
                           onClick={() => handleImageClick(purchase.videoSrc)}
                         />
+                        <img src={videoIcons} alt={videoIcons} className="video_sec"/>
                         <div>
                           <p className="music-title">{purchase.title}</p>
                           <p className="music-artist">by Lorem</p>
@@ -134,30 +136,7 @@ const Musictab = () => {
         )}
       </div>
 
-      <div>
-        <div className="player">
-          <div className="play_botto">
-            <div className="left_contentfooter">
-              <button onClick={handlePlayPause}>
-                <img src={PreTrack} alt="PreTrack" />
-              </button>
-              <audio ref={audioRef} src={musicItems[currentTrack].audio}></audio>
-              <span className="play_btn"><img src={VideoIcon} alt="VideoIcon" /></span>
-              <button onClick={handleNext}><img src={nextTrack} alt="nextTrack" /></button>
-              <h3>{musicItems[currentTrack].title}<span>by Lorem</span></h3>
-            </div>
-            <div className="right_footer">
-              <div className="icons_right">
-                <img src={QullSound} alt="QullSound" />
-                <img src={SolarLink} alt="SolarLink" />
-                <img src={HearIcon} alt="SolarLink" />
-              </div>
-              <button className="btn_One">Download</button>
-              <button className="btn_Two">Buy license</button>
-            </div>
-          </div>
-        </div>
-      </div>
+
 
       {showVideoPlayer && (
         <div className="video-player-overlay">

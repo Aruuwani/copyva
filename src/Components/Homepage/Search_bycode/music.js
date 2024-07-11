@@ -16,12 +16,12 @@ const Music = () => {
     };
 
     return (
-        <Container className="mt-4">
+        <Container className="">
             <div className="purchases-list1">
                 <div>
                     <div className="Top_header" style={{ borderBottom: "none" }}>
                         <h2>List of Content</h2>
-                        <div className="input_search">
+                        <div className="iput_search">
                             <input type="text" placeholder="Search by genre, mood, artist" />
                             <span className="search_icon">
                                 <button>
@@ -35,18 +35,18 @@ const Music = () => {
                     </div>
                 </div>
 
-                <Row className="g-0">
-                    <Col md={4}>
-                        <img src={Frame} alt="Track image" className="search_img" />
+                <Row className="g-4 px-4 historyContent align-items-center">
+                    <Col md={2}>
+                        <img src={Frame} alt="Track image" className="search_img" style={{width : "100%"}}/>
                     </Col>
-                    <Col md={8}>
+                    <Col md={10}>
                         <Card.Body style={{ textAlign: "start" }}>
                             <Card.Title>Lorem ipsum dolor sit</Card.Title>
                             <Card.Subtitle className="mb-2 text-muted">by Lorem</Card.Subtitle>
                             <Card.Text>
                                 Bright and pulsing, featuring string arrangement, mallets, and synthesizer that creates a driving and discovering mood.
                             </Card.Text>
-                            <Button variant="warning" className="text-white" onClick={toggleMenu}>Buy licence</Button>
+                            <Button variant="warning" className="text-white btn_one" onClick={toggleMenu}>Buy licence</Button>
                         </Card.Body>
 
                         {isMenuOpen && (
@@ -84,39 +84,41 @@ const Music = () => {
                     </div>
                 </div>
 
-                <h5 className="mt-4">More track details</h5>
-                <Row>
+                <h4 className="mt-5 px-4 text-start">More track details</h4>
+                <Row className="px-4 bottomWrap_content">
                     <Col>
                         <h6 style={{ textAlign: "start" }}>Genres</h6>
-                        <div className="d-flex flex-wrap">
+                        <div className="d-flex flex-wrap gap-3">
                             {['Jazz', 'Pop', 'Rock', 'Hip hop'].map((genre, index) => (
-                                <Badge key={index} bg="light" text="dark" className="me-4 mb-3 p-3 border rounded-pill">{genre}</Badge>
+                                <Badge key={index}  className=" mb-3 p-3 border rounded-pill">{genre}</Badge>
                             ))}
                         </div>
                     </Col>
-                    <Col>
-                        <h6 style={{ textAlign: "start" }}>Tags</h6>
-                        <div className="d-flex flex-wrap">
-                            {['Adventure', 'Adventure', 'Adventure'].map((tag, index) => (
-                                <Badge key={index} bg="light" text="dark" className="me-2 mb-2 p-2 border rounded-pill">{tag}</Badge>
-                            ))}
-                        </div>
-                    </Col>
-                </Row>
-                <Row>
                     <Col>
                         <h6 style={{ textAlign: "start" }}>Moods</h6>
-                        <div className="d-flex flex-wrap">
+                        <div className="d-flex flex-wrap gap-3">
                             {['Adventure', 'Romance', 'Comedy', 'Sad'].map((mood, index) => (
-                                <Badge key={index} bg="light" text="dark" className="me-2 mb-2 p-2 border rounded-pill">{mood}</Badge>
+                                <Badge key={index} className="mb-3 p-3 border rounded-pill">{mood}</Badge>
                             ))}
                         </div>
                     </Col>
+                   
+                </Row>
+                <Row className="px-4 bottomWrap_content mb-3">
+                <Col>
+                    
+                    <h6 style={{ textAlign: "start" }}>Tags</h6>
+                    <div className="d-flex flex-wrap  gap-3">
+                        {['Adventure', 'Adventure', 'Adventure'].map((tag, index) => (
+                            <Badge key={index} className="mb-3 p-3 border rounded-pill">{tag}</Badge>
+                        ))}
+                    </div>
+                </Col>
                     <Col>
                         <h6 style={{ textAlign: "start" }}>Instruments</h6>
-                        <div className="d-flex flex-wrap">
+                        <div className="d-flex flex-wrap gap-3">
                             {['Adventure', 'Adventure', 'Adventure'].map((instrument, index) => (
-                                <Badge key={index} bg="light" text="dark" className="me-2 mb-2 p-2 border rounded-pill">{instrument}</Badge>
+                                <Badge key={index}  className="mb-3 p-3 border rounded-pill">{instrument}</Badge>
                             ))}
                         </div>
                     </Col>

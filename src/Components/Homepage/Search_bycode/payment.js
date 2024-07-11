@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Card, Form, Button } from 'react-bootstrap';
 import { FaArrowLeft } from "react-icons/fa6";
 import { useNavigate } from 'react-router-dom';
+import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
+import videoPayment from "../../../../src/assets/payment_video.svg";
+import videoIcons from "../../../../src/assets/payment_icons.png";
+
+
 // import PaymentSuccess from './paymentsuccess';
 
 const Payment = () => {
@@ -13,11 +18,12 @@ const Payment = () => {
     }
 
     return (
-        <Container>
+        <Container className='Payment_option'>
             <div className="mt-3">
-                <h6 className="d-flex align-items-center">
-                    <FaArrowLeft /> Payment options
-                </h6>
+                <h2 className="d-flex align-items-center">
+                <MdOutlineKeyboardArrowLeft style={{width: "20"}}/>
+                Payment options
+                </h2>
             </div>
             <Row className="mt-3">
                 <Col xs={12} md={7}>
@@ -25,9 +31,8 @@ const Payment = () => {
                         <Card.Body>
                             <h6>Credit | Debit | ATM Card</h6>
                             <p className="text-muted mb-3">
-                                We accept <img src="path-to-rupay-logo" alt="RuPay" className="mx-2" />
-                                <img src="path-to-mastercard-logo" alt="MasterCard" className="mx-2" />
-                                <img src="path-to-visa-logo" alt="Visa" className="mx-2" />
+                                We accept <img src={videoIcons} alt="videoIcons" className="mx-2" />
+                                
                             </p>
                             <Form>
                                 <Form.Group className="mb-3" controlId="formNameOnCard">
@@ -48,7 +53,7 @@ const Payment = () => {
                                         </Form.Group>
                                     </Col>
                                 </Row>
-                                <Button variant="warning" className="w-100" onClick={() => setShow(true)}>
+                                <Button variant="warning" className="w-100 btn_one" onClick={() => setShow(true)}>
                                     Submit
                                 </Button>
                             </Form>
@@ -59,14 +64,15 @@ const Payment = () => {
                     <Card>
                         <Card.Body>
                             <h6>Order summary</h6>
-                            <div className="d-flex align-items-center mt-3">
-                                <p className="mb-0">Lorem ipsum dolor sit</p>
-                                <Form.Control as="select" className="ml-2" defaultValue="1500">
+                            <div className="d-flex align-items-center mt-3 select_yearly ">
+                                
+                                <p className="mb-0 d-flex gap-2"><img src={videoPayment} alt='videoPayment' /> Lorem ipsum dolor sit</p>
+                                <Form.Control as="select" className="ml-2 gp-3" defaultValue="1500">
                                     <option value="1500">₹1500 per Year</option>
                                     <option value="2500">₹2500 per Year</option>
                                 </Form.Control>
                             </div>
-                            <h6 className="mt-3">Total ₹1500</h6>
+                            <h6 className="mt-3 total_amount">Total ₹1500</h6>
                         </Card.Body>
                     </Card>
                 </Col>

@@ -78,31 +78,63 @@
   
   .side-menu {
     position: fixed;
-    top: 0;
     right: 0;
-    width: 300px;
+    top: 0;
+    width: 584px;
     height: 100%;
-    background: white;
+    background-color: white;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
-    padding: 20px;
+    padding: 30px;
     z-index: 1000;
   }
-  
+  .side-menu-header .close-button {
+    position: absolute;
+    top: -20px;
+    right: -10px;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+.side-menu-content span.searchbycodestep {
+  font-family: Poppins;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
+  text-align: left;
+  color: #707070;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+.side-menu-content h4 {
+  font-family: Poppins;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 42px;
+  text-align: left;
+  margin-bottom: 30px;
+}
   .side-menu-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  
+  form.Progress_form .check_progress:hover {
+    border-color: #111;
+}
+form.Progress_form .check_progress {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 15px;
+
+}
   .close-button {
     background: none;
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
-  }
-  
-  .side-menu-content {
-    margin-top: 20px;
   }
   
   .side-menu-content h3 {
@@ -178,8 +210,92 @@ section.header_Sec.all_sections .header_main {
   max-width: 90%;
   margin: 0 auto;
 }
-
-
+button.btn_three, .btn_Twowrapper>button:last-child {
+  background: #181717;
+  color: #fff;
+  min-width: 250px;
+  min-height: 70px;
+  border-radius: 6px;
+  transition: .5s all;
+  font-family: Roboto;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 28.13px;
+}
+button.btn_three:hover, .btn_Twowrapper>button:last-child:hover {
+  background: transparent;
+  color: #111;
+}
+.btn_Twowrapper>button:first-child {
+  color: #fff;
+  min-width: 250px;
+  min-height: 70px;
+  border-radius: 6px;
+  transition: .5s all;
+  font-family: Roboto;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 28.13px;
+}
+.btn_Twowrapper>button:first-child:hover{
+  background: transparent;
+  color: #111;
+}
+.side-menu-content button.btn_three {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+}
+.btn_Twowrapper {
+  position: absolute;
+  right: 30px;
+  left: 30px;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+}
+.btn_Twowrapper {
+    position: absolute;
+    right: 30px;
+    left: 30px;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.btn_Twowrapper {
+  position: absolute;
+  right: 30px;
+  left: 30px;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.btn_Twowrapper>button:first-child {
+  color: #fff;
+  min-width: 250px;
+  min-height: 70px;
+  border-radius: 6px;
+  transition: .5s all;
+  font-family: Roboto;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 28.13px;
+  color: #111;
+  background: transparent;
+}
+.btn_Twowrapper {
+  position: absolute;
+  right: 30px;
+  left: 30px;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  bottom: 30px;
+  background: #fff;
+}
   /* Responsive */
   @media (max-width: 767px) {
     .Header_btns button {

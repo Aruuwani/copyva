@@ -1,15 +1,42 @@
 
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Music from "./music";
 import Filter from "../Music_dashboard/All/Filter";
+import nextTrack from "../../../../src/assets/nextbtn.svg";
+import PreTrack from "../../../../src/assets/prebtn.svg";
+import VideoIcon from "../../../../src/assets/video_icon.svg";
+import HearIcon from "../../../../src/assets/heart.svg";
+import QullSound from "../../../../src/assets/quill_sound.svg";
+import SolarLink from "../../../../src/assets/solar_link-bold.svg";
 
 
+const SearchBycode = ({ purchases }) => {
+        const [currentTrack, setCurrentTrack] = useState(0);
+        const [isPlaying, setIsPlaying] = useState(false);
 
-const SearchBycode = () => {
 
 
     const [activeTabsopen, setActiveTabopen] = useState('Music');
+    const audioRef = useRef(null);
+
+    const handlePlayPause = () => {
+        if (isPlaying) {
+            audioRef.current.pause();
+        } else {
+            audioRef.current.play();
+        }
+        setIsPlaying(!isPlaying);
+    };
+
+    const handleNext = () => {
+        setCurrentTrack((prevTrack) => (prevTrack + 1) % purchases.length);
+        setIsPlaying(false);
+    };
+
+    const handleVolumeChange = (e) => {
+        audioRef.current.volume = e.target.value;
+    };
     return (
         <div>
 
@@ -22,7 +49,8 @@ const SearchBycode = () => {
                         <button className={activeTabsopen === 'Content' && 'activeitem'} onClick={() => setActiveTabopen("Content")}> Content</button>
 
                     </div>
-                    <div style={{ display: "flex", justifyContent: "center", gap: "2rem" }}>
+                    <div >
+                        <div className="main_pageWidth">
                         <div>
 
                             {activeTabsopen === "Music" && <Filter />}
@@ -34,7 +62,37 @@ const SearchBycode = () => {
 
 
                         </div>
+                        </div>
 
+                    </div>
+                </div>
+            </div>
+
+            <div className="player">
+                <div className="play_botto">
+
+                    <div className="left_contentfooter">
+
+
+                        <button onClick={handlePlayPause}>{isPlaying ? '' : ''}<img src={PreTrack} alt="PreTrack" /></button>
+                        <audio ref={audioRef} src={purchases && purchases[currentTrack]?.audio}></audio>
+                        <span className="play_btn"><img src={VideoIcon} alt="VideoIcon" /></span>
+                        <button onClick={handleNext}><img src={nextTrack} alt="nextTrack" /></button>
+
+                        <h3>{purchases && purchases[currentTrack]?.title}<span>by Lorem</span></h3>
+
+                    </div>
+
+                    <div className="right_footer">
+                        <div className="icons_right">
+                            <img src={QullSound} alt="QullSound" />
+                            <img src={SolarLink} alt="SolarLink" />
+                            <img src={HearIcon} alt="SolarLink" />
+
+                        </div>
+                        {/* <input type="range" min="0" max="1" step="0.01" onChange={handleVolumeChange} /> */}
+                        <button className="btn_One">Download</button>
+                        <button className="btn_Two">Buy license</button>
                     </div>
                 </div>
             </div>
@@ -44,6 +102,7 @@ const SearchBycode = () => {
 
 
         </div>
+        
     );
 };
 
