@@ -9,6 +9,7 @@ const Buylicenceform = () => {
 
     const renderStep1 = () => (
         <div>
+            <span className='searchbycodestep'>Step{step}/4</span>
             <h4 style={{ textAlign: "start" }}>Select Licence Type</h4>
             <div className="check_progress">
                 <input
@@ -32,6 +33,7 @@ const Buylicenceform = () => {
 
     const renderStep2 = () => (
         <div>
+            <span className='searchbycodestep'>Step{step}/4</span>
             <h4 style={{ textAlign: "start" }}>Licence only for the content that you selected now:</h4>
             <div className="check_progress">
                 <input
@@ -55,6 +57,7 @@ const Buylicenceform = () => {
 
     const renderStep3 = () => (
         <div>
+            <span className='searchbycodestep'>Step{step}/4</span>
             <h4 style={{ textAlign: "start" }}>Commercial / Business purpose</h4>
             <div className="check_progress">
                 <input
@@ -94,6 +97,7 @@ const Buylicenceform = () => {
 
     const renderStep4 = () => (
         <div>
+            <span className='searchbycodestep'>Step{step}/4</span>
             <h4 style={{ textAlign: "start" }}>Youtube subscribers limit</h4>
             <div className="check_progress">
                 <input
@@ -113,7 +117,7 @@ const Buylicenceform = () => {
             <span>To use full content to edit with your content/video</span>
             <div className="check_progress">
                 <input
-                    type="radio"
+                    type="checkbox"
                     name="pricing"
                     value="Commercial / Business purpose"
                 />
@@ -121,7 +125,7 @@ const Buylicenceform = () => {
             </div>
             <div className="check_progress">
                 <input
-                    type="radio"
+                    type="checkbox"
                     name="pricing"
                     value="Commercial / Business purpose"
                 />
@@ -129,7 +133,7 @@ const Buylicenceform = () => {
             </div>
             <div className="check_progress">
                 <input
-                    type="radio"
+                    type="checkbox"
                     name="pricing"
                     value="Commercial / Business purpose"
                 />
