@@ -17,9 +17,9 @@ const SearchBycode = () => {
             <div className="user-component">
                 <div className="tab-content">
                     <div className="tabs">
-                        <button onClick={() => setActiveTabopen("All")}> All</button>
-                        <button onClick={() => setActiveTabopen("Music")}> Music</button>
-                        <button onClick={() => setActiveTabopen("Content")}> Content</button>
+                        <button className={activeTabsopen === 'All' && 'activeitem'} onClick={() => setActiveTabopen("All")}> All</button>
+                        <button className={activeTabsopen === 'Music' && 'activeitem'} onClick={() => setActiveTabopen("Music")}> Music</button>
+                        <button className={activeTabsopen === 'Content' && 'activeitem'} onClick={() => setActiveTabopen("Content")}> Content</button>
 
                     </div>
                     <div style={{ display: "flex", justifyContent: "center", gap: "2rem" }}>

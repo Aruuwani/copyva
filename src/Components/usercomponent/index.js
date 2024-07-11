@@ -175,9 +175,10 @@ const UserComponent = () => {
     <div className="user-component">
       <div className="tab-content">
         <div className="tabs">
-          <button onClick={() => setActiveTab("purchases")}>Purchases</button>
-          <button onClick={() => setActiveTab("favourites")}>Favourites</button>
-          <button onClick={() => setActiveTab("userinfo")}>User Info</button>
+
+          <button className={activeTabs === 'purchases' && 'activeitem'} onClick={() => setActiveTab("purchases")}>Purchases</button>
+          <button className={activeTabs === 'favourites' && 'activeitem'} onClick={() => setActiveTab("favourites")}>Favourites</button>
+          <button className={activeTabs === 'userinfo' && 'activeitem'} onClick={() => setActiveTab("userinfo")}>User Info</button>
         </div>
         {activeTabs === "purchases" && <Purchases />}
         {activeTabs === "favourites" && <Favourites />}

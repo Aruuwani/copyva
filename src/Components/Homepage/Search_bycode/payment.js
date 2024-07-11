@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, Row, Col, Card, Form, Button } from 'react-bootstrap';
 import { FaArrowLeft } from "react-icons/fa6";
+import { useNavigate } from 'react-router-dom';
+// import PaymentSuccess from './paymentsuccess';
+
 const Payment = () => {
+    const navigate = useNavigate();
+    const [show, setShow] = useState(false);
+
+    const successHandler = () => {
+        navigate('/paymentsuccess');
+    }
+
     return (
         <Container>
             <div className="mt-3">
@@ -38,7 +48,7 @@ const Payment = () => {
                                         </Form.Group>
                                     </Col>
                                 </Row>
-                                <Button variant="warning" className="w-100" onClick={() => { window.location.href = "/checkout"; }}>
+                                <Button variant="warning" className="w-100" onClick={() => setShow(true)}>
                                     Submit
                                 </Button>
                             </Form>
@@ -61,7 +71,9 @@ const Payment = () => {
                     </Card>
                 </Col>
             </Row>
+            {/* <PaymentSuccess show={show} handleClose={() => setShow(false)} /> */}
         </Container>
     );
 };
+
 export default Payment;
