@@ -212,7 +212,7 @@
   transition: .5s all;
   position: relative;
 }
-.user-component .tab-content .tabs>button:first-child, .user-component .tab-content .tabs>button:hover{
+.user-component .tab-content .tabs>button:hover, .user-component .tab-content .tabs>button.activeitem{
   background: linear-gradient(180deg, #F4C05C 0%, #D8A136 100%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
@@ -232,6 +232,53 @@
   transition: width 0.3s ease; /* Adjust the duration and timing function as needed */
 }
 
-.user-component .tab-content .tabs button:hover::after, .user-component .tab-content .tabs>button:first-child::after {
+.user-component .tab-content .tabs button:hover::after {
   width: 100%;
+}
+.user-component .tab-content .tabs>button.activeitem::after {
+  width: 100%;
+}
+
+.user-component .no-purchases {
+  width: 100%;
+  max-width: 80%;
+  margin: 0px auto;
+  padding: 0px;
+}
+
+.user-component .no-purchases-content h3 {
+  font-family: Poppins;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 48px;
+}
+
+.user-component .no-purchases-content p {
+  font-family: Poppins;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 36px;
+  text-align: center;
+}
+
+button.explore-button {
+  font-size: 24px;
+  color: #181717;
+  line-height: 28.13px;
+  font-weight: 500;
+  background: linear-gradient(180deg, #F4C05C 0%, #D8A136 100%);
+  width: 100%;
+  max-width: 269px;
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #00000000;
+  border-radius: 10px;
+  margin: 30px auto 0px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 23.44px;
+  text-align: left;
 }

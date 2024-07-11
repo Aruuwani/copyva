@@ -32,7 +32,7 @@ const PurchasesList = ({ purchases }) => {
     };
     return (
         <>
-            {purchases.length > 0 ? (
+            {!purchases.length > 0 ? (
                 <div className="purchases-list">
                     <div className="Top_header"><h2>List of Purchases</h2>
                         <div className="iput_search">
@@ -69,13 +69,27 @@ const PurchasesList = ({ purchases }) => {
                 </div>
             ) : (
                 <div className="no-purchases">
-                    <h2>List of Purchases</h2>
-                    <div className="no-purchases-content">
-                        <p>No purchase yet</p>
-                        <p>Browse through our large section of royalty-free music</p>
-                        <button className="explore-button">Explore more</button>
-                    </div>
-                </div>
+           
+            <div className="Top_header">
+              <h2>List of Purchases</h2>
+              <div className="iput_search">
+                <input type="text" placeholder="Search by genre, mood, artist" />
+                <span className="search_icon">
+                  <button>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="#181717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M21.0004 21.0004L16.6504 16.6504" stroke="#181717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </button>
+                </span>
+              </div>
+            </div>
+            <div className="no-purchases-content">
+              <h3>No purchase yet</h3>
+              <p>Browse through our large section of royalty-free music</p>
+              <button className="explore-button">Explore more</button>
+            </div>
+          </div>
             )}
             <div className="player">
                 <div className="play_botto">

@@ -151,7 +151,7 @@ table.purchase_table thead{
     background: #181717;
 }
 .player {
-    position: sticky;
+    position: fixed;
     background: #000;
     left: 0;
     bottom: -5px;
@@ -159,6 +159,9 @@ table.purchase_table thead{
     height: 94px;
     padding: 20px 10px !important;
     z-index: 1;
+}
+.Top_header {
+    border: 0px;
 }
 .play_botto {
     display: flex;
