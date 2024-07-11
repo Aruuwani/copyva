@@ -1,5 +1,11 @@
 import React, { useRef, useState } from "react";
 import "./favroties.css";
+import nextTrack from "../../../../src/assets/nextbtn.svg";
+import PreTrack from "../../../../src/assets/prebtn.svg";
+import VideoIcon from "../../../../src/assets/video_icon.svg";
+import HearIcon from "../../../../src/assets/heart.svg";
+import QullSound from "../../../../src/assets/quill_sound.svg";
+import SolarLink from "../../../../src/assets/solar_link-bold.svg";
 
 const FavouritiesList = ({ purchases }) => {
     const [currentTrack, setCurrentTrack] = useState(0);
@@ -27,19 +33,24 @@ const FavouritiesList = ({ purchases }) => {
     <>
       {purchases.length > 0 ? (
         <div className="purchases-list">
-            <h2>List of Favourites</h2>
-            <div className="search-bar">
+            <div className="Top_header"><h2>List of Purchases</h2>
+            <div className="iput_search">
                 <input type="text" placeholder="Search by genre, mood, artist" />
-                <button><i className="fas fa-search"></i></button>
+                <span className="search_icon"><button><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="#181717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M21.0004 21.0004L16.6504 16.6504" stroke="#181717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg></button></span>
             </div>
-            <table>
+            </div>
+            <table className="purchase_table">
                 <thead>
                     <tr>
                         <th>Title</th>
                         <th>Genres</th>
                         <th>Mood</th>
                         <th>Artists</th>
-                        <th>Link</th>
+                        <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -49,20 +60,13 @@ const FavouritiesList = ({ purchases }) => {
                             <td>{purchase.genres}</td>
                             <td>{purchase.mood}</td>
                             <td>{purchase.artists}</td>
-                            <td>{purchase.link}</td>
+                            <td><img src={HearIcon} alt="SolarLink" /></td>
+                            <td><button className="btn_Two">Buy licence</button></td>
                         </tr>
                     ))}
                 </tbody>
             </table>
-            <div className="player">
-                <audio ref={audioRef} src={purchases[currentTrack].audio}></audio>
-                <p>{purchases[currentTrack].title}</p>
-                <button onClick={handlePlayPause}>{isPlaying ? 'Pause' : 'Play'}</button>
-                <button onClick={handleNext}>Next</button>
-                <input type="range" min="0" max="1" step="0.01" onChange={handleVolumeChange} />
-                <button>Download</button>
-                <button>Buy license</button>
-            </div>
+          
         </div>
       ) : (
         <div className="no-purchases">
@@ -74,7 +78,36 @@ const FavouritiesList = ({ purchases }) => {
           </div>
         </div>
       )}
-      <br />
+
+
+<div className="player">
+                <div className="play_botto">
+                    
+                <div className="left_contentfooter"> 
+           
+               
+                <button onClick={handlePlayPause}>{isPlaying ? '' : ''}<img src={PreTrack} alt="PreTrack" /></button>
+                <audio ref={audioRef} src={purchases[currentTrack].audio}></audio> 
+                <span className="play_btn"><img src={VideoIcon} alt="VideoIcon" /></span>
+                <button onClick={handleNext}><img src={nextTrack} alt="nextTrack" /></button>
+
+                <h3>{purchases[currentTrack].title}<span>by Lorem</span></h3>
+
+                </div>
+
+                <div className="right_footer">
+                    <div className="icons_right">
+                        <img src={QullSound} alt="QullSound" />
+                        <img src={SolarLink} alt="SolarLink" />
+                        <img src={HearIcon} alt="SolarLink" />
+
+                    </div>
+                {/* <input type="range" min="0" max="1" step="0.01" onChange={handleVolumeChange} /> */}
+                <button className="btn_One">Download</button>
+                <button className="btn_Two">Buy license</button>
+                </div>
+                </div>
+            </div>
     </>
   );
 };
