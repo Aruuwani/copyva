@@ -15,7 +15,7 @@ const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userProfile, setUserProfile] = useState(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState('xx');
+  const [activeTab, setActiveTab] = useState('');
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -35,6 +35,7 @@ const Header = () => {
     setIsLoggedIn(false);
     setUserProfile(null);
     setIsMenuOpen(false);
+    navigate('/auth')
   };
 
   const handleTabClick = (tab) => {
@@ -50,7 +51,7 @@ const Header = () => {
       <section className={window.location.pathname === '/' ? "header_Sec" : "header_Sec all_sections"}>
         <div className="header_main">
           <div className="Web_logo">
-            <img src={Logo_web} alt="main_logo" />
+            <Link to='/'><img src={Logo_web} alt="main_logo" /></Link>
           </div>
           <div className="Header_btns">
             <button type="button">Report content piracy</button>

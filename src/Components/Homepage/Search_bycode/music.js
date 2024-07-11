@@ -49,7 +49,7 @@ const Music = () => {
                             <Button variant="warning" className="text-white" onClick={toggleMenu}>Buy licence</Button>
                         </Card.Body>
                         {isMenuOpen && (
-                            <div className="side-menu">
+                            <div className="side-menu ">
                                 <div className="side-menu-header">
 
                                     <button className="close-button" onClick={toggleMenu}><IoClose /></button>
