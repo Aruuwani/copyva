@@ -7,106 +7,104 @@
     max-width: 1200px;
     margin: 0 auto;
   } */
-  
-  .music-list h2 {
-    margin-bottom: 20px;
-  }
-  
-  .search-input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  thead {
-    background-color: #000;
-    color: #fff;
-  }
-  
-  th, td {
-    padding: 15px;
-    text-align: left;
-  }
-  
-  th {
-    font-weight: bold;
-  }
-  
-  tbody tr {
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .music-item {
-    display: flex;
-    align-items: center;
-    position: relative;
-  }
-  .purchase_table .music-item img.video_sec {
-    position: absolute;
-    left: 37px;
+
+.music-list h2 {
+  margin-bottom: 20px;
 }
-  .music-image {
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
-    border-radius: 8px;
-  }
-  
-  .music-title {
-    margin: 0;
-    font-weight: bold;
-  }
-  
-  .music-artist {
-    margin: 0;
-    color: #777;
-  }
-  
-  .like-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 18px;
-  }
-  
-  .buy-button {
-    background: #ffcc00;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    color: #000;
-    font-weight: bold;
-  }
-  
-  .buy-button:hover {
-    background: #e6b800;
-  }
-  
 
+.search-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
 
-    .video-player-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: #181717c2;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
-    .main_pageWidth .video-player {
+thead {
+  background-color: #000;
+  color: #fff;
+}
+
+th,
+td {
+  padding: 15px;
+  text-align: left;
+}
+
+th {
+  font-weight: bold;
+}
+
+tbody tr {
+  border-bottom: 1px solid #ddd;
+}
+
+.music-item {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.purchase_table .music-item img.video_sec {
+  position: absolute;
+  left: 37px;
+}
+.music-image {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  border-radius: 8px;
+}
+
+.music-title {
+  margin: 0;
+  font-weight: bold;
+}
+
+.music-artist {
+  margin: 0;
+  color: #777;
+}
+
+.like-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.buy-button {
+  background: #ffcc00;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #000;
+  font-weight: bold;
+}
+
+.buy-button:hover {
+  background: #e6b800;
+}
+
+.video-player-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+/* .main_pageWidth .video-player {
       background: transparent;
       width: 844.52px;
       padding: 0px;
@@ -117,33 +115,45 @@
       align-items: center;
       height: 476px;
       border-radius: 0px !important;
-  }
-  .main_pageWidth .video-player button.close-button {
-    color: #fff;
-    font-size: 20px;
-    cursor: pointer;
-}
-    .close-button {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background: none;
-      border: none;
-      font-size: 1.5em;
-      cursor: pointer;
-    }
-  
-    .video-element {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-    }
+  } */
 
-    .music-image {
-      width: 100%;
-      max-width: 80px;
-      height: 50px;
-      margin-right: 10px;
-      border-radius: 8px;
-      object-fit: cover;
-  }
+.video-player {
+  background: transparent;
+  width: 60%;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main_pageWidth .video-player button.close-button {
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.video-element {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.music-image {
+  width: 100%;
+  max-width: 80px;
+  height: 50px;
+  margin-right: 10px;
+  border-radius: 8px;
+  object-fit: cover;
+}

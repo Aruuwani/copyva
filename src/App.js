@@ -19,7 +19,7 @@ function App() {
   const [footerPath, setFooterPath] = useState(true);
 
   useEffect(() => {
-    if (location.pathname === '/usercomponent' || location.pathname === '/serch_bycode') {
+    if (location.pathname === '/usercomponent' || location.pathname === '/serch_bycode' || '/viewall') {
       setFooterPath(false);
     } else {
       setFooterPath(true);

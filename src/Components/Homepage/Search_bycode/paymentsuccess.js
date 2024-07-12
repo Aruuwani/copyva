@@ -1,30 +1,35 @@
+
+
+
 import React from 'react';
 import { Modal, Button, Form, InputGroup } from 'react-bootstrap';
-import { CheckCircle } from 'react-bootstrap-icons';
 
+import nounsuccess from "../../../../src/assets/noun-success.png";
 const PaymentSuccess = ({ show, handleClose }) => {
     return (
         <Modal show={show} onHide={handleClose} centered>
             <Modal.Header closeButton></Modal.Header>
-            <Modal.Body className="text-center">
-                <CheckCircle color="green" size={50} />
+            <Modal.Body className="text-center" style={{ paddingTop: "10px" }}>
+
+                <img src={nounsuccess} alt="" />
                 <h4>Payment successful</h4>
-                <p>
+                <p style={{ padding: "10px" }}>
                     Congratulations! Enjoy the creative freedom while avoiding the copyright violation.
                 </p>
-                <InputGroup className="mb-3">
+                <InputGroup className="mb-3 pb-10">
                     <Form.Control
                         placeholder="Integer auctor cum urna malesuada."
                         aria-label="Payment Link"
                         aria-describedby="basic-addon2"
                     />
-                    <InputGroup.Append>
-                        <Button variant="outline-secondary">Copy Link</Button>
-                    </InputGroup.Append>
+
+                    <Button variant="outline-secondary" style={{ background: "black", color: "white" }}>Copy Link</Button>
+
+
+
                 </InputGroup>
             </Modal.Body>
         </Modal>
     );
 };
-
 export default PaymentSuccess;

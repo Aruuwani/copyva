@@ -1,217 +1,229 @@
 .serch_img {
-width: 242px;
-    height: 223px;
-    gap: 0px;
-    border-radius: 13.99px 0px 0px 0px;
-    opacity: 0px;
-   
+  width: 242px;
+  height: 223px;
+  gap: 0px;
+  border-radius: 13.99px 0px 0px 0px;
+  opacity: 0px;
 }
 
-.icon_section{
-    border: 1px solid grey;
-    border-radius: 15px;
-    /* width: 80%; */
-    display: flex;
-    /* justify-content: center; */
-    align-items: center;
-    padding: 20px;
-    margin: 20px auto;
-    width: 100%;
-    max-width: 96%;
+.icon_section {
+  border: 1px solid grey;
+  border-radius: 15px;
+  /* width: 80%; */
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  padding: 20px;
+  margin: 20px auto;
+  width: 100%;
+  max-width: 96%;
 }
 
 .historyContent button.text-white.btn_one {
-    margin: 0px;
-    min-height: 48px;
-    max-width: 196px;
-    color: #111 !important;
-    font-family: Poppins;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 24px;
-    border-radius: 10px;
+  margin: 0px;
+  min-height: 48px;
+  max-width: 196px;
+  color: #111 !important;
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  border-radius: 10px;
 }
 .historyContent .card-title.h5 {
-    font-family: Poppins;
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 30px;
-    text-align: left;
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  text-align: left;
 }
 .historyContent .text-muted.h6 {
-    font-family: Poppins;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 18px;
-    text-align: left;
+  font-family: Poppins;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  text-align: left;
 }
-.historyContent  p.card-text {
-    font-family: Poppins;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 21px; 
-    text-align: left;
+.historyContent p.card-text {
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  text-align: left;
 }
 .main_pageWidth {
-    width: 100%;
-    max-width: 90%;
-    justify-content: center;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 11fr;
-    gap: 20px;
+  width: 100%;
+  max-width: 90%;
+  justify-content: center;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 11fr;
+  gap: 20px;
 }
 .main_pageWidth .container {
-    max-width: 100%;
+  max-width: 100%;
 }
 .icon_section small.text-muted {
-    font-family: Poppins;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    text-align: left;
-} 
-.icon_section div {
-    font-family: Poppins;
-    font-size: 22px;
-    font-weight: 400;
-    line-height: 33px;
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
 }
-.main_pageWidth h4{
-    font-family: Poppins;
-    font-size: 24px;
-    font-weight: 600;
-    line-height: 36px;
-    text-align: left;
+.icon_section div {
+  font-family: Poppins;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 33px;
+}
+.main_pageWidth h4 {
+  font-family: Poppins;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 36px;
+  text-align: left;
 }
 .bottomWrap_content.row span {
-    font-family: Poppins;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 21px;
-    background: transparent !important;
-    color: #707070;
-    min-width: 91px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  background: transparent !important;
+  color: #707070;
+  min-width: 91px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .bottomWrap_content h6 {
-    font-family: Poppins;
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 27px;
-    color: #444343;
+  font-family: Poppins;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
+  color: #444343;
 }
 .Payment_option.container {
-    max-width: 90%;
-    padding: 30px;
-    background: white;
-    margin-top: 20px;
-    border-radius: 8px;
-    border: 1px solid var(--Color-Black-10, #DFDFDF);
+  max-width: 90%;
+  padding: 30px;
+  background: white;
+  margin-top: 20px;
+  border-radius: 8px;
+  border: 1px solid var(--Color-Black-10, #dfdfdf);
 }
 
 .Payment_option.container h2 {
-    font-family: Poppins;
-    font-size: 24px;
-    font-weight: 500;
-    line-height: 36px;
-    text-align: left;
+  font-family: Poppins;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 36px;
+  text-align: left;
 }
 
 .Payment_option.container h2 svg {
-    width: 30px !important;
-    height: 30px !important;
+  width: 30px !important;
+  height: 30px !important;
 }
 .Payment_option h6 {
-    font-family: Poppins;
-    font-size: 24px;
-    font-weight: 600;
-    line-height: 36px;
+  font-family: Poppins;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 36px;
 }
 
 .card-body {
-    text-align: left;
+  text-align: left;
 }
 
 .Payment_option .card-body p {
-    font-family: Poppins;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 21px;
-    color: #707070 !important;
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+  color: #707070 !important;
 }
 
 .Payment_option input {
-    min-height: 54px;
-    border-color: #707070;
+  min-height: 54px;
+  border-color: #707070;
 }
 .Payment_option button.btn_one {
-    margin: 10px 0px 0px;
-    min-height: 52px;
-    font-family: Roboto;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 18.75px;
-    max-width: 100% !important;
-    width: 100%;
-    border-radius: 8px;
+  margin: 10px 0px 0px;
+  min-height: 52px;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 18.75px;
+  max-width: 100% !important;
+  width: 100%;
+  border-radius: 8px;
 }
 .Payment_option button.btn_one {
-    margin: 10px 0px 0px;
-    min-height: 52px;
-    font-family: Roboto;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 18.75px;
-    max-width: 100% !important;
-    width: 100%;
-    border-radius: 8px;
+  margin: 10px 0px 0px;
+  min-height: 52px;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 18.75px;
+  max-width: 100% !important;
+  width: 100%;
+  border-radius: 8px;
 }
-.Payment_option input:focus{
-    box-shadow: none !important;
-    border-color: unset !important;
+.Payment_option input:focus {
+  box-shadow: none !important;
+  border-color: unset !important;
 }
-
 
 .select_yearly select {
-    border: 1px solid var(--Color-Black-80, #444343);
-    width: 160px;
-    min-height: 42px;
-    appearance: auto;
-    padding: 6px;
+  border: 1px solid var(--Color-Black-80, #444343);
+  width: 160px;
+  min-height: 42px;
+  appearance: auto;
+  padding: 6px;
 }
 .select_yearly {
-    justify-content: space-between;
-}
-
-.select_yearly {
-    padding: 0px 0px 20px;
-    justify-content: space-between;
-    border-bottom: 1px solid #C9C9C9;
-    margin-bottom: 10px;
-    padding: 0px 0px 20px;
+  justify-content: space-between;
 }
 
 .select_yearly {
-    padding: 0px 0px 20px;
-    justify-content: space-between;
-    border-bottom: 1px solid #C9C9C9;
-    margin-bottom: 10px;
-    padding: 0px 0px 20px;
+  padding: 0px 0px 20px;
+  justify-content: space-between;
+  border-bottom: 1px solid #c9c9c9;
+  margin-bottom: 10px;
+  padding: 0px 0px 20px;
+}
+
+.select_yearly {
+  padding: 0px 0px 20px;
+  justify-content: space-between;
+  border-bottom: 1px solid #c9c9c9;
+  margin-bottom: 10px;
+  padding: 0px 0px 20px;
 }
 
 /* Style for the checkbox */
 .check_progress input[type="checkbox"] {
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-    accent-color: black; /* Change the checkbox color */
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: black; /* Change the checkbox color */
 }
 
 /* Optional: Style for the label */
 .check_progress label {
-    margin-left: 10px;
-    cursor: pointer;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.Payment_option1 {
+  max-width: 90%;
+  padding: 30px;
+  background: white;
+  margin-top: 20px;
+  border-radius: 8px;
+}
+
+.backbtnhandlercolor {
+  font-size: 2.2rem;
+  margin-top: -1rem;
+  color: #111;
 }

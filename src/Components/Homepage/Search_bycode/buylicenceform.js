@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
 const Buylicenceform = () => {
     const [step, setStep] = useState(1);
 
@@ -7,8 +7,18 @@ const Buylicenceform = () => {
         setStep(prevStep => prevStep + 1);
     };
 
+    const backbtnhandler = () => {
+
+        setStep(prevStep => prevStep - 1);
+    };
+
     const renderStep1 = () => (
         <div>
+            { }
+            <span className='searchbycodestep' >
+                <MdOutlineKeyboardArrowLeft
+                    className='backbtnhandlercolor' />
+            </span>
             <span className='searchbycodestep'>Step{step}/4</span>
             <h4 style={{ textAlign: "start" }}>Select Licence Type</h4>
             <div className="check_progress">
@@ -33,6 +43,9 @@ const Buylicenceform = () => {
 
     const renderStep2 = () => (
         <div>
+            <span className='searchbycodestep' onClick={backbtnhandler}>
+                <MdOutlineKeyboardArrowLeft className='backbtnhandlercolor' />
+            </span>
             <span className='searchbycodestep'>Step{step}/4</span>
             <h4 style={{ textAlign: "start" }}>Licence only for the content that you selected now:</h4>
             <div className="check_progress">
@@ -57,6 +70,9 @@ const Buylicenceform = () => {
 
     const renderStep3 = () => (
         <div>
+            <span className='searchbycodestep' onClick={backbtnhandler}>
+                <MdOutlineKeyboardArrowLeft className='backbtnhandlercolor' />
+            </span>
             <span className='searchbycodestep'>Step{step}/4</span>
             <h4 style={{ textAlign: "start" }}>Commercial / Business purpose</h4>
             <div className="check_progress">
@@ -97,6 +113,9 @@ const Buylicenceform = () => {
 
     const renderStep4 = () => (
         <div>
+            <span className='searchbycodestep' onClick={backbtnhandler}>
+                <MdOutlineKeyboardArrowLeft className='backbtnhandlercolor' />
+            </span>
             <span className='searchbycodestep'>Step{step}/4</span>
             <h4 style={{ textAlign: "start" }}>Youtube subscribers limit</h4>
             <div className="check_progress">
@@ -113,6 +132,7 @@ const Buylicenceform = () => {
 
     const renderStep5 = () => (
         <div>
+
             <h4 style={{ textAlign: "start" }}>Youtube with 0 to 50,000 subscribers</h4>
             {/* <span>To use full content to edit with your content/video</span> */}
             <div className="check_progress">
@@ -140,9 +160,9 @@ const Buylicenceform = () => {
                 <label>Just few seconds of content will be used</label>
             </div>
             <div className='btn_Twowrapper'>
-                
-                <button type="button">Add to Cart</button>
-            <button type="button" onClick={() => { window.location.href = "/payment"; }}>Buy Now</button>
+
+                <button type="button" onClick={() => { window.location.href = "/checkout"; }}>Add to Cart</button>
+                <button type="button" onClick={() => { window.location.href = "/payment"; }}>Buy Now</button>
             </div>
 
 
@@ -167,7 +187,7 @@ const Buylicenceform = () => {
     };
 
     return (
-        <form className="Progress_form">
+        <form className="Progress_form" style={{ marginTop: "0px" }}>
             {renderCurrentStep()}
         </form>
     );

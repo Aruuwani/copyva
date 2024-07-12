@@ -37,7 +37,7 @@ const Music = () => {
 
                 <Row className="g-4 px-4 historyContent align-items-center">
                     <Col md={2}>
-                        <img src={Frame} alt="Track image" className="search_img" style={{width : "100%"}}/>
+                        <img src={Frame} alt="Track image" className="search_img" style={{ width: "100%" }} />
                     </Col>
                     <Col md={10}>
                         <Card.Body style={{ textAlign: "start" }}>
@@ -90,7 +90,7 @@ const Music = () => {
                         <h6 style={{ textAlign: "start" }}>Genres</h6>
                         <div className="d-flex flex-wrap gap-3">
                             {['Jazz', 'Pop', 'Rock', 'Hip hop'].map((genre, index) => (
-                                <Badge key={index}  className=" mb-3 p-3 border rounded-pill">{genre}</Badge>
+                                <Badge key={index} className=" mb-3 p-3 border rounded-pill">{genre}</Badge>
                             ))}
                         </div>
                     </Col>
@@ -102,23 +102,23 @@ const Music = () => {
                             ))}
                         </div>
                     </Col>
-                   
+
                 </Row>
                 <Row className="px-4 bottomWrap_content mb-3">
-                <Col>
-                    
-                    <h6 style={{ textAlign: "start" }}>Tags</h6>
-                    <div className="d-flex flex-wrap  gap-3">
-                        {['Adventure', 'Adventure', 'Adventure'].map((tag, index) => (
-                            <Badge key={index} className="mb-3 p-3 border rounded-pill">{tag}</Badge>
-                        ))}
-                    </div>
-                </Col>
+                    <Col>
+
+                        <h6 style={{ textAlign: "start" }}>Tags</h6>
+                        <div className="d-flex flex-wrap  gap-3">
+                            {['Adventure', 'Adventure', 'Adventure'].map((tag, index) => (
+                                <Badge key={index} className="mb-3 p-3 border rounded-pill">{tag}</Badge>
+                            ))}
+                        </div>
+                    </Col>
                     <Col>
                         <h6 style={{ textAlign: "start" }}>Instruments</h6>
                         <div className="d-flex flex-wrap gap-3">
                             {['Adventure', 'Adventure', 'Adventure'].map((instrument, index) => (
-                                <Badge key={index}  className="mb-3 p-3 border rounded-pill">{instrument}</Badge>
+                                <Badge key={index} className="mb-3 p-3 border rounded-pill">{instrument}</Badge>
                             ))}
                         </div>
                     </Col>
