@@ -4,6 +4,8 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import './Auth.css';
 import { useNavigate } from 'react-router-dom';
+import Gooogleimg from "../../../src/assets/Google.svg"
+import Main_logo from "../../../src/assets/new_logo.svg"
 
 // import loginbg from "../../assets/loginbg.jpeg"
 
@@ -58,12 +60,13 @@ const Auth = () => {
   return (
     <div className="auth-container">
       <div className="auth-left">
-        <h1 className="auth-logo">COPYVA</h1>
+        <h1 className="auth-logo"><img src={Main_logo} alt='Main_logo' /></h1>
         <p className="auth-welcome">Welcome to Copyva</p>
         <p className="auth-description">Your one-stop destination to buy & sell<br /> licenses</p>
         {/* <img src={loginbg} alt="" className="auth-image" /> */}
       </div>
       <div className="auth-right">
+        <div className='auth_right_content'>
         <h2 className="auth-title">{isLogin ? 'Login' : 'Create account'}</h2>
         <div className="auth-toggle">
           <button
@@ -117,11 +120,12 @@ const Auth = () => {
           {isLogin && <p className="forgot-password">Forgot password?</p>}
           <button type="submit" className="auth-submit">Submit</button>
         </form>
+       
+
+        <button className="google-signin"><img src={Gooogleimg} alt='' />Continue with Google</button>
         <div className="auth-divider">
           <span>Or</span>
         </div>
-
-        <button className="google-signin">Continue with Google</button>
         <p className="auth-switch">
           {isLogin
             ? 'Not a member? Sign up'
@@ -134,6 +138,7 @@ const Auth = () => {
           className="google-signin">
           {isLogin ? 'Create your account' : 'Login'}
         </button>
+        </div>
       </div>
     </div>
   );
