@@ -17,9 +17,9 @@ import PaymentSuccess from "./Components/Homepage/Search_bycode/paymentsuccess";
 function App() {
   const location = useLocation();
   const [footerPath, setFooterPath] = useState(true);
-
+  console.log('footerPath', footerPath)
   useEffect(() => {
-    if (location.pathname === '/usercomponent' || location.pathname === '/serch_bycode' || '/viewall') {
+    if (location.pathname === '/usercomponent' || location.pathname === '/serch_bycode' || location.pathname === '/viewall') {
       setFooterPath(false);
     } else {
       setFooterPath(true);
