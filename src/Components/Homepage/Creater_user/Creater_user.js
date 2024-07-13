@@ -3,6 +3,7 @@ import "./Creater_user.css"
 import Right_arrow from '../../../assets/right_arrow.svg'
 import User_img from '../../../assets/User.svg'
 import Creator_Img from '../../../assets/Creator.svg'
+import { Link } from 'react-router-dom'
 
 
 const Createuser = () => {
@@ -19,7 +20,7 @@ const Createuser = () => {
         
       
         </div>
-        <img src={Right_arrow} alt='Right_arrow' className='Desk_arrow'/>
+       <Link to='/dashboard/Music-upload'> <img src={Right_arrow} alt='Right_arrow' className='Desk_arrow'/></Link>
     </div>
 
     <div className='Creator_sec'>
@@ -28,7 +29,7 @@ const Createuser = () => {
         <p>Buy the music/ content of your choice</p>
         
         </div>
-        <img src={Right_arrow} alt='Right_arrow' className='Desk_arrow'/>
+        <Link to='/dashboard/upload-content'><img src={Right_arrow} alt='Right_arrow' className='Desk_arrow'/></Link>
     </div>
 
 </div>
