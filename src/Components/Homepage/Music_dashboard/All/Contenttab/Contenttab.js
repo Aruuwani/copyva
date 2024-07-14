@@ -97,7 +97,7 @@ import HearIcon from "../../../../../assets/heart.svg";
 import QullSound from "../../../../../assets/quill_sound.svg";
 import SolarLink from "../../../../../assets/solar_link-bold.svg";
 import filterIcon from "../../../../../assets/filter.png";
-import cartFooter from "../../../../../../../copyva/src/assets/cart_foter.png";
+import cartFooter from "../../../../../assets/cart_foter.png";
 
 
 
@@ -149,7 +149,7 @@ const Contenttab = () => {
           <div >
             <div className="Top_header"><h2>List of Content</h2>
               <div className="iput_search">
-            <div className='d-md-none d-block filter_icon'><img src={filterIcon} alt='filterIcon' /></div>
+                <div className='d-md-none d-block filter_icon'><img src={filterIcon} alt='filterIcon' /></div>
 
                 <input type="text" placeholder="Search by genre, mood, artist" />
                 <span className="search_icon"><button><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -195,7 +195,7 @@ const Contenttab = () => {
 
                     </td>
                     {/* <td><img src={HearIcon} alt="SolarLink" /></td> */}
-                    <td><button className="btn_Two"><img src={cartFooter} alt="" className="d-md-none d-block"/><span className="d-md-block d-none">Buy license</span></button></td>
+                    <td><button className="btn_Two"><img src={cartFooter} alt="" className="d-md-none d-block" /><span className="d-md-block d-none">Buy license</span></button></td>
                   </tr>
                 ))}
               </tbody>

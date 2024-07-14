@@ -8,8 +8,9 @@ import QullSound from "../../../../../assets/quill_sound.svg";
 import SolarLink from "../../../../../assets/solar_link-bold.svg";
 import Five_img from "../../../../../assets/Frame 34.png";
 import videoIcons from "../../../../../assets/Vector_td.png";
-import DwnloadBtn from "../../../../../../../copyva/src/assets/downloade_btn.png";
-import cartFooter from "../../../../../../../copyva/src/assets/cart_foter.png";
+
+import DwnloadBtn from "../../../../../assets/downloade_btn.png";
+import cartFooter from "../../../../../assets/cart_foter.png";
 import filterIcon from "../../../../../assets/filter.png";
 
 // import Frame from "../../../assets/Frame 22.png";
@@ -77,7 +78,7 @@ const Musictab = () => {
               <h2>List of Music</h2>
               <div className="iput_search">
                 <input type="text" placeholder="Search by genre, mood, artist" />
-            <div className='d-md-none d-block filter_icon'><img src={filterIcon} alt='filterIcon' /></div>
+                <div className='d-md-none d-block filter_icon'><img src={filterIcon} alt='filterIcon' /></div>
 
                 <span className="search_icon">
                   <button>
@@ -124,7 +125,7 @@ const Musictab = () => {
                     <td>
                       {purchase.liked ? "🖤" : "🤍"}
                     </td>
-                    <td><button className="btn_Two"><img src={cartFooter} alt="" className="d-md-none d-block"/><span className="d-md-block d-none">Buy license</span></button></td>
+                    <td><button className="btn_Two"><img src={cartFooter} alt="" className="d-md-none d-block" /><span className="d-md-block d-none">Buy license</span></button></td>
                   </tr>
                 ))}
               </tbody>
@@ -136,7 +137,7 @@ const Musictab = () => {
             <div className="Top_header">
               <h2>List of Purchases</h2>
               <div className="iput_search">
-                <input type="text" placeholder="Search by genre, mood, artist" className="d-md-block d-none"/>
+                <input type="text" placeholder="Search by genre, mood, artist" className="d-md-block d-none" />
                 <span className="search_icon">
                   <button>
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -164,7 +165,7 @@ const Musictab = () => {
               </button>
               <audio ref={audioRef} src={musicItems[currentTrack].audio}></audio>
               <span className="play_btn"><img src={VideoIcon} alt="VideoIcon" /></span>
-              <button onClick={handleNext}  className="d-md-block d-none"><img src={nextTrack} alt="nextTrack" /></button>
+              <button onClick={handleNext} className="d-md-block d-none"><img src={nextTrack} alt="nextTrack" /></button>
               <h3>{musicItems[currentTrack].title}<span>by Lorem</span></h3>
             </div>
             <div className="right_footer">
@@ -173,8 +174,8 @@ const Musictab = () => {
                 <img src={SolarLink} alt="SolarLink" />
                 <img src={HearIcon} alt="SolarLink" />
               </div>
-              <button className="btn_One"><img src={DwnloadBtn} alt="" className="d-md-none d-block"/><span className="d-md-block d-none">Download</span></button>
-              <button className="btn_Two"><img src={cartFooter} alt="" className="d-md-none d-block"/><span className="d-md-block d-none">Buy license</span></button>
+              <button className="btn_One"><img src={DwnloadBtn} alt="" className="d-md-none d-block" /><span className="d-md-block d-none">Download</span></button>
+              <button className="btn_Two"><img src={cartFooter} alt="" className="d-md-none d-block" /><span className="d-md-block d-none">Buy license</span></button>
             </div>
           </div>
         </div>
