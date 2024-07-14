@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import './Auth.css';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Gooogleimg from "../../../src/assets/Google.svg"
 import Main_logo from "../../../src/assets/new_logo.svg"
 import Login_div from "../../../src/assets/login_left.png"
@@ -67,79 +67,79 @@ const Auth = () => {
         {/* <img src={loginbg} alt="" className="auth-image" /> */}
       </div>
       <div className="auth-right">
-        <div className='d-lg-none d-flex mobi_login'><img src={Login_div} alt='Login_div' />Login</div>
+        <div className='d-lg-none d-flex mobi_login'><Link to='/' style={{ color: 'black', textDecoration: 'none' }}><img src={Login_div} alt='Login_div' /> Login</Link></div>
         <div className='auth_right_content'>
-        <h2 className="auth-title">{isLogin ? 'Login' : 'Create account'}</h2>
-        <div className="auth-toggle">
+          <h2 className="auth-title">{isLogin ? 'Login' : 'Create account'}</h2>
+          <div className="auth-toggle">
+            <button
+              className={isUser ? 'active' : ''}
+              onClick={() => setIsUser(true)}>
+              User
+            </button>
+            <button
+              className={!isUser ? 'active' : ''}
+              onClick={() => setIsUser(false)}>
+              Owner
+            </button>
+          </div>
+          <form onSubmit={handleSubmit(onSubmit)} className="auth-form">
+            {!isLogin && (
+              <>
+                <input
+                  type="text"
+                  placeholder="Full name"
+                  {...register('fullName')}
+                  className={errors.fullName ? 'input-error' : ''}
+                />
+                {errors.fullName && <p className="error-message">{errors.fullName.message}</p>}
+              </>
+            )}
+            <input
+              type="email"
+              placeholder="Email address"
+              {...register('email')}
+              className={errors.email ? 'input-error' : ''}
+            />
+            {errors.email && <p className="error-message">{errors.email.message}</p>}
+            <input
+              type="password"
+              placeholder="Password"
+              {...register('password')}
+              className={errors.password ? 'input-error' : ''}
+            />
+            {errors.password && <p className="error-message">{errors.password.message}</p>}
+            {!isLogin && (
+              <>
+                <input
+                  type="password"
+                  placeholder="Confirm password"
+                  {...register('confirmPassword')}
+                  className={errors.confirmPassword ? 'input-error' : ''}
+                />
+                {errors.confirmPassword && <p className="error-message">{errors.confirmPassword.message}</p>}
+              </>
+            )}
+            {isLogin && <p className="forgot-password">Forgot password?</p>}
+            <button type="submit" className="auth-submit">Submit</button>
+          </form>
+
+
+          <button className="google-signin"><img src={Gooogleimg} alt='' />Continue with Google</button>
+          <div className="auth-divider">
+            <span>Or</span>
+          </div>
+          <p className="auth-switch">
+            {isLogin
+              ? 'Not a member? Sign up'
+              : 'Already a member? Login'}
+
+          </p>
+
           <button
-            className={isUser ? 'active' : ''}
-            onClick={() => setIsUser(true)}>
-            User
+            onClick={() => setIsLogin(!isLogin)}
+            className="google-signin">
+            {isLogin ? 'Create your account' : 'Login'}
           </button>
-          <button
-            className={!isUser ? 'active' : ''}
-            onClick={() => setIsUser(false)}>
-            Owner
-          </button>
-        </div>
-        <form onSubmit={handleSubmit(onSubmit)} className="auth-form">
-          {!isLogin && (
-            <>
-              <input
-                type="text"
-                placeholder="Full name"
-                {...register('fullName')}
-                className={errors.fullName ? 'input-error' : ''}
-              />
-              {errors.fullName && <p className="error-message">{errors.fullName.message}</p>}
-            </>
-          )}
-          <input
-            type="email"
-            placeholder="Email address"
-            {...register('email')}
-            className={errors.email ? 'input-error' : ''}
-          />
-          {errors.email && <p className="error-message">{errors.email.message}</p>}
-          <input
-            type="password"
-            placeholder="Password"
-            {...register('password')}
-            className={errors.password ? 'input-error' : ''}
-          />
-          {errors.password && <p className="error-message">{errors.password.message}</p>}
-          {!isLogin && (
-            <>
-              <input
-                type="password"
-                placeholder="Confirm password"
-                {...register('confirmPassword')}
-                className={errors.confirmPassword ? 'input-error' : ''}
-              />
-              {errors.confirmPassword && <p className="error-message">{errors.confirmPassword.message}</p>}
-            </>
-          )}
-          {isLogin && <p className="forgot-password">Forgot password?</p>}
-          <button type="submit" className="auth-submit">Submit</button>
-        </form>
-       
-
-        <button className="google-signin"><img src={Gooogleimg} alt='' />Continue with Google</button>
-        <div className="auth-divider">
-          <span>Or</span>
-        </div>
-        <p className="auth-switch">
-          {isLogin
-            ? 'Not a member? Sign up'
-            : 'Already a member? Login'}
-
-        </p>
-
-        <button
-          onClick={() => setIsLogin(!isLogin)}
-          className="google-signin">
-          {isLogin ? 'Create your account' : 'Login'}
-        </button>
         </div>
       </div>
     </div>
