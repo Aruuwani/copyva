@@ -19,6 +19,7 @@
   
   .Web_logo img {
     height: 40px;
+    object-fit: contain;
   }
   
   .Header_btns {
@@ -178,6 +179,7 @@
   justify-content: center;
   gap: 50px;
   padding: 0px;
+  overflow-x: auto;
 }
 .user-component .App, .user-component .tab-content .tabs+div {
   background: #fafafa;
@@ -211,6 +213,7 @@
   padding: 0px;
   transition: .5s all;
   position: relative;
+  white-space: pre;
 }
 .user-component .tab-content .tabs>button:hover, .user-component .tab-content .tabs>button.activeitem{
   background: linear-gradient(180deg, #F4C05C 0%, #D8A136 100%) !important;
@@ -281,4 +284,104 @@ button.explore-button {
   font-weight: 700;
   line-height: 23.44px;
   text-align: left;
+}
+
+
+@media (max-width:767px){
+  .user-icon, .Header_btns a img {
+    width: 32px;
+    height: 32px;
+    margin: 0px;
+}
+.side-menu-content {
+  height: 100%;
+  overflow-y: auto;
+}
+  .side-menu {
+    left: 0px;
+    right: 0px;
+    width: 100%;
+    top: 30%;
+    border-radius: 16px 16px 0px 0px;
+}
+.side-menu-content h3 {
+  font-size: 24px;
+  line-height: 30px;
+  margin-top: 20px;
+}
+.side-menu-content ul li a {
+  font-size: 20px;
+  line-height: 30px;
+}
+.user-component .tab-content .tabs button {
+  font-size: 16px;
+  line-height: 24px;
+
+}
+.user-component .tab-content .tabs {
+  min-height: 48px;
+  overflow-x: auto;
+  justify-content: center;
+  padding: 0 15px;
+  gap: 20px;
+  box-shadow: 0px 3.74px 3.74px 0px #0000000D;
+  margin-bottom: 3px;
+}
+.user-component .no-purchases-content h3 {
+  font-size: 24px;
+  line-height: 36px;
+}
+.user-component .no-purchases-content p {
+  font-size: 16px;
+  line-height: 24px;
+}
+button.explore-button {
+  max-width: 235px;
+  min-height: 42px;
+  font-size: 16px;
+  line-height: 16.41px;
+  border-radius: 8px;
+  font-weight: 500;
+}
+.no-purchases-content {
+  margin-top: 20px;
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  right: 15px;
+  transform: translateY(-50%);
+}
+.user-component .App, .user-component .tab-content .tabs+div {
+  background: #fff;
+  padding-top: 0px;
+}
+.user-component .no-purchases {
+  max-width: 100%;
+  padding: 20px 15px 0px;
+  border: 0px;
+}
+.user-component .purchases-list {
+  max-width: 100%;
+  padding: 20px 15px 70px;
+  border: 0px;
+}
+.user-component .purchases-list form.profile_setting {
+  padding: 0px;
+}
+}
+@media (max-width:479px){
+  .Web_logo img {
+    height: fit-content;
+    object-fit: contain;
+    width: 60px;
+}
+.user-component .no-purchases {
+  max-width: 100%;
+  padding: 0px 15px;
+  border: 0px;
+}
+.user-component .App, .user-component .tab-content .tabs+div {
+  background: white;
+  /* padding-top: 20px; */
+}
 }

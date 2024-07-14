@@ -61,7 +61,7 @@ const Header = () => {
             {isLoggedIn ? (
               <div className="profile-container" onClick={toggleMenu}>
                 <img src={UserIcon} alt="user_icon" className="user-icon" />
-                <div className="profile_name"><span className="profile_name" >{userProfile.fullName}</span>
+                <div className="profile_name d-md-block d-none"><span className="profile_name" >{userProfile.fullName}</span>
                   <span className="view_profile" >View profile</span>
                 </div>
 

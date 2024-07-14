@@ -37,7 +37,7 @@ const Buylicenceform = () => {
                 />
                 <label>Permission to repost the content/video without any edits</label>
             </div>
-            <button type="button" onClick={nextStep} className='btn_three'>Next</button>
+            <span className='btn_mobis'><button type="button" onClick={nextStep} className='btn_three'>Next</button></span>
         </div>
     );
 
@@ -64,7 +64,7 @@ const Buylicenceform = () => {
                 />
                 <label>Specific / Custom licence</label>
             </div>
-            <button type="button" onClick={nextStep} className='btn_three'>Next</button>
+            <span className='btn_mobis'><button type="button" onClick={nextStep} className='btn_three'>Next</button></span>
         </div>
     );
 
@@ -107,7 +107,7 @@ const Buylicenceform = () => {
                 />
                 <label>Set a discussion with copyva team</label>
             </div>
-            <button type="button" onClick={nextStep} className='btn_three'>Next</button>
+            <span className='btn_mobis'><button type="button" onClick={nextStep} className='btn_three'>Next</button></span>
         </div>
     );
 
@@ -126,7 +126,7 @@ const Buylicenceform = () => {
                 />
                 <label>0 to 50,000 subscribers</label>
             </div>
-            <button type="button" onClick={nextStep} className='btn_three'>Next</button>
+            <span className='btn_mobis'><button type="button" onClick={nextStep} className='btn_three'>Next</button></span>
         </div>
     );
 
@@ -159,11 +159,11 @@ const Buylicenceform = () => {
                 />
                 <label>Just few seconds of content will be used</label>
             </div>
-            <div className='btn_Twowrapper'>
+            <span className='btn_mobis'><div className='btn_Twowrapper'>
 
                 <button type="button" onClick={() => { window.location.href = "/checkout"; }}>Add to Cart</button>
                 <button type="button" onClick={() => { window.location.href = "/payment"; }}>Buy Now</button>
-            </div>
+            </div></span>
 
 
         </div>

@@ -4,9 +4,145 @@
   height: 100vh;
   background: #f5f5f5;
 }
+  
+  .auth-left {
+    width: 100%;
+    background: url('../../assets/loginbg.jpeg') no-repeat center center; /* Add your background image here */
+    background-size: cover;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    padding: 3rem;
+    padding: 3rem;
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    height: 106ch;
+    max-width: 40%;
+  }
+  
+  .auth-welcome {
+    font-family: Poppins;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 48px;
+    text-align: left;
+    margin-top: 50px;
+    margin-bottom: 0px;
+  }
+  .auth-description {
+    font-family: Roboto;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 38px;
+}
+  
+  .auth-welcome, .auth-description {
+    margin: 1rem 0;
+    /* font-size: 25px; */
+    text-align: start;
+  }
+  
+  .auth-image {
+    width: 100%;
+    height: auto;
+    /* margin-top: 2rem; */
+  }
+  
+  .auth-right {
+    width: 100%;
+    height: 106ch;
+    margin: 0px 0% 0px 40%;
+    padding: 0px 4rem;
+    background: #fff;
+    overflow-x: auto;
+  }
+  .auth_right_content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 600px;
+    height: 100%;
+  }
+  .auth-title {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    text-align: start;
+  }
+  
+  .auth-toggle {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1rem;
+  }
+  
+  .auth-toggle button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 1rem;
+    font-size: 1rem;
+    color: gray;
+  }
+  
+  .auth-toggle .active {
+    border-bottom: 2px solid black;
+    color: black;
+  }
+  
+  .auth-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .auth-form input {
+    min-height: 64px;
+    padding: 12px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    border: 1px solid #9D9C9C;
+    border-radius: 5px;
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left; 
+  }
+  .auth-submit {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #E9484A;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    min-height: 58px;
+    font-family: Poppins;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 36px;
+    text-align: center;
+  }
+  
+  .forgot-password {
+    margin: 0.5rem 0.5;
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: start;
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+  }
+  
 
 .auth-left {
-  width: 35%;
+  width: 100%;
   background: url("../../assets/loginbg.jpeg") no-repeat center center; /* Add your background image here */
   background-size: cover;
   color: white;
@@ -22,21 +158,38 @@
   left: 0;
 }
 
-.auth-welcome {
-  font-family: Poppins;
-  font-size: 32px;
-  font-weight: 600;
-  line-height: 48px;
-  text-align: left;
-  margin-top: 50px;
-  margin-bottom: 0px;
-}
 .auth-description {
   font-family: Roboto;
   font-size: 22px;
   font-weight: 400;
   line-height: 38px;
 }
+  .auth-toggle {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    border: 1px solid black; /* Adjust the color as needed */
+    border-radius: 10px; /* Adjust the radius as needed */
+    padding: 5px;
+    width: 70%;
+    /* Center the component */
+  }
+  
+  .auth-toggle button {
+    background-color: transparent;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    width: 50%; /* Adjust to match the design */
+  }
+  
+  .auth-toggle button.active {
+    background-color: black;
+    color: white; 
+  }
+  
 
 .auth-welcome,
 .auth-description {
@@ -49,26 +202,6 @@
   width: 100%;
   height: auto;
   /* margin-top: 2rem; */
-}
-
-.auth-right {
-  width: 100%;
-  height: 100%;
-  margin: 0px 0% 50px 35%;
-  padding: 0px 4rem;
-  background: #fff;
-}
-.auth_right_content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  max-width: 50%;
-  height: 100%;
-}
-.auth-title {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  text-align: start;
 }
 
 .auth-toggle {
@@ -111,7 +244,7 @@
 }
 
 .auth-form .input-error {
-  /* border-color: red; */
+  border-color: red;
 }
 
 .auth-submit {
@@ -218,22 +351,113 @@
 
 .auth-divider span {
   flex-grow: 1;
-  border-bottom: 2px solid #ccc;
+  /* border-bottom: 2px solid #ccc; */
   text-align: center;
   line-height: 0.1em;
   margin: 0 10px;
   position: relative;
 }
-.auth-divider span::before {
-  content: "";
-  flex-grow: 1;
-  border-bottom: 2px solid #ccc;
-  margin-right: 10px;
+
+  
+  .auth-divider span {
+    flex-grow: 1;
+    /* border-bottom: 2px solid #ccc; */
+    text-align: center;
+    line-height: 0.1em;
+    margin: 0 10px;
+    position: relative;
+  }
+  .auth-divider span::before {
+    content: '';
+    flex-grow: 1;
+    border-bottom: 2px solid #ccc;
+    margin-right: 10px;
+    width: calc(100% - 54%);
+    display: block;
+    left: -10px;
+    position: absolute;
+  }
+  p.error-message {
+    text-align: left;
+    color: red;
+}
+  .auth-divider span::after {
+    content: '';
+    flex-grow: 1;
+    border-bottom: 2px solid #ccc;
+    content: '';
+    flex-grow: 1;
+    border-bottom: 2px solid #ccc;
+    margin-right: 10px;
+    width: calc(100% - 54%);
+    display: block;
+    right: -20px;
+    position: absolute;
+  }
+  .auth-left h1.auth-logo {
+    text-align: left;
+    margin-bottom: 50px;
 }
 
-.auth-divider span::after {
-  content: "";
-  flex-grow: 1;
-  border-bottom: 2px solid #ccc;
-  margin-left: 7px;
+  @media (max-width:767px){
+    .auth-right {
+      margin: 0px;
+      padding: 0px;
+      height: 100%;
+  }
+  .mobi_login {
+    box-shadow: 0px 1px 2px 0px #00000026;
+    height: 50px;
+    align-items: center;
+    padding: 0px 21px;
+    gap: 20px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
 }
+.auth-title {
+  font-size: 20px;
+}
+.auth_right_content {
+  max-width: 100%;
+  padding: 6rem 20px 4rem;
+}
+.auth-form input {
+  min-height: 42px;
+  border-radius: 8px;
+}
+.forgot-password {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 12px;
+}
+.auth-submit {
+  padding: 10px;
+  background-color: #E9484A;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  min-height: 42px;
+  font-size: 14px;
+  line-height: 21px;
+}
+.auth-toggle {
+  width: 100%;
+}
+.auth-toggle button.active {
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Poppins';
+}
+.google-signin {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+  min-height: 42px;
+}
+.auth-switch {
+  font-size: 12px;
+  line-height: 18px;
+}
+  }

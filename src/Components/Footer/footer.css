@@ -173,6 +173,19 @@ section.Footer hr {
     section.Footer {
         margin-top: 50px;
     }
+    .Top_header {
+        padding: 0px;
+        justify-content: space-between;
+        gap: 20px;
+        border: 0px;
+    }
+    .Top_header h2 {
+        font-size: 20px;
+        line-height: 30px;
+        /* width: 100%; */
+        white-space: pre;
+        margin: 0px;
+    }
     section.Footer {
         padding: 30px 0px 15px;
     }
@@ -237,6 +250,20 @@ section.Footer hr {
         background: linear-gradient(146.31deg, #F4C05C 13.27%, #D29A2E 90.77%);
         cursor: pointer;
     }
+    .Top_header .iput_search span.search_icon {
+        width: 24px;
+    height: 24px;
+    background: transparent;
+    border: 1px solid;
+    position: unset;
+    transform: unset;
+    }
+    .Top_header .iput_search span.search_icon svg {
+        width: 12px;
+        height: 12px;
+        position: relative;
+        top: -2px;
+    }
     p.Copy_right {
         font-family: Roboto;
         font-size: 8px;
@@ -265,6 +292,12 @@ section.Footer hr {
     }
     .Bottom_raw .Footer_menu ul {
         justify-content: center;
+    }
+    .Top_header .iput_search {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 15px;
     }
 }
 

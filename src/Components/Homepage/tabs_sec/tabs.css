@@ -79,7 +79,8 @@ font-size: 24px;
     }
     .Tab_content {
         grid-template-columns: 1fr 1fr;
-        grid-gap: 15px;
+        padding: 0px !important;
+        gap: 40px;
     }
     .btn_one {
         width: 100%;
@@ -111,6 +112,7 @@ font-size: 24px;
         line-height: 27px;
         text-align: left;
     }
+
 }
 @media (max-width:389px){
     .tabs_section ul.react-tabs__tab-list h4 {

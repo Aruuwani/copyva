@@ -62,7 +62,7 @@ const TabsComponent = () => {
           </div>
           <div>
           <div className="main_pageWidth">
-            <div>
+            <div className="d-md-block d-none">
               <Filter />
             </div>
 

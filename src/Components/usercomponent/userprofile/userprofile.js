@@ -8,7 +8,7 @@ const UserProfile = () => {
     return (
         <div className="purchases-list">
         <Form className='profile_setting'>
-        <h1 className='text-start mb-3'>Bank account</h1>
+        <h1 className='text-start mb-3 d-none d-md-block'>Bank account</h1>
          <div className='profile_Div'>
             <img src={ProfileImg} alt='ProfileImg' />
 <div className='Profile_content'>
@@ -84,7 +84,7 @@ const UserProfile = () => {
                 </Col>
 
             </Row>
-            <button  className='form_btn mt-2'>Update</button>
+            <span className='btn_udate'><button  className='form_btn mt-2'>Update</button></span>
         </Form>
         </div>
     )

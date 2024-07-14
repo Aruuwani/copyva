@@ -735,6 +735,9 @@ line-height: 24px;
   align-items: center;
   justify-content: center;
 }
+form.Progress_form {
+  margin-top: 10px !important;
+}
 .Dashboard_rightContent .custom-form .note_secwrap p {
   text-align: left;
   font-size: 14px;
@@ -758,5 +761,12 @@ line-height: 24px;
 .Predefined_price .customize_btns button {
   max-width: 100%;
   flex: 1;
+}
+form.Progress_form .check_progress label {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19px;
+  text-align: left;
+  margin: 0px;
 }
 }

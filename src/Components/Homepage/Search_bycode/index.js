@@ -51,7 +51,7 @@ const SearchBycode = ({ purchases }) => {
                     </div>
                     <div >
                         <div className="main_pageWidth">
-                        <div>
+                        <div className="d-md-block d-none">
 
                             {activeTabsopen === "Music" && <Filter />}
                         </div>
@@ -74,10 +74,10 @@ const SearchBycode = ({ purchases }) => {
                     <div className="left_contentfooter">
 
 
-                        <button onClick={handlePlayPause}>{isPlaying ? '' : ''}<img src={PreTrack} alt="PreTrack" /></button>
+                        <button onClick={handlePlayPause}  className="d-md-block d-none">{isPlaying ? '' : ''}<img src={PreTrack} alt="PreTrack" /></button>
                         <audio ref={audioRef} src={purchases && purchases[currentTrack]?.audio}></audio>
                         <span className="play_btn"><img src={VideoIcon} alt="VideoIcon" /></span>
-                        <button onClick={handleNext}><img src={nextTrack} alt="nextTrack" /></button>
+                        <button onClick={handleNext}  className="d-md-block d-none"><img src={nextTrack} alt="nextTrack" /></button>
 
                         <h3>{purchases && purchases[currentTrack]?.title}<span>by Lorem</span></h3>
 

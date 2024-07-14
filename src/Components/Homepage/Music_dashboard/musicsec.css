@@ -10,6 +10,9 @@
 .tabs_section ul.react-tabs__tab-list li.react-tabs__tab--selected {
     border-bottom: 3px solid orange;
 }
+section.Creator_Div+section.Container.tabs_section ul.react-tabs__tab-list li.react-tabs__tab--selected {
+    border-color: #000;
+}
 section.Music_sec {
     padding: 0px 30px;
 }

@@ -78,3 +78,56 @@ form.profile_setting button {
     text-align: left;
     display: flex;
 }
+
+span.btn_udate {
+    display: flex;
+}
+@media (max-width:767px){
+    .Top_header .iput_search input {
+        display: none;
+    }
+    .profile_Div img {
+        object-fit: contain;
+        width: 75px;
+        height: 75px;
+    }
+    .profile_Div h5 {
+        font-size: 16px;
+        line-height: 18.75px;
+        margin-bottom: 5px;
+    }
+    .profile_Div p {
+        font-size: 10px;
+        line-height: 11.72px;
+        margin-bottom: 10px;
+    }
+    .user-component .purchases-list form.profile_setting  button {
+        min-width: 104px;
+        min-height: 32px;
+        border-radius: 8px;
+        font-size: 14px;
+        line-height: 16.41px;
+    }
+    .user-component .purchases-list form.profile_setting  span.btn_udate button {
+        min-height: 42px !important;
+        border-radius: 4px !important;
+        font-size: 14px !important;
+        line-height: 16.41px !important;
+    }
+    .user-component .purchases-list input, .user-component .purchases-list select {
+        border-color: #181717;
+        min-height: 42px;
+        font-size: 12px;
+    }
+    .user-component .purchases-list label.form-label {
+        font-size: 12px;
+        line-height: 18px;
+    }
+    .profile_setting .row {
+        gap: 13px;
+    }
+    form.profile_setting h1.text-start {
+        font-size: 20px;
+        line-height: 23.44px;
+    }
+}

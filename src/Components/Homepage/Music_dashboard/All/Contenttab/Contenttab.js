@@ -96,6 +96,10 @@ import { IoVideocamOutline } from "react-icons/io5";
 import HearIcon from "../../../../../assets/heart.svg";
 import QullSound from "../../../../../assets/quill_sound.svg";
 import SolarLink from "../../../../../assets/solar_link-bold.svg";
+import filterIcon from "../../../../../assets/filter.png";
+import cartFooter from "../../../../../../../copyva/src/assets/cart_foter.png";
+
+
 
 const Contenttab = () => {
   const musicItems = [
@@ -145,6 +149,8 @@ const Contenttab = () => {
           <div >
             <div className="Top_header"><h2>List of Content</h2>
               <div className="iput_search">
+            <div className='d-md-none d-block filter_icon'><img src={filterIcon} alt='filterIcon' /></div>
+
                 <input type="text" placeholder="Search by genre, mood, artist" />
                 <span className="search_icon"><button><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="#181717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -153,7 +159,7 @@ const Contenttab = () => {
               </div>
             </div>
             <table className="purchase_table">
-              <thead>
+              <thead className="thheader">
                 <tr>
                   <th>Title</th>
                   <th>Genres</th>
@@ -168,9 +174,9 @@ const Contenttab = () => {
                 {musicItems.map((purchase, index) => (
                   <tr key={index}>
                     <td> <span className="play_btn p-2"><img src={VideoIcon} alt="VideoIcon" /></span>{purchase.title}</td>
-                    <td>{purchase.genre}</td>
-                    <td>{purchase.mood}</td>
-                    <td>{purchase.artist}</td>
+                    <td className="d-md-inline-block d-none">{purchase.genre}</td>
+                    <td className="d-md-inline-block d-none">{purchase.mood}</td>
+                    <td className="d-md-inline-block d-none">{purchase.artist}</td>
                     <td>
                       {purchase.category === "Music" ? (
 
@@ -189,7 +195,7 @@ const Contenttab = () => {
 
                     </td>
                     {/* <td><img src={HearIcon} alt="SolarLink" /></td> */}
-                    <td><button className="btn_Two">Buy licence</button></td>
+                    <td><button className="btn_Two"><img src={cartFooter} alt="" className="d-md-none d-block"/><span className="d-md-block d-none">Buy license</span></button></td>
                   </tr>
                 ))}
               </tbody>

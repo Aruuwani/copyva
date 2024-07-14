@@ -17,7 +17,7 @@ const ProfileSettings = () => {
          </div>
 
 
-            <Row>
+            <Row >
                 <Col md={6}>
                     <Form.Group controlId="name">
                         <Form.Label className="statement_form">Name</Form.Label>
@@ -111,7 +111,7 @@ const ProfileSettings = () => {
                 </Col>
 
             </Row>
-            <button >Update</button>
+            <span className='btn_udate'><button >Update</button></span>
         </Form>
     )
 }

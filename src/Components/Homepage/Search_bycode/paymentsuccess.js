@@ -7,7 +7,7 @@ import { Modal, Button, Form, InputGroup } from 'react-bootstrap';
 import nounsuccess from "../../../../src/assets/noun-success.png";
 const PaymentSuccess = ({ show, handleClose }) => {
     return (
-        <Modal show={show} onHide={handleClose} centered>
+        <Modal show={show} onHide={handleClose} centered className='submit_popup'>
             <Modal.Header closeButton></Modal.Header>
             <Modal.Body className="text-center" style={{ paddingTop: "10px" }}>
 

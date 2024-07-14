@@ -6,6 +6,8 @@ import VideoIcon from "../../../../src/assets/video_icon.svg";
 import HearIcon from "../../../../src/assets/heart.svg";
 import QullSound from "../../../../src/assets/quill_sound.svg";
 import SolarLink from "../../../../src/assets/solar_link-bold.svg";
+import DwnloadBtn from "../../../../src/assets/downloade_btn.png";
+import cartFooter from "../../../../src/assets/cart_foter.png";
 
 const FavouritiesList = ({ purchases }) => {
   const [currentTrack, setCurrentTrack] = useState(0);
@@ -42,7 +44,7 @@ const FavouritiesList = ({ purchases }) => {
               </svg></button></span>
             </div>
           </div>
-          <table className="purchase_table">
+          <table className="purchase_table d-md-table d-none">
             <thead>
               <tr>
                 <th>Title</th>
@@ -66,6 +68,74 @@ const FavouritiesList = ({ purchases }) => {
               ))}
             </tbody>
           </table>
+
+          <div className="d-md-none d-block purchase_list">
+                        <div>
+                            <ul>
+                            <li>
+                                    <span className="vide_content">
+                                        <img src={VideoIcon} alt="VideoIcon" />
+                                       
+                                       
+                                            <h3>
+                                            Lorem ipsum dolor sit 
+                                            <p>by Lorem</p>
+                                            </h3>
+                                        </span>
+                                        <span className="cart_icons">
+                                        <img src={HearIcon} alt="SolarLink" />
+<img src={cartFooter} alt="" className="d-md-none d-block"/>
+                                        </span>
+                                </li>
+                                <li>
+                                    <span className="vide_content">
+                                        <img src={VideoIcon} alt="VideoIcon" />
+                                       
+                                       
+                                            <h3>
+                                            Lorem ipsum dolor sit 
+                                            <p>by Lorem</p>
+                                            </h3>
+                                        </span>
+                                        <span className="cart_icons">
+                                        <img src={HearIcon} alt="SolarLink" />
+<img src={cartFooter} alt="" className="d-md-none d-block"/>
+                                        </span>
+                                </li>
+                                <li>
+                                    <span className="vide_content">
+                                        <img src={VideoIcon} alt="VideoIcon" />
+                                       
+                                       
+                                            <h3>
+                                            Lorem ipsum dolor sit 
+                                            <p>by Lorem</p>
+                                            </h3>
+                                        </span>
+                                        <span className="cart_icons">
+                                        <img src={HearIcon} alt="SolarLink" />
+<img src={cartFooter} alt="" className="d-md-none d-block"/>
+                                        </span>
+                                </li>
+                                <li>
+                                    <span className="vide_content">
+                                        <img src={VideoIcon} alt="VideoIcon" />
+                                       
+                                       
+                                            <h3>
+                                            Lorem ipsum dolor sit 
+                                            <p>by Lorem</p>
+                                            </h3>
+                                        </span>
+                                        <span className="cart_icons">
+                                        <img src={HearIcon} alt="SolarLink" />
+<img src={cartFooter} alt="" className="d-md-none d-block"/>
+                                        </span>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
 
         </div>
       ) : (
@@ -100,10 +170,10 @@ const FavouritiesList = ({ purchases }) => {
           <div className="left_contentfooter">
 
 
-            <button onClick={handlePlayPause}>{isPlaying ? '' : ''}<img src={PreTrack} alt="PreTrack" /></button>
+            <button onClick={handlePlayPause}  className="d-md-block d-none">{isPlaying ? '' : ''}<img src={PreTrack} alt="PreTrack" /></button>
             <audio ref={audioRef} src={purchases[currentTrack].audio}></audio>
             <span className="play_btn"><img src={VideoIcon} alt="VideoIcon" /></span>
-            <button onClick={handleNext}><img src={nextTrack} alt="nextTrack" /></button>
+            <button onClick={handleNext}  className="d-md-block d-none"><img src={nextTrack} alt="nextTrack" /></button>
 
             <h3>{purchases[currentTrack].title}<span>by Lorem</span></h3>
 
@@ -117,8 +187,8 @@ const FavouritiesList = ({ purchases }) => {
 
             </div>
             {/* <input type="range" min="0" max="1" step="0.01" onChange={handleVolumeChange} /> */}
-            <button className="btn_One">Download</button>
-            <button className="btn_Two">Buy license</button>
+            <button className="btn_One"><img src={DwnloadBtn} alt="" className="d-md-none d-block"/><span className="d-md-block d-none">Download</span></button>
+            <button className="btn_Two"><img src={cartFooter} alt="" className="d-md-none d-block"/><span className="d-md-block d-none">Buy license</span></button>
           </div>
         </div>
       </div>

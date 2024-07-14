@@ -6,6 +6,7 @@
     overflow-x: hidden;
     overflow-y: auto;
     position: relative;
+    padding-bottom: 50px;
 }
 .mobile_slider button.slick-arrow {
     background: transparent;

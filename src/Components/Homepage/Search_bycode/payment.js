@@ -17,7 +17,7 @@ const Payment = () => {
 
     return (
         <Container className='Payment_option'>
-            <div className="mt-3">
+            <div className="pb-1">
                 <h2 className="d-flex align-items-center">
                     <MdOutlineKeyboardArrowLeft style={{ width: "20" }} />
                     Payment options

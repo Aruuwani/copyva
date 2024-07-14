@@ -305,10 +305,14 @@ button.btn_three:hover, .btn_Twowrapper>button:last-child:hover {
     }
   
     .Header_btns button:first-child {
-      padding: 10px;
+      padding: 0px 9px;
       min-height: 32px;
+      margin: 0px;
     }
-  
+    .side-menu-content span.searchbycodestep {
+      font-size: 14px;
+      line-height: 21px;
+  }
     .Header_btns button:last-child {
       max-width: 68px;
       min-height: 32px;
@@ -331,6 +335,29 @@ button.btn_three:hover, .btn_Twowrapper>button:last-child:hover {
       width: 32px;
       height: 32px;
     }
+    span.btn_mobis {
+      position: fixed;
+      left: 0px;
+      bottom: 0px;
+      width: 100%;
+      background: #fff;
+      padding: 10px;
+      box-shadow: 0px -3px 4px 0px #0000000D;
+  }
+  .side-menu-content button.btn_three, .btn_Twowrapper button {
+    position: unset;
+    font-size: 16px !important;
+    font-weight: 500;
+    line-height: 18.75px !important;
+    min-height: 48px !important;
+    min-width: 100px !important;
+    border-radius: 8px !important;
+    max-width: 100% !important;
+    width: 100% !important;
+}
+span.btn_mobis .btn_Twowrapper {
+  position: unset;
+}
   }
   
   @media (max-width: 380px) {
