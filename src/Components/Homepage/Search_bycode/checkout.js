@@ -89,6 +89,7 @@
 import React from "react";
 import { Container, Row, Col, Card, Form, Button } from "react-bootstrap";
 import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 import { MdDeleteOutline } from "react-icons/md";
 import Frame from "../../../../src/assets/Frame 22.png";
@@ -124,7 +125,7 @@ const Payment = () => {
           >
             <div className="">
               <h2 className="d-flex align-items-center">
-                <MdOutlineKeyboardArrowLeft style={{ width: "20" }} />
+                <Link to={{ pathname: '/serch_bycode', state: { initialStep: 5 } }} style={{ textDecoration: 'none', color: 'black' }}> <MdOutlineKeyboardArrowLeft style={{ width: "20" }} /></Link>
                 Checkout page
               </h2>
             </div>
@@ -174,67 +175,67 @@ const Payment = () => {
 
             <div className="mobile_checkout d-md-none d-block">
               <ul className="music-item">
-              <li>
-                 
-                 <div className="d-flex gap-2">
-                 <img src={Frame} alt="video" className="music-image" />
+                <li>
 
-                   <div><p className="music-title">Lorem ipsum dolor sit </p>
-                   <p className="music-artist">by Lorem</p>
-                   <div>
-                     <p className="price_bottom">₹1500 per Year</p>
-                     <p className="bottom_text">Promotional, Branded, Advert</p>
-                     <p className="bottom_text">Standard, Web, Social Media & Internal , 1 Edits</p>
-                   </div>
-                   </div>
-                 </div>
+                  <div className="d-flex gap-2">
+                    <img src={Frame} alt="video" className="music-image" />
 
-                 <span> 
-                   <MdDeleteOutline
-                       style={{
-                         color: "red",
-                         fontSize: "25px",
-                         background: "#f0d9d9",
-                         borderRadius: "18px",
-                         padding: "5px",
-                       }}
-                     /></span>
-               </li>
-               <li>
-                 
-                 <div className="d-flex gap-2">
-                 <img src={Frame} alt="video" className="music-image" />
+                    <div><p className="music-title">Lorem ipsum dolor sit </p>
+                      <p className="music-artist">by Lorem</p>
+                      <div>
+                        <p className="price_bottom">₹1500 per Year</p>
+                        <p className="bottom_text">Promotional, Branded, Advert</p>
+                        <p className="bottom_text">Standard, Web, Social Media & Internal , 1 Edits</p>
+                      </div>
+                    </div>
+                  </div>
 
-                   <div><p className="music-title">Lorem ipsum dolor sit </p>
-                   <p className="music-artist">by Lorem</p>
-                   <div>
-                     <p className="price_bottom">₹1500 per Year</p>
-                     <p className="bottom_text">Promotional, Branded, Advert</p>
-                     <p className="bottom_text">Standard, Web, Social Media & Internal , 1 Edits</p>
-                   </div>
-                   </div>
-                 </div>
+                  <span>
+                    <MdDeleteOutline
+                      style={{
+                        color: "red",
+                        fontSize: "25px",
+                        background: "#f0d9d9",
+                        borderRadius: "18px",
+                        padding: "5px",
+                      }}
+                    /></span>
+                </li>
+                <li>
 
-                 <span> 
-                   <MdDeleteOutline
-                       style={{
-                         color: "red",
-                         fontSize: "25px",
-                         background: "#f0d9d9",
-                         borderRadius: "18px",
-                         padding: "5px",
-                       }}
-                     /></span>
-               </li>
+                  <div className="d-flex gap-2">
+                    <img src={Frame} alt="video" className="music-image" />
+
+                    <div><p className="music-title">Lorem ipsum dolor sit </p>
+                      <p className="music-artist">by Lorem</p>
+                      <div>
+                        <p className="price_bottom">₹1500 per Year</p>
+                        <p className="bottom_text">Promotional, Branded, Advert</p>
+                        <p className="bottom_text">Standard, Web, Social Media & Internal , 1 Edits</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <span>
+                    <MdDeleteOutline
+                      style={{
+                        color: "red",
+                        fontSize: "25px",
+                        background: "#f0d9d9",
+                        borderRadius: "18px",
+                        padding: "5px",
+                      }}
+                    /></span>
+                </li>
               </ul>
             </div>
             <div className="chcekout_btn">
-                <div className="price_end d-md-none d-block">
-                    <p>Total</p>
+              <div className="price_end d-md-none d-block">
+                <p>Total</p>
 
-                    <span className="mt-1 price_div"> ₹3500 <MdOutlineKeyboardArrowLeft style={{ width: "20" }} /></span>
-                    
-                </div>
+                <span className="mt-1 price_div"> ₹3500 <MdOutlineKeyboardArrowLeft style={{ width: "20" }} /></span>
+
+              </div>
               <Button
                 variant="warning"
                 className="w-50 btn_one"

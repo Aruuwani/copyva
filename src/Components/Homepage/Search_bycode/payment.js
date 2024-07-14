@@ -19,7 +19,7 @@ const Payment = () => {
         <Container className='Payment_option'>
             <div className="pb-1">
                 <h2 className="d-flex align-items-center">
-                    <MdOutlineKeyboardArrowLeft style={{ width: "20" }} />
+                    <Link to={{ pathname: '/serch_bycode', state: { initialStep: 5 } }} style={{ textDecoration: 'none', color: 'black' }}><MdOutlineKeyboardArrowLeft style={{ width: "20" }} /></Link>
                     Payment options
                 </h2>
             </div>

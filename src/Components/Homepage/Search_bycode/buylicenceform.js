@@ -1,7 +1,13 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
-const Buylicenceform = () => {
-    const [step, setStep] = useState(1);
+import { useNavigate } from 'react-router-dom';
+const Buylicenceform = ({ initialStep = 1 }) => {
+    const [step, setStep] = useState(initialStep);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        setStep(initialStep);
+    }, [initialStep]);
 
     const nextStep = () => {
         setStep(prevStep => prevStep + 1);
@@ -12,6 +18,12 @@ const Buylicenceform = () => {
         setStep(prevStep => prevStep - 1);
     };
 
+    const checkoutHandler = () => {
+        navigate('/checkout')
+    }
+    const paymentHandler = () => {
+        navigate('/payment')
+    }
     const renderStep1 = () => (
         <div>
             { }
@@ -161,8 +173,8 @@ const Buylicenceform = () => {
             </div>
             <span className='btn_mobis'><div className='btn_Twowrapper'>
 
-                <button type="button" onClick={() => { window.location.href = "/checkout"; }}>Add to Cart</button>
-                <button type="button" onClick={() => { window.location.href = "/payment"; }}>Buy Now</button>
+                <button type="button" onClick={() => checkoutHandler()}>Add to Cart</button>
+                <button type="button" onClick={() => paymentHandler()}>Buy Now</button>
             </div></span>
 
 
