@@ -9,6 +9,8 @@ import VideoIcon from "../../../../src/assets/video_icon.svg";
 import HearIcon from "../../../../src/assets/heart.svg";
 import QullSound from "../../../../src/assets/quill_sound.svg";
 import SolarLink from "../../../../src/assets/solar_link-bold.svg";
+import DwnloadBtn from "../../../../src/assets/downloade_btn.png";
+import cartFooter from "../../../../src/assets/cart_foter.png";
 
 
 const SearchBycode = ({ purchases }) => {
@@ -68,18 +70,18 @@ const SearchBycode = ({ purchases }) => {
                 </div>
             </div>
 
-            <div className="player">
+            <div className="player && player">
                 <div className="play_botto">
 
                     <div className="left_contentfooter">
 
 
                         <button onClick={handlePlayPause}  className="d-md-block d-none">{isPlaying ? '' : ''}<img src={PreTrack} alt="PreTrack" /></button>
-                        <audio ref={audioRef} src={purchases && purchases[currentTrack]?.audio}></audio>
+                        <audio ref={audioRef} src={purchases && purchases[currentTrack].audio}></audio>
                         <span className="play_btn"><img src={VideoIcon} alt="VideoIcon" /></span>
                         <button onClick={handleNext}  className="d-md-block d-none"><img src={nextTrack} alt="nextTrack" /></button>
 
-                        <h3>{purchases && purchases[currentTrack]?.title}<span>by Lorem</span></h3>
+                        <h3>{purchases && purchases[currentTrack].title}<span>by Lorem</span></h3>
 
                     </div>
 
@@ -91,8 +93,8 @@ const SearchBycode = ({ purchases }) => {
 
                         </div>
                         {/* <input type="range" min="0" max="1" step="0.01" onChange={handleVolumeChange} /> */}
-                        <button className="btn_One">Download</button>
-                        <button className="btn_Two">Buy license</button>
+                        <button className="btn_One"><img src={DwnloadBtn} alt="" className="d-md-none d-block"/><span className="d-md-block d-none">Download</span></button>
+                        <button className="btn_Two"><img src={cartFooter} alt="" className="d-md-none d-block"/><span className="d-md-block d-none">Buy license</span></button>
                     </div>
                 </div>
             </div>

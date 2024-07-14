@@ -16,7 +16,7 @@ const Createuser = () => {
 <div className='Creator_user_sec'>
     <div className='Creator_sec'>
         <img src={Creator_Img} alt='Creator_Img' className='creator_user'/>
-        <div className='creator_heading'> <h4>Creator - Music/ Content <img src={Right_arrow} alt='Right_arrow' className='Mobi_arrow'/></h4>   <p>Sell the licence of your music/ content</p>
+        <div className='creator_heading'> <h4>Creator - Music/ Content <Link to='/dashboard/Music-upload'><img src={Right_arrow} alt='Right_arrow' className='Mobi_arrow'/></Link></h4>   <p>Sell the licence of your music/ content</p>
         
       
         </div>
@@ -25,7 +25,7 @@ const Createuser = () => {
 
     <div className='Creator_sec'>
         <img src={User_img} alt='Creator_Img' className='creator_user' />
-        <div className='creator_heading'> <h4>User - Music/ Content <img src={Right_arrow} alt='Right_arrow' className='Mobi_arrow'/></h4>
+        <div className='creator_heading'> <h4>User - Music/ Content  <Link to='/dashboard/upload-content'><img src={Right_arrow} alt='Right_arrow' className='Mobi_arrow'/></Link></h4>
         <p>Buy the music/ content of your choice</p>
         
         </div>

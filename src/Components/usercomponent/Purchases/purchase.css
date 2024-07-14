@@ -300,6 +300,10 @@ button.btn_Two:hover span {
     .right_footer, .left_contentfooter {
         gap: 10px;
     }
+    .player {
+        bottom: 0px;
+        position: fixed;
+    }
     .right_footer button.btn_One {
         padding: 0px !important;
         width: 30px;
