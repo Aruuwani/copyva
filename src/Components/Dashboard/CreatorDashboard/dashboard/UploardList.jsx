@@ -33,7 +33,7 @@ const UploardList = () => {
 
       <div class="Statement_page_firstcontent">
         <div>
-          <h4>Uploard List</h4>
+          <h4>Upload List</h4>
         </div>
         <div className='statement_search'>
         <CiSearch />

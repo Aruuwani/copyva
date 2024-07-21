@@ -61,10 +61,21 @@ const Auth = () => {
   return (
     <div className="auth-container">
       <div className="auth-left d-md-block d-none">
-        <h1 className="auth-logo"><img src={Main_logo} alt='Main_logo' /></h1>
+        {/* <h1 className="auth-logo"><img src={Main_logo} alt='Main_logo' /></h1> */}
         <p className="auth-welcome">Welcome to Copyva</p>
         <p className="auth-description">Your one-stop destination to buy & sell licenses</p>
         {/* <img src={loginbg} alt="" className="auth-image" /> */}
+        {!isLogin && !isUser && (
+        <div class="notes-container">
+          <h6 style={{ textAlign: 'start', color: "black", paddingLeft: "12px" }}>Notes</h6>
+          <ol>
+            <li>Copyva is only for copyright owners and its distributors</li>
+            <li>Copyva serves as a third party platform facilitating connections between copyright owners, distributors (organisation/agencies), and their customers in order to form licence agreements</li>
+            <li>Copyva does not issue licences under its own name.</li>
+          </ol>
+        </div>
+      )}
+
       </div>
       <div className="auth-right">
         <div className='d-lg-none d-flex mobi_login'><Link to='/' style={{ color: 'black', textDecoration: 'none' }}><img src={Login_div} alt='Login_div' /> Login</Link></div>

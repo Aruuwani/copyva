@@ -121,7 +121,9 @@ const handleChangeCase4 = (event) => {
     }
   });
 };
-
+const handleDivClick = (value) => {
+  setFormData({ ...formData, pricing: value });
+};
 const renderForm = () => {
   switch (currentStep) {
     case 1:
@@ -185,7 +187,8 @@ const renderForm = () => {
         <form className="Progress_form">
           <div>
             <h4>Licence to use music in public places as:</h4>
-            <div className="check_progress">
+            <div className="check_progress"
+            onClick={() => handleDivClick("Background")}>
               <input
                 type="radio"
                 name="pricing"
@@ -195,7 +198,7 @@ const renderForm = () => {
               />
               <label>Background</label>
             </div>
-            <div className="check_progress">
+            <div className="check_progress"   onClick={() => handleDivClick("BackgLive performanceround")}>
               <input
                 type="radio"
                 name="pricing"

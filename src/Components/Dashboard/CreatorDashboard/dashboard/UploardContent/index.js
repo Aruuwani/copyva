@@ -70,19 +70,19 @@ const UploardContent = () => {
         <div className='step_divForm'><p onClick={() => setActiveStep(4)} className={currentStep === 4 ? 'active' : ''}>Agreement</p><span>4</span></div>
     </div> */}
                 <div className="stepForm_part">
-                    <div className={`step_divForm ${currentStep > 1 ? 'stepCompleted' : ''}`}>
+                    <div className={`step_divForm ${currentStep > 1 ? 'stepCompleted' : ''}`} onClick={() => setCurrentStep(1)}>
                         <p onClick={() => setActiveStep(1)} className={currentStep === 1 ? 'active' : ''}>Content information</p>
                         <span>{currentStep >= 2 ? <img src={check} /> : 1}</span>
                     </div>
-                    <div className={`step_divForm ${currentStep > 2 ? 'stepCompleted' : ''}`}>
+                    <div className={`step_divForm ${currentStep > 2 ? 'stepCompleted' : ''}`} onClick={() => setCurrentStep(2)}>
                         <p onClick={() => setActiveStep(2)} className={currentStep === 2 ? 'active' : ''}>Content links</p>
                         <span>{currentStep >= 3 ? <img src={check} /> : 2}</span>
                     </div>
-                    <div className={`step_divForm ${currentStep > 3 ? 'stepCompleted' : ''}`}>
+                    <div className={`step_divForm ${currentStep > 3 ? 'stepCompleted' : ''}`} onClick={() => setCurrentStep(3)}>
                         <p onClick={() => setActiveStep(3)} className={currentStep === 3 ? 'active' : ''}>Permission to upload</p>
                         <span>{currentStep >= 4 ? <img src={check} /> : 3}</span>
                     </div>
-                    <div className={`step_divForm ${currentStep > 4 ? 'stepCompleted' : ''}`}>
+                    <div className={`step_divForm ${currentStep > 4 ? 'stepCompleted' : ''}`} onClick={() => setCurrentStep(4)}>
                         <p onClick={() => setActiveStep(4)} className={currentStep === 4 ? 'active' : ''}>Agreement</p>
                         <span>4</span>
                     </div>

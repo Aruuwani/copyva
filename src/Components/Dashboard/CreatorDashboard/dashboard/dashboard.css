@@ -566,7 +566,7 @@ filter: invert(1);
         position: absolute;
         right: 30px;
         top: -15px;
-        opacity: 0;
+        /* opacity: 0; */
         transition: .3s all;
     }
     .statement_search.active input {
@@ -698,6 +698,17 @@ filter: invert(1);
         padding: 15px;
     }
 }
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .desktoponly {
+      display: none;
+    }
+  
+    .statement_page_firstcontent {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+}
 
   .Dashboard_rightContent .custom-form {
     background-color: #ffffff;
@@ -764,3 +775,28 @@ filter: invert(1);
     background-color: red;
   }
   
+
+
+
+  @media (max-width: 425px) {
+
+.Statement_page_firstcontent{
+    flex-direction: column;
+    display: flex;
+    text-align: start;
+    align-items: start;
+}
+  .statement_search span{
+  
+    padding-left: 21rem;
+
+   
+   
+  } 
+     .Statement_page_firstcontent h4{
+
+        margin-bottom: 21px;
+
+  }
+
+  }

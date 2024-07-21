@@ -123,7 +123,7 @@ const PermissionUpload = ({nextstep}) => {
                 Permission to remix/combine the selected content/video by
                 editing:
               </h4>
-              <div className="check_progress">
+              <div className="check_progress" >
                 <input
                   type="radio"
                   name="pricing"

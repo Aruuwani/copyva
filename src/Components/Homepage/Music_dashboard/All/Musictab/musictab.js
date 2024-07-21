@@ -15,14 +15,14 @@ import filterIcon from "../../../../../assets/filter.png";
 
 // import Frame from "../../../assets/Frame 22.png";
 const Musictab = () => {
-  const musicItems = [
+  const [musicItems, setMusicItems] = useState([
     {
       title: "Lorem ipsum dolor sit",
       genre: "Lorem ipsum do",
       mood: "Lorem ipsum do",
       artist: "Lorem ipsum do",
       liked: true,
-      videoSrc: "https://www.w3schools.com/html/mov_bbb.mp4", // Use a direct video link here
+      videoSrc: "https://www.w3schools.com/html/mov_bbb.mp4",
     },
     {
       title: "Lorem ipsum dolor sit",
@@ -30,11 +30,10 @@ const Musictab = () => {
       mood: "Lorem ipsum do",
       artist: "Lorem ipsum do",
       liked: false,
-      videoSrc: "https://www.w3schools.com/html/mov_bbb.mp4", // Use a direct video link here
+      videoSrc: "https://www.w3schools.com/html/mov_bbb.mp4",
     },
     // Add more items as needed
-  ];
-
+  ]);
   const [currentTrack, setCurrentTrack] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [showVideoPlayer, setShowVideoPlayer] = useState(false);
@@ -60,6 +59,7 @@ const Musictab = () => {
   };
 
   const handleImageClick = (videoSrc) => {
+    debugger
     setVideoSrc(videoSrc);
     setShowVideoPlayer(true);
   };
@@ -68,7 +68,12 @@ const Musictab = () => {
     setShowVideoPlayer(false);
     setVideoSrc("");
   };
-
+  const toggleLike = (index) => {
+    const updatedMusicItems = musicItems.map((item, i) => 
+      i === index ? { ...item, liked: !item.liked } : item
+    );
+    setMusicItems(updatedMusicItems);
+  };
   return (
     <div>
       <div className={`purchases-list1 ${showVideoPlayer ? 'blurred' : ''}`}>
@@ -108,6 +113,7 @@ const Musictab = () => {
                       <div className="music-item">
                         <img
                           src={Five_img}
+                          style={{cursor:'pointer'}}
                           alt="video"
                           className="music-image"
                           onClick={() => handleImageClick(purchase.videoSrc)}
@@ -122,9 +128,12 @@ const Musictab = () => {
                     <td className="d-md-inline-block d-none">{purchase.genre}</td>
                     <td className="d-md-inline-block d-none">{purchase.mood}</td>
                     <td className="d-md-inline-block d-none">{purchase.artist}</td>
-                    <td>
-                      {purchase.liked ? "🖤" : "🤍"}
-                    </td>
+                    <td
+              style={{ cursor: 'pointer' }}
+              onClick={() => toggleLike(index)}
+            >
+              {purchase.liked ? "🖤" : "🤍"}
+            </td>
                     <td><button className="btn_Two"><img src={cartFooter} alt="" className="d-md-none d-block" /><span className="d-md-block d-none">Buy license</span></button></td>
                   </tr>
                 ))}

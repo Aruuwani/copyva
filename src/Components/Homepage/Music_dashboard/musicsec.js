@@ -64,12 +64,14 @@ const Musictab = () => {
               <TabPanel>
                 <div className="music_tabContent">
                   <img src={Dashboard_img} alt="Dashboard_img" />
+                  
                 </div>
               </TabPanel>
 
               <TabPanel>
                 <div className="music_tabContent">
                   <img src={Dashboard_img} alt="Dashboard_img" />
+                  
                 </div>
               </TabPanel>
 

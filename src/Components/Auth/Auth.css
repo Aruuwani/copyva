@@ -7,22 +7,23 @@
 
 .auth-left {
   width: 100%;
-  background: url("../../assets/loginbg.jpeg") no-repeat center center; /* Add your background image here */
-  background-size: cover;
+  height: 100vh; 
+  background: url("../../assets/loginbg.jpeg") no-repeat center center;
+  background-size: cover;   
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: start;
   padding: 3rem;
-  padding: 3rem;
   position: fixed;
   bottom: 0;
   top: 0;
   left: 0;
-  height: 106ch;
   max-width: 40%;
 }
+
+
 
 .auth-welcome {
   font-family: Poppins;
@@ -460,3 +461,36 @@ p.error-message {
     line-height: 18px;
   }
 }
+
+
+
+
+.notes-container {
+  background: rgba(255, 255, 255, 0.9); 
+  border-radius: 15px; 
+  padding: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  position: relative; 
+  bottom: 1rem; 
+
+  /* transform: translateX(-3%);  */
+  
+  top: 40%;
+}
+
+
+
+
+.notes-container ol {
+  margin: 0;
+  padding-left: 1.5rem; /* Indent the list items */
+}
+
+.notes-container li {
+  margin-bottom: 10px; /* Space between list items */
+text-align: start;
+  line-height: 1.5; /* Line height for better readability */
+  color:black;
+  font-size: 13px;
+}
+

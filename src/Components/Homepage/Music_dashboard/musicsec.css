@@ -65,6 +65,7 @@ section.Music_sec {
     padding: 0px 30px;
     justify-content: flex-start;
     margin: 0px;
+    cursor: pointer;
 }
 .music_tab .react-tabs ul.react-tabs__tab-list>li:first-child::after {
     width: 100%;
