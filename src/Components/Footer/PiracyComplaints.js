@@ -1,5 +1,6 @@
 import React from 'react'
 import { Form, Row, Col } from 'react-bootstrap';
+import "./piracyomplaints.css";
 const PiracyComplaints = () => {
     return (
         <Form className='piracy_setting'>
@@ -61,9 +62,6 @@ const PiracyComplaints = () => {
                         <Form.Control name="Confirmpassword" placeholder='' type="date" />
                     </Form.Group>
                 </Col>
-
-            </Row>
-            <Row>
                 <Col md={6}>
                     <Form.Group controlId="appleLink">
                         <Form.Label className="statement_form">Platform where the music/content was used </Form.Label>
@@ -72,6 +70,7 @@ const PiracyComplaints = () => {
                 </Col>
 
             </Row>
+        
             <Row>
                 <Col md={12}>
                     <Form.Group controlId="appleLink">
