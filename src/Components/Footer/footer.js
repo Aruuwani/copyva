@@ -4,6 +4,7 @@ import main_logo from '../../assets/Copyva_logo.png'
 import Twitter_img from '../../assets/twitter.png'
 import Insta_img from '../../assets/instagram.png'
 import Mail_img from '../../assets/mail.png'
+import { Link } from 'react-router-dom'
 const Footer = () => {
   return (
     <section className='Footer'>
@@ -54,7 +55,7 @@ const Footer = () => {
             <ul>
               <li> <a href='#'>Purchase Flow</a></li>
               <li> <a href='#'>Terms and Conditions</a></li>
-              <li> <a href='#'>Privacy Policy</a></li>
+              <li> <Link to='/piracycomplaints'>Privacy Policy</Link></li>
               <li> <a href='#'>Refund and Cancellation</a></li>
             </ul>
 

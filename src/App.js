@@ -13,6 +13,7 @@ import Checkout from "./Components/Homepage/Search_bycode/checkout";
 
 import "./App.css";
 import PaymentSuccess from "./Components/Homepage/Search_bycode/paymentsuccess";
+import PiracyComplaints from "./Components/Footer/PiracyComplaints";
 
 function App() {
   const location = useLocation();
@@ -51,7 +52,7 @@ function App() {
             <Route path="/payment" element={<Payment />} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/serch_bycode" element={<SearchBycode />} />
-            {/* <Route path="/paymentsuccess" element={<PaymentSuccess />} /> */}
+            <Route path="/piracycomplaints" element={<PiracyComplaints />} />
           </Routes>
           {footerPath && <Footer />}
         </>
