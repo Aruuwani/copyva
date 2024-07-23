@@ -55,7 +55,7 @@ const Footer = () => {
             <ul>
               <li> <a href='#'>Purchase Flow</a></li>
               <li> <a href='#'>Terms and Conditions</a></li>
-              <li> <Link to='/piracycomplaints'>Privacy Policy</Link></li>
+              <li> <a href='#'>Privacy Policy </a></li>
               <li> <a href='#'>Refund and Cancellation</a></li>
             </ul>
 

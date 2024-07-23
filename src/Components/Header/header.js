@@ -44,6 +44,9 @@ const Header = () => {
   const loginHandler = () => {
     navigate('/auth')
   }
+  const PiracyHandler=()=>{
+    navigate('/piracycomplaints')
+  }
   const location = useLocation();
   return (
     <>
@@ -53,7 +56,9 @@ const Header = () => {
             <Link to='/'><img src={Logo_web} alt="main_logo" /></Link>
           </div>
           <div className="Header_btns">
-            <button type="button">Report content piracy</button>
+          
+         <button type="button"  onClick={()=>PiracyHandler()}>Report content piracy</button> 
+           
             {(location.pathname === '/usercomponent' || location.pathname === '/serch_bycode') && (
 
               <Link to='#'><img src={cartLogo} alt="cart_logo" /></Link>
