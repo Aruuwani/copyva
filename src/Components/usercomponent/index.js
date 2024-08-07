@@ -4,6 +4,7 @@ import PurchasesList from "./Purchases/purchase";
 import UserProfile from "./userprofile/userprofile";
 import { useParams } from "react-router-dom";
 import FavouritiesList from "./favroties/favroties";
+import { GetCurrentUser } from "../../Hooks/ApiService";
 
 const Purchases = () => {
   const dummyPurchases = [
@@ -157,19 +158,29 @@ const Favourites = () => {
     </div>
   );
 };
-const UserInfo = () => (
+const UserInfo = ({userProfile}) => (
   <div>
-    <UserProfile />
+    <UserProfile userProfile={userProfile}/>
   </div>
 );
 
 const UserComponent = () => {
   const [activeTabs, setActiveTab] = useState('purchases');
-
+  const [userProfile, setUserProfile] = useState(null);
 
   const { tab } = useParams();
 
 
+  useEffect(() => {
+    const fetchUser = async () => {
+      
+      const User = await GetCurrentUser();
+      if (User) {
+        setUserProfile(User);
+      }
+    }
+    fetchUser()
+  }, []);
 
   return (
     <div className="user-component">
@@ -182,7 +193,7 @@ const UserComponent = () => {
         </div>
         {activeTabs === "purchases" && <Purchases />}
         {activeTabs === "favourites" && <Favourites />}
-        {activeTabs === "userinfo" && <UserInfo />}
+        {activeTabs === "userinfo" && <UserInfo userProfile={userProfile} />}
       </div>
     </div>
   );

@@ -7,6 +7,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { IoClose } from "react-icons/io5";
 import { IoIosArrowForward } from "react-icons/io";
 import cartLogo from '../../assets/header_cart.svg'
+import { GetCurrentUser } from "../../Hooks/ApiService";
 
 
 const Header = () => {
@@ -17,11 +18,15 @@ const Header = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    const storedUser = JSON.parse(localStorage.getItem("user"));
-    if (storedUser) {
-      setIsLoggedIn(true);
-      setUserProfile(storedUser);
+    const fetchUser = async () => {
+      
+      const User = await GetCurrentUser();
+      if (User) {
+        setIsLoggedIn(true);
+        setUserProfile(User);
+      }
     }
+    fetchUser()
   }, []);
 
   const toggleMenu = () => {
@@ -29,7 +34,7 @@ const Header = () => {
   };
 
   const handleLogout = () => {
-    localStorage.removeItem("user");
+    localStorage.removeItem("authToken");
     setIsLoggedIn(false);
     setUserProfile(null);
     setIsMenuOpen(false);
@@ -66,7 +71,7 @@ const Header = () => {
             {isLoggedIn ? (
               <div className="profile-container" onClick={toggleMenu}>
                 <img src={UserIcon} alt="user_icon" className="user-icon" />
-                <div className="profile_name d-md-block d-none"><span className="profile_name" >{userProfile.fullName}</span>
+                <div className="profile_name d-md-block d-none"><span className="profile_name" >{userProfile.first_name}</span>
                   <span className="view_profile" >View profile</span>
                 </div>
 
@@ -84,7 +89,7 @@ const Header = () => {
             <button className="close-button" onClick={toggleMenu}><IoClose /></button>
           </div>
           <div className="side-menu-content">
-            <div><h3>Hello <br></br>{userProfile.fullName}</h3>
+            <div><h3>Hello <br></br>{userProfile.first_name}</h3>
               <ul>
                 <li onClick={() => handleTabClick('purchases')}>
                   <Link to='/usercomponent'>Purchases <span><IoIosArrowForward /> </span>               </Link>

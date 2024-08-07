@@ -7,6 +7,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import Gooogleimg from "../../../src/assets/Google.svg"
 import Main_logo from "../../../src/assets/new_logo.svg"
 import Login_div from "../../../src/assets/login_left.png"
+import useRegisterUser, { Login, RegisterUser } from '../../Hooks/ApiService';
 
 // import loginbg from "../../assets/loginbg.jpeg"
 
@@ -32,26 +33,45 @@ const Auth = () => {
     defaultValues: { isLogin }
   });
 
-  const onSubmit = data => {
+  const OnSubmit = async(data) => {
     if (isLogin) {
       // Handle login
-      const storedUser = JSON.parse(localStorage.getItem('user'));
-      if (storedUser && storedUser.email === data.email && storedUser.password === data.password && storedUser.type === (isUser ? 'user' : 'owner')) {
-        alert('Login successful!');
-        window.location.href = '/';
-      } else {
-        alert('Invalid email or password');
-      }
-    } else {
-      // Handle registration
-      localStorage.setItem('user', JSON.stringify({
-        fullName: data.fullName,
+      // const storedUser = JSON.parse(localStorage.getItem('user'));
+      if (data) {
+         const body = {
+        
         email: data.email,
         password: data.password,
-        type: isUser ? 'user' : 'owner'
-      }));
-      alert('Registration successful! You can now log in.');
-      setIsLogin(true);
+       
+      };
+      const result = await Login(body);
+      debugger
+      if(result?.response?.status !== 400){
+        // alert('Login successful!');
+        window.location.href = '/';
+      }
+      } else {
+        // alert('Invalid email or password');
+      }
+    } else {
+      const body = {
+        first_name:data.fullName,
+        email: data.email,
+        password: data.password,
+        password2: data.password,
+      };
+      debugger
+      try {
+        const result = await RegisterUser(body);
+        
+        if(result?.response?.status !== 400){
+          setIsLogin(true);
+        }
+      } catch (err) {
+        // alert('Registration failed. Please try again.');
+      }
+      // alert('Registration successful! You can now log in.');
+     
     }
   };
   useEffect(() => {
@@ -93,7 +113,7 @@ const Auth = () => {
               Owner
             </button>
           </div>
-          <form onSubmit={handleSubmit(onSubmit)} className="auth-form">
+          <form onSubmit={handleSubmit(OnSubmit)} className="auth-form">
             {!isLogin && (
               <>
                 <input

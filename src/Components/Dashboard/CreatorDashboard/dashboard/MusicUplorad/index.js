@@ -15,9 +15,9 @@ import { IoMdClose } from "react-icons/io";
 const MusicUplorad = () => {
     const [currentStep, setCurrentStep] = useState(1);
     const [activeStep, setActiveStep] = useState();
-  console.log('currentStep :>> ', currentStep);
+    console.log('currentStep :>> ', currentStep);
     const [showPredefinedPrice, setShowPredefinedPrice] = useState(false);
-   
+
     const [prisingStep, setPrisingStep] = useState(
         localStorage.getItem("pricingStep") || ""
     );
@@ -33,7 +33,7 @@ const MusicUplorad = () => {
     const [isActive, setIsActive] = useState(false);
 
     const handleSearchClick = () => {
-        setIsActive(!isActive);
+        setIsActive(!isActive); 
     };
 
     const handleBlurbClick = () => {
@@ -56,16 +56,22 @@ const MusicUplorad = () => {
     const handlePrev = () => {
         setCurrentStep(currentStep - 1);
     };
+console.log('formData :>> ', formData);
 
 
+    // const handleDataChange = (stepData, stepName) => {
+    //     setFormData({
+    //         ...formData,
+    //         [stepName]: stepData
+    //     });
+    // };
 
     const handleDataChange = (stepData, stepName) => {
-        setFormData({
-            ...formData,
-            [stepName]: stepData
-        });
+        setFormData((prevData) => ({
+            ...prevData,
+            [stepName]: { ...prevData[stepName], ...stepData }
+        }));
     };
-   
     const handlePricingStepChange = (step) => {
         if (step === 4) {
             setShowPredefinedPrice(true);
@@ -73,6 +79,9 @@ const MusicUplorad = () => {
             setShowPredefinedPrice(false);
         }
     };
+    useEffect(() => {
+        console.log('Current formData:', formData);
+    }, [formData]);
     return (
         <>
             <div className='back_screens'>
@@ -90,7 +99,7 @@ const MusicUplorad = () => {
                     <div className={`step_divForm ${currentStep > 5 ? 'stepCompleted' : ''}`} onClick={() => setCurrentStep(5)}><p onClick={() => setActiveStep(5)} className={currentStep === 5 ? 'active' : ''}>Agreement</p><span>5</span></div>
                 </div>
                 <div className='Custom_formwrapper'>
-                {showPredefinedPrice && currentStep === 3 &&
+                    {showPredefinedPrice && currentStep === 3 &&
                         <div className='Predefined_price top_prices'>
                             <div className='note_secwrap'>
                                 <h1>Can we use previously given information?</h1>
@@ -103,7 +112,7 @@ const MusicUplorad = () => {
 
                         </div>
                     }
-<div className={`custom-form content_info ${isActive ? 'active' : ''} ${currentStep === 3 ? 'Content_infowrapper' : ''}`}>
+                    <div className={`custom-form content_info ${isActive ? 'active' : ''} ${currentStep === 3 ? 'Content_infowrapper' : ''}`}>
                         <div className='note_SecWrapper mobile_only'>
                             <div className='note_sec'>
                                 <div className='note_secwrap'>
@@ -160,7 +169,7 @@ const MusicUplorad = () => {
                                 setFormData={(data) => handleDataChange(data, 'agreement')} />
                         )}
 
-<div className={currentStep !== 3 && 'musicSubmitbtn'}>
+                        <div className={currentStep !== 3 && 'musicSubmitbtn'}>
                             {/* {currentStep > 1 && <button onClick={handlePrev}>Previous</button>} */}
                             {currentStep < 5 && currentStep !== 3 && <button onClick={handleNext} className='musicSubmitbutton'>Submit</button>}
                             {currentStep === 5 && currentStep !== 3 && <button className='musicSubmitbutton' onClick={() => console.log(formData)}>Submit</button>}
