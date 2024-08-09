@@ -20,17 +20,22 @@ export const useGetMusicDetails = () => {
 };
 
 // Hook to create a new music or content
-export const useCreateMusic = () => {
-  const [response, setResponse] = useState(null);
-  const [error, setError] = useState(null);
+export const CreateMusic = async({body}) => {
 
-  const createMusic = (body) => {
-    axios.post(`${BASE_URL}/api/music_details/`, body)
-      .then(response => setResponse(response.data))
-      .catch(error => setError(error));
-  };
+  try {
+    const res = await axios.post(`${BASE_URL}/api/music_details/`, body, {
+      headers: {
+        Authorization: `Token ${token}`, // Include the token in the headers
+      },
+    });
+    return res.data;
+  } catch (error) {
+    toast.error(error.response.data.error);
 
-  return { createMusic, response, error };
+    console.error(error.response.data.error);
+    return error;
+  }
+ 
 };
 
 // Hook to get music uploads by the current logged in user

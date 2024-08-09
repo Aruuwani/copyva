@@ -540,13 +540,13 @@ const Pricing = ({ nextstep, onPricingStepChange ,setFormData}) => {
                   <label>{option.label}</label>
                 </div>
               ))}
-              <button
+              {/* <button
                 type="button"
                 onClick={addOption}
                 className="bg_transparent"
               >
                 Add an option if needed
-              </button>
+              </button> */}
               <div className="btn_wapper">
                 <button
                   type="button"
@@ -595,13 +595,13 @@ const Pricing = ({ nextstep, onPricingStepChange ,setFormData}) => {
                   />
                 </Form.Group>
               ))}
-              <button
+              {/* <button
                 type="button"
                 onClick={addOptionCase4}
                 className="add_option bg_transparent"
               >
                 +Add an option if needed
-              </button>
+              </button> */}
               <div className="btn_wapper">
                 <button
                   type="button"

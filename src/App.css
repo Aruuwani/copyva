@@ -45,3 +45,16 @@ body{
     transform: rotate(360deg);
   }
 }
+.relative {
+  position: relative;
+}
+.custom-svg {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 31px;
+  height: 31px;
+  color: #6B7280;
+  pointer-events: none;
+}
