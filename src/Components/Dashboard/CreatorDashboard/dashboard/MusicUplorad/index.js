@@ -236,7 +236,7 @@ const MusicUplorad = () => {
         music_links: [
 
         ],
-        upload_type: "",
+        upload_type: "Music",
         owner_name: "",
         upload_music_link: "",
         cover_template_link: "",
@@ -245,8 +245,8 @@ const MusicUplorad = () => {
         release_date: "",
         usage: "",
         music_category: "",
-        price: "",
-        license_end_date: "",
+        
+        license_end_date: "2024-05-15",
         seating: "",
         price_6: "",
         price_12: "",
@@ -283,7 +283,7 @@ const MusicUplorad = () => {
     //         [stepName]: stepData
     //     });
     // };
-    
+
     // const handleDataChange = (stepData, stepName) => {
     // const handleDataChange = (stepData,stepName) => {
     //     debugger
@@ -303,13 +303,43 @@ const MusicUplorad = () => {
     //         ...prevData,
     //         [stepName]: { ...prevData[stepName], ...stepData }
     //     }));
+    // // };
+    // const handleDataChange = (stepData) => {
+    //     setFormData((prevData) => ({
+    //         ...prevData,
+    //         ...stepData // Update formData with the incoming stepData
+    //     }));
     // };
-    const handleDataChange = (stepData) => {
-        setFormData((prevData) => ({
-            ...prevData,
-            ...stepData // Update formData with the incoming stepData
-        }));
+    const handleDataChange = (stepData, stepName) => {
+        setFormData(prevData => {
+            if (stepName === 'music_links') {
+                // Handle music_links updates specifically
+                return {
+                    ...prevData,
+                    [stepName]: stepData // Replace the entire music_links array with the new data
+                };
+            } else if (stepName) {
+                // Handle nested data updates for other steps
+                return {
+                    ...prevData,
+                    [stepName]: {
+                        ...prevData[stepName],
+                        ...stepData
+                    }
+                };
+            } else {
+                // Handle normal data updates
+                return {
+                    ...prevData,
+                    ...stepData
+                };
+            }
+        });
     };
+
+
+
+
     const handlePricingStepChange = (step) => {
         if (step === 4) {
             setShowPredefinedPrice(true);
@@ -327,8 +357,12 @@ const MusicUplorad = () => {
         try {
             // eslint-disable-next-line react-hooks/rules-of-hooks
             const response = await CreateMusic(formData);
+            debugger
+            if(response){
+                
+                toast.success("All data saved successfully!");
+            }
             // console.log(response, "heyyyyyyyyyyyyyyyyyyyy")
-            toast.success("All data saved successfully!");
         } catch (error) {
             toast.error("Failed to save data.");
         }
@@ -385,18 +419,20 @@ const MusicUplorad = () => {
                         {currentStep === 1 && (
                             <SongInformation
                                 data={formData}
-                                setFormData={ handleDataChange} />
+                                setFormData={handleDataChange} />
                         )}
                         {currentStep === 2 && (
                             <SongLinks
-                                formData={formData.music_links}
-                                setFormData={(data) => handleDataChange(data, 'music_links')} />
+                                formData={formData.music_links} // Pass the array of music links
+                                setFormData={(updatedLinks) => handleDataChange(updatedLinks.music_links, 'music_links')} // Pass the handler to update music_links
+                            />
                         )}
+
                         {currentStep === 3 && (
                             <Pricing
                                 nextstep={handleNext}
-                                data={formData.pricing}
-                                setFormData={(data) => handleDataChange(data, 'pricing')}
+                                data={formData}
+                                setFormData={handleDataChange}
                                 onPricingStepChange={handlePricingStepChange}
                             // priseState={() => setPriseState()} />
                             />
@@ -409,7 +445,8 @@ const MusicUplorad = () => {
                         {currentStep === 4 && (
                             <Agreement
                                 data={formData.agreement}
-                                setFormData={(data) => handleDataChange(data, 'agreement')} />
+                            // setFormData={(data) => handleDataChange(data, 'agreement')}
+                            />
                         )}
                         <div className={currentStep !== 3 && 'musicSubmitbtn'}>
                             {/* {currentStep > 1 && <button onClick={handlePrev}>Previous</button>} */}

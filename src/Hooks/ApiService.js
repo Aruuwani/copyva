@@ -20,10 +20,10 @@ export const useGetMusicDetails = () => {
 };
 
 // Hook to create a new music or content
-export const CreateMusic = async({body}) => {
+export const CreateMusic = async(formData) => {
 
   try {
-    const res = await axios.post(`${BASE_URL}/api/music_details/`, body, {
+    const res = await axios.post(`${BASE_URL}/api/music_details/`, formData, {
       headers: {
         Authorization: `Token ${token}`, // Include the token in the headers
       },

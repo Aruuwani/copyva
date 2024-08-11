@@ -19,7 +19,7 @@ const Agreement = ({ formData, setFormData }) => {
     //     setFormData(agreement);
     // }, []);
     const handleBlur = () => {
-        setFormData(agreement);
+        // setFormData(agreement);
     }
 
     return (

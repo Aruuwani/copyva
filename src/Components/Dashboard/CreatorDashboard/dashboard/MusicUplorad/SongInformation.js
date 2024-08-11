@@ -11,13 +11,37 @@ const SongInformation = ({ data, setFormData }) => {
     }, [data]);
     console.log('songInfo :>> ', songInfo);
 
+    // const handleChange = (e) => {
+    //     const { name, value } = e.target;
+    //     setSongInfo((prev) => ({
+    //         ...prev,
+    //         [name]: value,
+    //     }));
+    // };
+    // const handleChange = (e) => {
+    //     const { name, value } = e.target;
+    //     setSongInfo((prev) => ({
+    //         ...prev,
+    //         [name]: Array.isArray(prev[name]) ? [value] : value,  // Convert to array if it's one of the fields that expects an array
+    //     }));
+    // };
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setSongInfo((prev) => ({
-            ...prev,
-            [name]: value,
-        }));
+    
+        if (name === 'languages' || name === 'genres' || name === 'moods') {
+            // If it is a select for multiple items, update as an array
+            setSongInfo((prev) => ({
+                ...prev,
+                [name]: [...prev[name], value].filter(Boolean),  // Ensure values are not empty
+            }));
+        } else {
+            setSongInfo((prev) => ({
+                ...prev,
+                [name]: value,
+            }));
+        }
     };
+    
     useEffect(() => {
         setFormData(songInfo);
     }, []);
@@ -32,20 +56,20 @@ const SongInformation = ({ data, setFormData }) => {
                 <div className="d-flex">
                     <Form.Check
                         type="radio"
-                        id="song"
+                        id="SONG"
                         name="music_category"
                         label="Song"
-                        value="song"
-                        checked={songInfo?.music_category === "song"}
+                        value="SONG"
+                        checked={songInfo?.music_category === "SONG"}
                         onChange={handleChange}
                     />
                     <Form.Check
                         type="radio"
-                        id="instrumental"
+                        id="INSTRUMENTAL"
                         name="music_category"
                         label="Instrumental"
-                        value="instrumental"
-                        checked={songInfo?.music_category === "instrumental"}
+                        value="INSTRUMENTAL"
+                        checked={songInfo?.music_category === "INSTRUMENTAL"}
                         onChange={handleChange}
                     />
                 </div>
@@ -122,85 +146,97 @@ const SongInformation = ({ data, setFormData }) => {
                         <Form.Control
                             as="select"
                             name="languages"
-                            value={songInfo?.languages}
+                            value={songInfo?.languages || []}
                             onChange={handleChange}
                             // onBlur={handleBlur}
                             required
                             className="custom-select"
+                        // as="select"
+                        // name="languages"
+                        // value={songInfo?.languages}
+                        // onChange={(e) => {
+                        //     const selectedOptions = Array.from(e.target.selectedOptions, option => option.value);
+                        //     setSongInfo((prev) => ({ ...prev, languages: selectedOptions }));
+                        // }}
+                        // multiple // Allows multiple selection
+                        // required
+                        // className="custom-select"
                         >
                             <option value="">Select language</option>
-                            <option value="AF">Afrikaans</option>
-                            <option value="SQ">Albanian</option>
-                            <option value="AR">Arabic</option>
-                            <option value="HY">Armenian</option>
-                            <option value="EU">Basque</option>
-                            <option value="BN">Bengali</option>
-                            <option value="BG">Bulgarian</option>
-                            <option value="CA">Catalan</option>
-                            <option value="KM">Cambodian</option>
-                            <option value="ZH">Chinese (Mandarin)</option>
-                            <option value="HR">Croatian</option>
-                            <option value="CS">Czech</option>
-                            <option value="DA">Danish</option>
-                            <option value="NL">Dutch</option>
-                            <option value="EN">English</option>
-                            <option value="ET">Estonian</option>
-                            <option value="FJ">Fiji</option>
-                            <option value="FI">Finnish</option>
-                            <option value="FR">French</option>
-                            <option value="KA">Georgian</option>
-                            <option value="DE">German</option>
-                            <option value="EL">Greek</option>
-                            <option value="GU">Gujarati</option>
-                            <option value="HE">Hebrew</option>
-                            <option value="HI">Hindi</option>
-                            <option value="HU">Hungarian</option>
-                            <option value="IS">Icelandic</option>
-                            <option value="ID">Indonesian</option>
-                            <option value="GA">Irish</option>
-                            <option value="IT">Italian</option>
-                            <option value="JA">Japanese</option>
-                            <option value="JW">Javanese</option>
-                            <option value="KO">Korean</option>
-                            <option value="LA">Latin</option>
-                            <option value="LV">Latvian</option>
-                            <option value="LT">Lithuanian</option>
-                            <option value="MK">Macedonian</option>
-                            <option value="MS">Malay</option>
-                            <option value="ML">Malayalam</option>
-                            <option value="MT">Maltese</option>
-                            <option value="MI">Maori</option>
-                            <option value="MR">Marathi</option>
-                            <option value="MN">Mongolian</option>
-                            <option value="NE">Nepali</option>
-                            <option value="NO">Norwegian</option>
-                            <option value="FA">Persian</option>
-                            <option value="PL">Polish</option>
-                            <option value="PT">Portuguese</option>
-                            <option value="PA">Punjabi</option>
-                            <option value="QU">Quechua</option>
-                            <option value="RO">Romanian</option>
-                            <option value="RU">Russian</option>
-                            <option value="SM">Samoan</option>
-                            <option value="SR">Serbian</option>
-                            <option value="SK">Slovak</option>
-                            <option value="SL">Slovenian</option>
-                            <option value="ES">Spanish</option>
-                            <option value="SW">Swahili</option>
-                            <option value="SV">Swedish</option>
-                            <option value="TA">Tamil</option>
-                            <option value="TT">Tatar</option>
-                            <option value="TE">Telugu</option>
-                            <option value="TH">Thai</option>
-                            <option value="BO">Tibetan</option>
-                            <option value="TO">Tonga</option>
-                            <option value="TR">Turkish</option>
-                            <option value="UK">Ukrainian</option>
-                            <option value="UR">Urdu</option>
-                            <option value="UZ">Uzbek</option>
-                            <option value="VI">Vietnamese</option>
-                            <option value="CY">Welsh</option>
-                            <option value="XH">Xhosa</option>
+                            <option value={1}>Malyalam</option>
+                            <option value={2}>Tamil</option>
+                            <option value={3}>Hindi</option>
+                            {/* <option value={4}>Armenian</option>
+                            <option value={5}>Basque</option>
+                            <option value={6}>Bengali</option>
+                            <option value={7}>Bulgarian</option>
+                            <option value={8}>Catalan</option>
+                            <option value={9}>Cambodian</option>
+                            <option value={10}>Chinese (Mandarin)</option>
+                            <option value={11}>Croatian</option>
+                            <option value={12}>Czech</option>
+                            <option value={13}>Danish</option>
+                            <option value={14}>Dutch</option>
+                            <option value={15}>English</option>
+                            <option value={16}>Estonian</option>
+                            <option value={17}>Fiji</option>
+                            <option value={18}>Finnish</option>
+                            <option value={19}>French</option>
+                            <option value={20}>Georgian</option>
+                            <option value={21}>German</option>
+                            <option value={22}>Greek</option>
+                            <option value={23}>Gujarati</option>
+                            <option value={24}>Hebrew</option>
+                            <option value={25}>Hindi</option>
+                            <option value={26}>Hungarian</option>
+                            <option value={27}>Icelandic</option>
+                            <option value={28}>Indonesian</option>
+                            <option value={29}>Irish</option>
+                            <option value={30}>Italian</option>
+                            <option value={31}>Japanese</option>
+                            <option value={32}>Javanese</option>
+                            <option value={33}>Korean</option>
+                            <option value={34}>Latin</option>
+                            <option value={35}>Latvian</option>
+                            <option value={36}>Lithuanian</option>
+                            <option value={37}>Macedonian</option>
+                            <option value={38}>Malay</option>
+                            <option value={39}>Malayalam</option>
+                            <option value={40}>Maltese</option>
+                            <option value={41}>Maori</option>
+                            <option value={42}>Marathi</option>
+                            <option value={43}>Mongolian</option>
+                            <option value={44}>Nepali</option>
+                            <option value={45}>Norwegian</option>
+                            <option value={46}>Persian</option>
+                            <option value={47}>Polish</option>
+                            <option value={48}>Portuguese</option>
+                            <option value={49}>Punjabi</option>
+                            <option value={50}>Quechua</option>
+                            <option value={51}>Romanian</option>
+                            <option value={52}>Russian</option>
+                            <option value={53}>Samoan</option>
+                            <option value={54}>Serbian</option>
+                            <option value={55}>Slovak</option>
+                            <option value={56}>Slovenian</option>
+                            <option value={57}>Spanish</option>
+                            <option value={58}>Swahili</option>
+                            <option value={59}>Swedish</option>
+                            <option value={60}>Tamil</option>
+                            <option value={61}>Tatar</option>
+                            <option value={62}>Telugu</option>
+                            <option value={63}>Thai</option>
+                            <option value={64}>Tibetan</option>
+                            <option value={65}>Tonga</option>
+                            <option value={66}>Turkish</option>
+                            <option value={67}>Ukrainian</option>
+                            <option value={68}>Urdu</option>
+                            <option value={69}>Uzbek</option>
+                            <option value={70}>Vietnamese</option>
+                            <option value={71}>Welsh</option>
+                            <option value={72}>Xhosa</option> */}
+
+
                         </Form.Control>
                         <svg
                             className="custom-svg"
@@ -224,16 +260,16 @@ const SongInformation = ({ data, setFormData }) => {
                         <Form.Control
                             as="select"
                             name="genres"
-                            value={songInfo?.genres}
+                            value={songInfo?.genres || []}
                             onChange={handleChange}
                             onBlur={handleBlur}
                             required
                             className="custom-select"
                         >
                             <option value="">Select genre</option>
-                            <option value="electronic_dance_music">Electronic Dance Music</option>
-                            <option value="pop_drop">Pop-drop</option>
-                            <option value="other_genres">Other Genres</option>
+                            <option value={1}>Hip Hop</option>
+                            <option value={2}>Rock</option>
+                            <option value={3}>Pop</option>
                         </Form.Control>
                         <svg
                             className="custom-svg"
@@ -256,17 +292,17 @@ const SongInformation = ({ data, setFormData }) => {
                         <Form.Control
                             as="select"
                             name="moods"
-                            value={songInfo?.moods}
+                            value={songInfo?.moods || []}
                             onChange={handleChange}
                             onBlur={handleBlur}
                             required
                             className="custom-select"
                         >
                             <option value="">Select mood</option>
-                            <option value="romantic">romantic</option>
-                            <option value="sad">sad</option>
-                            <option value="hip-hop">hip-hop</option>
-                            <option value="love">love</option>
+                            <option value={1}>Uplifting</option>
+                            <option value={2}>Melancholic</option>
+                            <option value={3}>Calm</option>
+                            {/* <option value={4}>love</option> */}
                         </Form.Control>
                         <svg
                             className="custom-svg"
